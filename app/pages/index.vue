@@ -10,7 +10,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
+  <!-- <div>
     <ULandingHero
       :title="page.hero.title"
       :description="page.hero.description"
@@ -141,5 +141,5 @@ useSeoMeta({
         class="max-w-4xl mx-auto"
       />
     </ULandingSection>
-  </div>
+  </div> -->
 </template>
