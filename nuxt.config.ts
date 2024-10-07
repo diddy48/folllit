@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   //extends: ['@nuxt/ui-pro'],
+  head: {
+    meta: [
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+    ]
+  },
+
 
   modules: [
     '@nuxt/content',
