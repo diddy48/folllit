@@ -24,13 +24,11 @@ useSeoMeta({
   <!-- <UMain> -->
     <!-- <NuxtPage /> -->
   <!-- </UMain> -->
-  <!-- <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+ 
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout> 
 
-  <AppFooter /> -->
-  <div class="hello">
-   E[ un aprova per vedere se va]
-  </div>
+  <!-- <AppFooter/> -->
   <!-- <UNotifications /> -->
 </template>
