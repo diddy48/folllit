@@ -30,7 +30,7 @@ useSeoMeta({
 
   <AppFooter /> -->
   <div class="hello">
-    Hello Nuxt 2!
+   E[ un aprova per vedere se va]
   </div>
   <!-- <UNotifications /> -->
 </template>
