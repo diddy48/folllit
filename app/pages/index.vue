@@ -103,7 +103,7 @@ if (onMounted) {
 </div> -->
 
    <div class="splash">
-    <video class="fade-in" autoplay muted loop>
+    <video playsinline class="fade-in" autoplay muted loop>
       <source class="" src="~/assets/video/loader.mp4" type="video/mp4">
     </video>
 
