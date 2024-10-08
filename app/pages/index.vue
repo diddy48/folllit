@@ -107,7 +107,6 @@ if (onMounted) {
       <source class="" src="~/assets/video/loader.mp4" type="video/mp4">
     </video>
   </div> 
-
   <div class="row">
     <div class="col-md-12">
       <div class="row">
