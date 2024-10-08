@@ -106,6 +106,7 @@ if (onMounted) {
     <video class="fade-in" autoplay muted loop>
       <source class="" src="~/assets/video/loader.mp4" type="video/mp4">
     </video>
+
   </div> 
   <div class="row">
     <div class="col-md-12">
@@ -118,6 +119,7 @@ if (onMounted) {
         <div class="col-md-12">
           <h1>Home Page</h1>
           <p>Welcome to our application. Here is some information about us.</p>
+          <h3>Our missio</h3>
         </div>
       </div>
     </div>
