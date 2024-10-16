@@ -1,11 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from "nuxt/config"
 export default defineNuxtConfig({
   //extends: ['@nuxt/ui-pro'],
-  head: {
+  /* head: {
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
     ]
-  },
+  }, */
 
 
   modules: [
@@ -13,7 +14,9 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/image',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    'nuxtjs-naive-ui',
+    /* '@vueuse/nuxt' */
   ],
 
   routeRules: {

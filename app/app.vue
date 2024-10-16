@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -19,16 +20,10 @@ useSeoMeta({
 </script>
 
 <template>
-  <!-- <AppHeader />
- -->
-  <!-- <UMain> -->
-    <!-- <NuxtPage /> -->
-  <!-- </UMain> -->
- 
+  <!-- <AppHeader />  -->
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout> 
 
   <!-- <AppFooter/> -->
-  <!-- <UNotifications /> -->
 </template>
