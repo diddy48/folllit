@@ -10,14 +10,17 @@
     </video>
   </div> -->
   <div class="content">
-        <div class="masked-image" xmlns="http://www.w3.org/1999/xhtml">
-          <img src="~/assets/img/white-paper-texture.svg" alt="logo" />
-        </div>
     <svg class="mask-container" width="100%" height="100%">
       <!-- Define SVG mask -->
+       <!-- <defs>
+        <pattern id="mask-background" patternUnits="userSpaceOnUse" width="100" height="100">
+          <image href="~/assets/img/white-paper-texture.jpg" x="0" y="0" width="100" height="100"/>
+        </pattern>
+      </defs> -->
       <mask id="eye-mask">
         <!-- Full black background -->
-        <rect width="100%" height="100%" fill="black" />
+        <!-- <rect width="100%" height="100%"  fill="black" /> -->
+        <image href="~/assets/img/white-paper-texture.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
         <!-- Two circular holes for the eyes (the video will show through these) -->
         <!-- Desktop circles -->
         <circle v-if="canvasWidth >= 768" cx="33%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
@@ -215,21 +218,6 @@ export default {
   position: relative;
 }
 
-.masked-image {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 video {
   width: 100%;
@@ -244,7 +232,7 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   z-index: 200;
