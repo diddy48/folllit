@@ -5,7 +5,10 @@
     <div v-if="success" class="success-message">Success! You drew a smile! Redirecting to About Us...</div>
   </div>
   <div class="content">
-    <div><img class="home_logo img-fluid" :src="randomImage" alt="backgeound" /></div>
+    <div>
+      <img class="home_logo img-fluid" :src="randomImage" alt="background" />
+    </div>
+
     <svg class="mask-container" width="100%" height="100%">
       <!-- Define SVG mask -->
        <!-- <defs>
@@ -183,6 +186,17 @@ export default {
 </script>
 
 <style scoped>
+
+
+.home_logo {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
 .hint{
   font-family: 'EB Garamond', sans-serif;
 }
