@@ -10,7 +10,10 @@
     </video>
   </div> -->
   <div class="content">
-    <svg class="mask-container" width="100%" height="100%°">
+        <div class="masked-image" xmlns="http://www.w3.org/1999/xhtml">
+          <img src="~/assets/img/white-paper-texture.svg" alt="logo" />
+        </div>
+    <svg class="mask-container" width="100%" height="100%">
       <!-- Define SVG mask -->
       <mask id="eye-mask">
         <!-- Full black background -->
@@ -189,14 +192,14 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   z-index: 0;
   overflow: hidden;
 }
 
 .mask-container {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: absolute;
   top: 0;
@@ -210,6 +213,22 @@ export default {
   height: 100%;
   overflow: hidden;
   position: relative;
+}
+
+.masked-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 video {
