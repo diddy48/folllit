@@ -14,8 +14,13 @@
       </defs> -->
       <!-- <rect width="100%" height="100%"  fill="black"/> -->
       <mask id="eye-mask">
+      <text v-if="canvasWidth >= 768" x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
+      <text v-else="canvasWidth < 768" x="5" y="5%" font-size="200%" fill="white" class="folllit">folllit</text>
+
+      <text v-if="canvasWidth >= 768" x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text>
+      <text v-else="canvasWidth < 768" x="5" y="98%" font-size="200%" fill="white" class="hint">draw a smile to unlock</text>
         <!-- Full black background -->
-        <image :href="randomImage" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;"/>
+        <!-- <image :href="randomImage" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" fill="black"/> -->
         <!-- <rect width="100%" height="100%"  fill="black"/> -->
         <!-- Two circular holes for the eyes (the video will show through these) -->
         <!-- Desktop circles -->
@@ -168,6 +173,13 @@ export default {
 </script>
 
 <style scoped>
+.hint{
+  font-family: 'EB Garamond', sans-serif;
+}
+
+.folllit{
+  font-family: 'EB Garamond', sans-serif;
+}
 
 .content {
   position: fixed;
