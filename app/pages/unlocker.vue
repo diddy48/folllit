@@ -12,7 +12,7 @@
           <image href="~/assets/img/white-paper-texture.jpg" x="0" y="0" width="100" height="100"/>
         </pattern>
       </defs> -->
-      <rect width="100%" height="100%"  fill="black"/>
+      <!-- <rect width="100%" height="100%"  fill="black"/> -->
       <mask id="eye-mask">
         <!-- Full black background -->
         <image :href="randomImage" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;"/>
