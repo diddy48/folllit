@@ -10,7 +10,7 @@
     </video>
   </div> -->
   <div class="content">
-    <svg class="mask-container">
+    <svg class="mask-container" width="100%" height="100%°">
       <!-- Define SVG mask -->
       <mask id="eye-mask">
         <!-- Full black background -->
