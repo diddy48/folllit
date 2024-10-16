@@ -4,11 +4,6 @@
       @touchmove="draw" @touchend="stopDrawing"></canvas>
     <div v-if="success" class="success-message">Success! You drew a smile! Redirecting to About Us...</div>
   </div>
-  <!-- <div class="content">
-    <video playsinline autoplay muted loop>
-      <source class="" src="~/assets/video/loader.mp4" type="video/mp4">
-    </video>
-  </div> -->
   <div class="content">
     <svg class="mask-container" width="100%" height="100%">
       <!-- Define SVG mask -->
@@ -17,10 +12,11 @@
           <image href="~/assets/img/white-paper-texture.jpg" x="0" y="0" width="100" height="100"/>
         </pattern>
       </defs> -->
+      <rect width="100%" height="100%"  fill="black"/>
       <mask id="eye-mask">
         <!-- Full black background -->
-        <!-- <rect width="100%" height="100%"  fill="black" /> -->
-        <image href="~/assets/img/white-paper-texture.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+        <image :href="randomImage" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;"/>
+        <!-- <rect width="100%" height="100%"  fill="black"/> -->
         <!-- Two circular holes for the eyes (the video will show through these) -->
         <!-- Desktop circles -->
         <circle v-if="canvasWidth >= 768" cx="33%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
@@ -34,7 +30,7 @@
       <foreignObject width="100%" height="100%">
         <div class="masked-video" xmlns="http://www.w3.org/1999/xhtml">
           <video playsinline autoplay muted loop style="width: 100%; height: 100%;">
-            <source src="~/assets/video/loader.mp4" type="video/mp4" />
+            <source src="~/assets/video/Sequenza_02.webm" type="video/mp4" />
           </video>
         </div>
       </foreignObject>
@@ -58,25 +54,22 @@ export default {
       canvasWidth: 0,
       canvasHeight: 0,
       eyeRadius: 0,
+      images: [
+        'white-paper-texture.jpg',
+        'pink-paper-texture.jpg',
+      ],// Array of image sources
+      randomImage: '',// Randomly selected image
     };
   },
   mounted() {
     this.initializeCanvas();
     window.addEventListener('resize', this.initializeCanvas);
 
-    //for masking adaptation
-    // Run on initial load
-    /* this.updateEyeMask(); */
-    // Update on resize
-    /* window.addEventListener('resize', this.updateEyeMask); */
-
+    // Select a random image when the component mounts
+    this.selectRandomImage();
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.initializeCanvas);
-
-    //for masking adaptation
-    // Clean up the event listener
-    /* window.removeEventListener('resize', this.updateEyeMask );*/
   },
   methods: {
     initializeCanvas() {
@@ -164,27 +157,12 @@ export default {
       setTimeout(() => {
         this.$router.push('/about');
       }, 2000);
+   },
+   selectRandomImage() {
+      // Select a random image from the array
+      const randomIndex = Math.floor(Math.random() * this.images.length);
+      this.randomImage = this.images[randomIndex];
     },
-
-    // for masking adaptation
-    /* updateEyeMask() {
-      if (onMounted) {
-        const desktopEyes = document.querySelectorAll('.desktop-eye');
-        const mobileEyes = document.querySelectorAll('.mobile-eye');
-        const mobileEye = this.$refs.mobileEye;
-        const desktopEye = this.$refs.desktopEye;
-
-
-
-        if (window.innerWidth <= 768) {
-          desktopEyes.forEach(eye => eye.setAttribute('display', 'none'));
-          mobileEyes.forEach(eye => eye.setAttribute('display', 'block'));
-        } else {
-          desktopEyes.forEach(eye => eye.setAttribute('display', 'block'));
-          mobileEyes.forEach(eye => eye.setAttribute('display', 'none'));
-        }
-      }
-    }, */
   }
 };
 </script>
