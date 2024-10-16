@@ -66,8 +66,8 @@ export default {
         'papers/yellow.jpg',
         'papers/cardboard.jpg',
         'papers/handmade.png',
-        'papers/cork.jpg',
-      ],// Array of image sources
+        'papers/cork.jpeg',
+      ],// Array of imeage sources
       randomImage: '',// Randomly selected image
     };
   },
