@@ -5,6 +5,7 @@
     <div v-if="success" class="success-message">Success! You drew a smile! Redirecting to About Us...</div>
   </div>
   <div class="content">
+    <div><img class="home_logo img-fluid" :src="randomImage" alt="backgeound" /></div>
     <svg class="mask-container" width="100%" height="100%">
       <!-- Define SVG mask -->
        <!-- <defs>
@@ -21,7 +22,7 @@
       <text v-else="canvasWidth < 768" x="5" y="98%" font-size="200%" fill="white" class="hint">draw a smile to unlock</text>
         <!-- Full black background -->
         <!-- <image :href="randomImage" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" fill="black"/> -->
-        <!-- <rect width="100%" height="100%"  fill="black"/> -->
+        <!-- <rect width="100%" height="100%"  fill="url('mask-background')"/> -->
         <!-- Two circular holes for the eyes (the video will show through these) -->
         <!-- Desktop circles -->
         <circle v-if="canvasWidth >= 768" cx="33%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
@@ -60,8 +61,12 @@ export default {
       canvasHeight: 0,
       eyeRadius: 0,
       images: [
-        'white-paper-texture.jpg',
-        'pink-paper-texture.jpg',
+        'papers/white.jpg',
+        'papers/pink.jpg',
+        'papers/yellow.jpg',
+        'papers/cardboard.jpg',
+        'papers/handmade.png',
+        'papers/cork.jpg',
       ],// Array of image sources
       randomImage: '',// Randomly selected image
     };
@@ -114,14 +119,19 @@ export default {
       this.points.push({ x, y });
     },
     drawOnCanvas() {
-      if (this.points.length < 2) return;
-      this.ctx.beginPath();
-      this.ctx.moveTo(this.points[0].x, this.points[0].y);
-      for (let i = 1; i < this.points.length; i++) {
-        this.ctx.lineTo(this.points[i].x, this.points[i].y);
-      }
-      this.ctx.stroke();
-    },
+    if (this.points.length < 2) return;
+    
+    // Set stroke color and line width
+    this.ctx.strokeStyle = '#fff'; // Set to red color (you can change to any color)
+    this.ctx.lineWidth = 7; // Set line width (you can change the value)
+
+    this.ctx.beginPath();
+    this.ctx.moveTo(this.points[0].x, this.points[0].y);
+    for (let i = 1; i < this.points.length; i++) {
+      this.ctx.lineTo(this.points[i].x, this.points[i].y);
+    }
+    this.ctx.stroke();
+  },
     checkDrawing() {
       const eyeBottom = this.canvasHeight / 2 + this.eyeRadius;
       const validPoints = this.points.filter(p => p.y > eyeBottom);
