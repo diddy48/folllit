@@ -19,10 +19,10 @@
       <!-- <rect width="100%" height="100%"  fill="black"/> -->
       <mask id="eye-mask">
       <text v-if="canvasWidth >= 768" x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
-      <text v-else="canvasWidth < 768" x="5" y="5%" font-size="200%" fill="white" class="folllit">folllit</text>
+      <text v-else="canvasWidth < 768" x="1vh" y="6vh" font-size="200%" fill="white" class="folllit">folllit</text>
 
       <text v-if="canvasWidth >= 768" x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text>
-      <text v-else="canvasWidth < 768" x="5" y="98%" font-size="200%" fill="white" class="hint">draw a smile to unlock</text>
+      <text v-else="canvasWidth < 768" x="5vh" y="98vh" font-size="200%" fill="white" class="hint">draw a smile to unlock</text>
         <!-- Full black background -->
         <!-- <image :href="randomImage" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" fill="black"/> -->
         <!-- <rect width="100%" height="100%"  fill="url('mask-background')"/> -->
