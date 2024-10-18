@@ -50,7 +50,8 @@ import {
   </div> -->
   
           <img class="home_logo img-fluid" src="~/assets/img/home_logo.png" alt="logo" />
-          <a href="/unlocker" class="btn btn-primary">Unlock</a>
+          <span><a href="/unlocker" class="btn btn-primary">Unlock</a></span>
+          <span><a href="/iphone_test" class="btn btn-primary">Iphone Test</a></span>
   <!-- <n-image class="home_logo img-fluid"
     src="~/assets/img/home_logo.png"
   /> -->

@@ -11,39 +11,54 @@
 
     <svg class="mask-container" width="100%" height="100%">
       <!-- Define SVG mask -->
-       <!-- <defs>
+      <!-- <defs>
         <pattern id="mask-background" patternUnits="userSpaceOnUse" width="100" height="100">
           <image href="~/assets/img/white-paper-texture.jpg" x="0" y="0" width="100" height="100"/>
         </pattern>
       </defs> -->
       <!-- <rect width="100%" height="100%"  fill="black"/> -->
       <mask id="eye-mask">
-      <text v-if="canvasWidth >= 768" x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
-      <text v-else="canvasWidth < 768" x="1vh" y="6vh" font-size="200%" fill="white" class="folllit">folllit</text>
+        <text v-if="isMobile()" x="1%" y="4%" font-size="200%" fill="white" class="folllit">folllit</text>
+        <text v-else-if="isTablet()" x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
+        <text v-else x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
 
-      <text v-if="canvasWidth >= 768" x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text>
-      <text v-else="canvasWidth < 768" x="5vh" y="98vh" font-size="200%" fill="white" class="hint">draw a smile to unlock</text>
+        <text v-if="isMobile()" x="1%" y="85%" font-size="200%" fill="white" class="hint">draw a smile to unlock</text>
+        <text v-else-if="isTablet()" x="10" y="85%" font-size="400%" fill="white" class="hint">draw a smile to
+          unlock</text>
+        <text v-else x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text>
+
+        <!-- <text v-if="canvasWidth < 768" x="1%" y="90%" font-size="150%" fill="white" class="hint">if you read this you have a looooong phone</text> -->
         <!-- Full black background -->
         <!-- <image :href="randomImage" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" fill="black"/> -->
         <!-- <rect width="100%" height="100%"  fill="url('mask-background')"/> -->
         <!-- Two circular holes for the eyes (the video will show through these) -->
         <!-- Desktop circles -->
-        <circle v-if="canvasWidth >= 768" cx="33%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
-        <circle v-else="canvasWidth < 768" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye" ref="mobileEye" />
-        <circle  v-if="canvasWidth >= 768" cx="67%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
-        <circle v-else="canvasWidth < 768" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye" ref="mobileEye" />
+        <circle v-if="isMobile()" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye" ref="mobileEye" />
+        <circle v-else-if="isTablet()" cx="27%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
+        <circle v-else cx="33%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
+
+        <circle v-if="isMobile()" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye" ref="mobileEye" />
+        <circle v-else-if="isTablet()" cx="73%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
+        <circle v-else cx="67%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
         <!-- Mobile circles -->
       </mask>
 
       <!-- Video with the mask applied -->
+
+      <!-- <image href="~/assets/img/prova_device.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" mask="url(#eye-mask)"/> -->
       <foreignObject width="100%" height="100%">
         <div class="masked-video" xmlns="http://www.w3.org/1999/xhtml">
           <video playsinline autoplay muted loop style="width: 100%; height: 100%;">
-            <source src="~/assets/video/Sequenza_02.webm" type="video/mp4" />
+            <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
           </video>
         </div>
       </foreignObject>
     </svg>
+    <!-- <div class="masked-video" xmlns="http://www.w3.org/1999/xhtml">
+      <video playsinline autoplay muted loop style="width: 100%; height: 100%;">
+        <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
+      </video>
+    </div> -->
   </div>
 </template>
 
@@ -114,6 +129,21 @@ export default {
     window.removeEventListener('resize', this.initializeCanvas);
   },
   methods: {
+
+    isMobile() {
+      if (screen.width <= 768) {
+        return true
+      } else {
+        return false
+      }
+    },
+    isTablet() {
+      if (screen.width <= 1024) {
+        return true
+      } else {
+        return false
+      }
+    },
     initializeCanvas() {
       const canvas = this.$refs.canvas;
       this.canvasWidth = window.innerWidth;
@@ -151,19 +181,19 @@ export default {
       this.points.push({ x, y });
     },
     drawOnCanvas() {
-    if (this.points.length < 2) return;
-    
-    // Set stroke color and line width
-    this.ctx.strokeStyle = '#fff'; // Set to red color (you can change to any color)
-    this.ctx.lineWidth = 7; // Set line width (you can change the value)
+      if (this.points.length < 2) return;
 
-    this.ctx.beginPath();
-    this.ctx.moveTo(this.points[0].x, this.points[0].y);
-    for (let i = 1; i < this.points.length; i++) {
-      this.ctx.lineTo(this.points[i].x, this.points[i].y);
-    }
-    this.ctx.stroke();
-  },
+      // Set stroke color and line width
+      this.ctx.strokeStyle = '#fff'; // Set to red color (you can change to any color)
+      this.ctx.lineWidth = 7; // Set line width (you can change the value)
+
+      this.ctx.beginPath();
+      this.ctx.moveTo(this.points[0].x, this.points[0].y);
+      for (let i = 1; i < this.points.length; i++) {
+        this.ctx.lineTo(this.points[i].x, this.points[i].y);
+      }
+      this.ctx.stroke();
+    },
     checkDrawing() {
       const eyeBottom = this.canvasHeight / 2 + this.eyeRadius;
       const validPoints = this.points.filter(p => p.y > eyeBottom);
@@ -204,8 +234,8 @@ export default {
       setTimeout(() => {
         this.$router.push('/about');
       }, 2000);
-   },
-   selectRandomImage() {
+    },
+    selectRandomImage() {
       // Select a random image from the array
       const randomIndex = Math.floor(Math.random() * this.images.length);
       this.randomImage = this.images[randomIndex];
@@ -215,8 +245,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 .home_logo {
   width: 100%;
   height: 100vh;
@@ -226,11 +254,12 @@ export default {
   left: 0;
   z-index: 100;
 }
-.hint{
+
+.hint {
   font-family: 'EB Garamond', sans-serif;
 }
 
-.folllit{
+.folllit {
   font-family: 'EB Garamond', sans-serif;
 }
 
