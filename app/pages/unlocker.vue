@@ -8,7 +8,7 @@
     <div>
       <img class="home_logo img-fluid" :src="randomImage" alt="background" />
     </div>
-
+    
     <svg class="mask-container" width="100%" height="100%">
       <!-- Define SVG mask -->
       <!-- <defs>
@@ -18,6 +18,7 @@
       </defs> -->
       <!-- <rect width="100%" height="100%"  fill="black"/> -->
       <mask id="eye-mask">
+
         <text v-if="isMobile()" x="1%" y="4%" font-size="200%" fill="white" class="folllit">folllit</text>
         <text v-else-if="isTablet()" x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
         <text v-else x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
