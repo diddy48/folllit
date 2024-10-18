@@ -19,12 +19,12 @@
       <!-- <rect width="100%" height="100%"  fill="black"/> -->
       <mask id="eye-mask">
 
-        <text v-if="isMobile()" x="1%" y="4%" font-size="200%" fill="white" class="folllit">folllit</text>
-        <text v-else-if="isTablet()" x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
+        <text v-if="deviceType === 'mobile'" x="1%" y="4%" font-size="200%" fill="white" class="folllit">folllit</text>
+        <text v-else-if="deviceType === 'tablet'" x="10" y="8%" font-size="400%" fill="white" class="folllit">folllit</text>
         <text v-else x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
 
-        <text v-if="isMobile()" x="1%" y="85%" font-size="200%" fill="white" class="hint">draw a smile to unlock</text>
-        <text v-else-if="isTablet()" x="10" y="85%" font-size="400%" fill="white" class="hint">draw a smile to
+        <text v-if="deviceType === 'mobile'" x="1%" y="85%" font-size="200%" fill="white" class="hint">draw a smile to unlock</text>
+        <text v-else-if="deviceType === 'tablet'" x="10" y="85%" font-size="400%" fill="white" class="hint">draw a smile to
           unlock</text>
         <text v-else x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text>
 
@@ -34,12 +34,12 @@
         <!-- <rect width="100%" height="100%"  fill="url('mask-background')"/> -->
         <!-- Two circular holes for the eyes (the video will show through these) -->
         <!-- Desktop circles -->
-        <circle v-if="isMobile()" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye" ref="mobileEye" />
-        <circle v-else-if="isTablet()" cx="27%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
+        <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye" ref="mobileEye" />
+        <circle v-else-if="deviceType === 'tablet'" cx="27%" cy="42%" r="15%" fill="white" class="tablet-eye" ref="tabletEye" />
         <circle v-else cx="33%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
 
-        <circle v-if="isMobile()" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye" ref="mobileEye" />
-        <circle v-else-if="isTablet()" cx="73%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
+        <circle v-if="deviceType === 'mobile'" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye" ref="mobileEye" />
+        <circle v-else-if="deviceType === 'tablet'" cx="73%" cy="42%" r="15%" fill="white" class="tablet-eye" ref="tabletEye" />
         <circle v-else cx="67%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
         <!-- Mobile circles -->
       </mask>
@@ -69,6 +69,7 @@
 
 const { width } = useWindowSize()
  */
+
 export default {
   data() {
     return {
@@ -128,23 +129,68 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.initializeCanvas);
-  },
-  methods: {
+  }, setup() {
+    const deviceType = ref('desktop');
 
-    isMobile() {
-      if (screen.width <= 768) {
-        return true
+    const updateDeviceType = () => {
+      if (window.innerWidth <= 768) {
+        deviceType.value = 'mobile';
+      } else if (window.innerWidth <= 1240) {
+        deviceType.value = 'tablet';
       } else {
-        return false
+        deviceType.value = 'desktop';
       }
-    },
-    isTablet() {
-      if (screen.width <= 1024) {
-        return true
+    };
+
+    onMounted(() => {
+      updateDeviceType();  // Check device type on mount
+      window.addEventListener('resize', updateDeviceType);  // Listen for window resizing
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', updateDeviceType);
+    });
+
+    return {
+      deviceType,
+    };
+  },
+  /* computed: {
+    deviceType() {
+      if (process.client) {  // Ensure this only runs on the client
+      if (this.isMobile()) {
+        return 'mobile';
+      } else if (this.isTablet()) {
+        return 'tablet';
       } else {
-        return false
+        return 'desktop';
       }
-    },
+    }
+    return 'desktop'; // Fallback to desktop rendering on the server
+    }
+  }, */
+  methods: { 
+    /* isMobile() {
+    if (typeof window !== 'undefined' && screen.width <= 768) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  isTablet() {
+    if (typeof window !== 'undefined' && screen.width > 768 && screen.width <= 1024) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  isDesktop() {
+    if (typeof window !== 'undefined' && screen.width > 1024) {
+      return true;
+    } else {
+      return false;
+    }
+  }, */
     initializeCanvas() {
       const canvas = this.$refs.canvas;
       this.canvasWidth = window.innerWidth;
