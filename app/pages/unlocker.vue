@@ -167,7 +167,7 @@ export default {
       const splash = document.querySelector('.splash');
       setTimeout(() => {
         splash.classList.add('display-none');
-      }, 700);//13000);
+      }, 1050);//700);//13000);
       /* end splash screen */
     });
 
