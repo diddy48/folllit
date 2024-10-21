@@ -27,15 +27,10 @@ import {
 
   <!-- DO NOT DELETE -->
   <div class="splash">
-    <video playsinline class="fade-in" autoplay muted loop>
-      <!-- <source class="" src="~/assets/video/a.webm" type="video/webm -->">
-
-      <!-- <source src="~/assets/video/a.mov" type='video/mp4; codecs="hvc1"'> -->
-    </video>
     <video width="600" height="100%" autoplay loop muted playsinline>
       <source src="~/assets/video/l.mov" type='video/mp4; codecs="hvc1"'>
       <source src="~/assets/video/l.webm" type="video/webm">
-      
+      <!-- ffmpeg -i .\l.mov -c:v libvpx -quality good -cpu-used 0 -b:v 7000k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1500k -threads 8 -vf scale=-1:1080 -c:a libvorbis -b:a 192k -auto-alt-ref 0 -f webm l.webm -->
         <!-- <source src="https://rotato.netlify.app/alpha-demo/movie-webm.webm" type="video/webm"> -->
     </video>
   </div>
