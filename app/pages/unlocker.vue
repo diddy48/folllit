@@ -1,4 +1,13 @@
 <template>
+  <!-- DO NOT DELETE -->
+  <div class="splash">
+    <video width="600" height="100%" autoplay loop muted playsinline class="splash_video">
+      <source src="~/assets/video/load_ext_shadow.mov" type='video/mp4; codecs="hvc1"'>
+      <source src="~/assets/video/load_ext_shadow.webm" type="video/webm">
+      <!-- ffmpeg -i .\l.mov -c:v libvpx -quality good -cpu-used 0 -b:v 7000k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1500k -threads 8 -vf scale=-1:1080 -c:a libvorbis -b:a 192k -auto-alt-ref 0 -f webm l.webm -->
+      <!-- <source src="https://rotato.netlify.app/alpha-demo/movie-webm.webm" type="video/webm"> -->
+    </video>
+  </div>
   <div class="game-container">
     <canvas ref="canvas" @mousedown="startDrawing" @mousemove="draw" @mouseup="stopDrawing" @touchstart="startDrawing"
       @touchmove="draw" @touchend="stopDrawing"></canvas>
@@ -8,7 +17,7 @@
     <div>
       <img class="home_logo img-fluid" :src="randomImage" alt="background" />
     </div>
-    
+
     <svg class="mask-container" width="100%" height="100%">
       <!-- Define SVG mask -->
       <!-- <defs>
@@ -20,11 +29,14 @@
       <mask id="eye-mask">
 
         <text v-if="deviceType === 'mobile'" x="1%" y="4%" font-size="200%" fill="white" class="folllit">folllit</text>
-        <text v-else-if="deviceType === 'tablet'" x="10" y="8%" font-size="400%" fill="white" class="folllit">folllit</text>
+        <text v-else-if="deviceType === 'tablet'" x="10" y="8%" font-size="400%" fill="white"
+          class="folllit">folllit</text>
         <text v-else x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
 
-        <text v-if="deviceType === 'mobile'" x="1%" y="85%" font-size="200%" fill="white" class="hint">draw a smile to unlock</text>
-        <text v-else-if="deviceType === 'tablet'" x="10" y="85%" font-size="400%" fill="white" class="hint">draw a smile to
+        <text v-if="deviceType === 'mobile'" x="1%" y="85%" font-size="200%" fill="white" class="hint">draw a smile to
+          unlock</text>
+        <text v-else-if="deviceType === 'tablet'" x="10" y="85%" font-size="400%" fill="white" class="hint">draw a smile
+          to
           unlock</text>
         <text v-else x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text>
 
@@ -34,12 +46,16 @@
         <!-- <rect width="100%" height="100%"  fill="url('mask-background')"/> -->
         <!-- Two circular holes for the eyes (the video will show through these) -->
         <!-- Desktop circles -->
-        <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye" ref="mobileEye" />
-        <circle v-else-if="deviceType === 'tablet'" cx="27%" cy="42%" r="15%" fill="white" class="tablet-eye" ref="tabletEye" />
+        <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye"
+          ref="mobileEye" />
+        <circle v-else-if="deviceType === 'tablet'" cx="27%" cy="42%" r="15%" fill="white" class="tablet-eye"
+          ref="tabletEye" />
         <circle v-else cx="33%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
 
-        <circle v-if="deviceType === 'mobile'" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye" ref="mobileEye" />
-        <circle v-else-if="deviceType === 'tablet'" cx="73%" cy="42%" r="15%" fill="white" class="tablet-eye" ref="tabletEye" />
+        <circle v-if="deviceType === 'mobile'" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye"
+          ref="mobileEye" />
+        <circle v-else-if="deviceType === 'tablet'" cx="73%" cy="42%" r="15%" fill="white" class="tablet-eye"
+          ref="tabletEye" />
         <circle v-else cx="67%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
         <!-- Mobile circles -->
       </mask>
@@ -129,7 +145,8 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.initializeCanvas);
-  }, setup() {
+  },
+  setup() {
     const deviceType = ref('desktop');
 
     const updateDeviceType = () => {
@@ -145,6 +162,13 @@ export default {
     onMounted(() => {
       updateDeviceType();  // Check device type on mount
       window.addEventListener('resize', updateDeviceType);  // Listen for window resizing
+
+      /* splash screen */
+      const splash = document.querySelector('.splash');
+      setTimeout(() => {
+        splash.classList.add('display-none');
+      }, 700);//13000);
+      /* end splash screen */
     });
 
     onUnmounted(() => {
@@ -155,42 +179,8 @@ export default {
       deviceType,
     };
   },
-  /* computed: {
-    deviceType() {
-      if (process.client) {  // Ensure this only runs on the client
-      if (this.isMobile()) {
-        return 'mobile';
-      } else if (this.isTablet()) {
-        return 'tablet';
-      } else {
-        return 'desktop';
-      }
-    }
-    return 'desktop'; // Fallback to desktop rendering on the server
-    }
-  }, */
-  methods: { 
-    /* isMobile() {
-    if (typeof window !== 'undefined' && screen.width <= 768) {
-      return true;
-    } else {
-      return false;
-    }
-  },
-  isTablet() {
-    if (typeof window !== 'undefined' && screen.width > 768 && screen.width <= 1024) {
-      return true;
-    } else {
-      return false;
-    }
-  },
-  isDesktop() {
-    if (typeof window !== 'undefined' && screen.width > 1024) {
-      return true;
-    } else {
-      return false;
-    }
-  }, */
+  methods: {
+    
     initializeCanvas() {
       const canvas = this.$refs.canvas;
       this.canvasWidth = window.innerWidth;
@@ -292,6 +282,62 @@ export default {
 </script>
 
 <style scoped>
+/* splash screen */
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* Cover full screen height */
+  min-height: 100vh;
+  /* Ensures it covers on mobile */
+  /*background: black;*/
+  z-index: 200;
+  line-height: 99vh;
+  overflow: hidden;
+  /* Prevents scrolling while splash is visible */
+}
+
+.splash.display-none {
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  /*background: black;*/
+  color: white;
+  z-index: -10;
+  text-align: center;
+  line-height: 99vh;
+  /* transition: all 0.5s; */
+  object-fit: fill;
+}
+
+.splash_video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+/* 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+} */
+/* 
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+} */
+
+/* end splash screen */
+
 .home_logo {
   width: 100%;
   height: 100vh;
