@@ -14,23 +14,31 @@ if (onMounted) {
 
     setTimeout(() => {
       splash.classList.add('display-none');
-    }, 13000);
+    }, 1020);//13000);
   });
 }
 import {
   NImage,
-  
+
 } from 'naive-ui'
 </script>
 
 <template>
-  
-<!-- DO NOT DELETE -->
-<!--    <div class="splash">
+
+  <!-- DO NOT DELETE -->
+  <div class="splash">
     <video playsinline class="fade-in" autoplay muted loop>
-      <source class="" src="~/assets/video/loader.mp4" type="video/mp4">
+      <!-- <source class="" src="~/assets/video/a.webm" type="video/webm -->">
+
+      <!-- <source src="~/assets/video/a.mov" type='video/mp4; codecs="hvc1"'> -->
     </video>
-  </div>  -->
+    <video width="600" height="100%" autoplay loop muted playsinline>
+      <source src="~/assets/video/l.mov" type='video/mp4; codecs="hvc1"'>
+      <source src="~/assets/video/l.webm" type="video/webm">
+      
+        <!-- <source src="https://rotato.netlify.app/alpha-demo/movie-webm.webm" type="video/webm"> -->
+    </video>
+  </div>
 
   <!-- <div class="row">
     <div class="col-md-12">
@@ -39,19 +47,19 @@ import {
           <img class="home_logo img-fluid" src="~/assets/img/home_logo.png" alt="logo" />
         </div>
       </div> -->
-      <!-- <div class="row">
+  <!-- <div class="row">
         <div class="col-md-12">
           <h1>Home Page</h1>
           <p>Welcome to our application. Here is some information about us.</p>
           <h3>Our missio</h3>
         </div>
       </div> -->
-    <!-- </div>
+  <!-- </div>
   </div> -->
   
-          <img class="home_logo img-fluid" src="~/assets/img/home_logo.png" alt="logo" />
-          <span><a href="/unlocker" class="btn btn-primary">Unlock</a></span>
-          <span><a href="/iphone_test" class="btn btn-primary">Iphone Test</a></span>
+  <img class="home_logo img-fluid" src="~/assets/img/home_logo.png" alt="logo" />
+  <span><a href="/unlocker" class="btn btn-primary">Unlock</a></span>
+  <span><a href="/iphone_test" class="btn btn-primary">Iphone Test</a></span>
   <!-- <n-image class="home_logo img-fluid"
     src="~/assets/img/home_logo.png"
   /> -->
@@ -67,7 +75,7 @@ import {
   /* Cover full screen height */
   min-height: 100vh;
   /* Ensures it covers on mobile */
-  background: black;
+  /*background: black;*/
   z-index: 200;
   line-height: 99vh;
   overflow: hidden;
@@ -82,7 +90,7 @@ import {
   width: 100%;
   height: 100vh;
   min-height: 100vh;
-  background: black;
+  /*background: black;*/
   color: white;
   z-index: -10;
   text-align: center;
