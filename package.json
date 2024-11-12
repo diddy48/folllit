@@ -7,28 +7,41 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@iconify-json/heroicons": "^1.2.0",
-    "@iconify-json/simple-icons": "^1.2.4",
-    "@nuxt/content": "^2.13.2",
-    "@nuxt/fonts": "^0.9.2",
-    "@nuxt/image": "^1.8.0",
-    "@nuxt/ui-pro": "^1.4.3",
-    "nuxt": "npm:nuxt3@latest"
+    "@nuxt/fonts": "^0.10.2",
+    "firebase": "^11.0.1",
+    "naive-ui": "^2.40.1",
+    "nuxt": "^3.14.159",
+    "vue": "latest",
+    "vue-router": "latest"
   },
   "devDependencies": {
+    "@eslint/js": "^9.14.0",
     "@nuxt/eslint": "^0.5.7",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
-    "eslint": "^9.11.1",
-    "naive-ui": "^2.40.1",
-    "nuxtjs-naive-ui": "^1.0.1",
-    "vfonts": "^0.0.3",
-    "vue-tsc": "^2.1.6"
+    "eslint": "^9.14.0",
+    "eslint-plugin-vue": "^9.31.0",
+    "globals": "^15.12.0",
+    "typescript-eslint": "^8.14.0"
   },
-  "packageManager": "pnpm@9.11.0"
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all",
+    "last 3 version",
+    "Chrome >= 35",
+    "Firefox >= 38",
+    "Edge >= 10",
+    "Explorer >= 10",
+    "ie >= 10",
+    "iOS >= 8",
+    "Safari >= 8",
+    "Android 2.3",
+    "Android >= 4",
+    "Opera >= 12"
+  ]
 }

@@ -2,8 +2,15 @@
   <!-- DO NOT DELETE -->
   <div class="splash">
     <video width="600" height="100%" autoplay loop muted playsinline class="splash_video">
-      <source src="~/assets/video/load_ext_shadow.mov" type='video/mp4; codecs="hvc1"'>
-      <source src="~/assets/video/load_ext_shadow.webm" type="video/webm">
+      <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/mov; codecs="hvc1"'> -->
+      <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'> -->
+      
+      <source src="~/assets/video/load_ext_shadow.webm" type="video/webm"> 
+      <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'>
+
+      <!-- <source src="~/assets/video/load_ext_shadow-1.webm" type="video/webm"> 
+      <source src="~/assets/video/load_ext_shadow-1.mov" type='video/quicktime; codecs="hevc"'> -->
+
       <!-- ffmpeg -i .\l.mov -c:v libvpx -quality good -cpu-used 0 -b:v 7000k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1500k -threads 8 -vf scale=-1:1080 -c:a libvorbis -b:a 192k -auto-alt-ref 0 -f webm l.webm -->
       <!-- <source src="https://rotato.netlify.app/alpha-demo/movie-webm.webm" type="video/webm"> -->
     </video>
@@ -15,7 +22,7 @@
   </div>
   <div class="content">
     <div>
-      <img class="home_logo img-fluid" :src="randomImage" alt="background" />
+      <img class="home_logo img-fluid" :src="randomImage" rel="preload"/><!-- alt="background" -->
     </div>
 
     <svg class="mask-container" width="100%" height="100%">
@@ -79,12 +86,9 @@
   </div>
 </template>
 
+
 <script>
 
-/* import { useWindowSize } from '@vueuse/core'
-
-const { width } = useWindowSize()
- */
 
 export default {
   data() {
@@ -147,9 +151,14 @@ export default {
     window.removeEventListener('resize', this.initializeCanvas);
   },
   setup() {
+useSeoMeta({
+  title: "folllit",
+  description: "I am a graphic designer with an artisanal approach, mixing editorial and upcycling.",
+})
     const deviceType = ref('desktop');
 
     const updateDeviceType = () => {
+      
       if (window.innerWidth <= 768) {
         deviceType.value = 'mobile';
       } else if (window.innerWidth <= 1240) {
@@ -180,7 +189,7 @@ export default {
     };
   },
   methods: {
-    
+
     initializeCanvas() {
       const canvas = this.$refs.canvas;
       this.canvasWidth = window.innerWidth;
@@ -324,6 +333,7 @@ export default {
   left: 0;
   z-index: 100;
 }
+
 /* 
 @keyframes fadeIn {
   to {

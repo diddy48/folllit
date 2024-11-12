@@ -1,28 +1,10 @@
-![nuxt-ui-landing-social-card](https://github.com/nuxt-ui-pro/landing/assets/739984/d0919c96-e5f2-47e9-b460-44f87341218d)
+# Nuxt Minimal Starter
 
-# Nuxt UI Pro - Landing template
-
-This starter lets you get started with [Nuxt UI Pro](https://ui.nuxt.com/pro) quickly.
-
-[![Nuxt UI Pro](https://img.shields.io/badge/Made%20with-Nuxt%20UI%20Pro-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com/pro)
-
-- [Live demo](https://landing-template.nuxt.dev/)
-- [Play on Stackblitz](https://stackblitz.com/github/nuxt-ui-pro/landing)
-- [Documentation](https://ui.nuxt.com/pro/getting-started)
-
-[![Deploy to NuxtHub](https://hub.nuxt.com/button.svg)](https://hub.nuxt.com/new?repo=nuxt-ui-pro/landing)
-
-https://github.com/nuxt-ui-pro/landing/assets/904724/c7dd64a4-a09c-4cab-9572-92a02a5e06f9
-
-## Quick Start
-
-```bash [Terminal]
-npx nuxi init -t github:nuxt-ui-pro/landing
-```
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
-Make sure to install the dependencies:
+Make sure to install dependencies:
 
 ```bash
 # npm
@@ -47,7 +29,7 @@ Start the development server on `http://localhost:3000`:
 npm run dev
 
 # pnpm
-pnpm run dev
+pnpm dev
 
 # yarn
 yarn dev
@@ -65,7 +47,7 @@ Build the application for production:
 npm run build
 
 # pnpm
-pnpm run build
+pnpm build
 
 # yarn
 yarn build
@@ -81,7 +63,7 @@ Locally preview production build:
 npm run preview
 
 # pnpm
-pnpm run preview
+pnpm preview
 
 # yarn
 yarn preview
@@ -91,7 +73,3 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
