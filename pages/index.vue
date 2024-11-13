@@ -2,12 +2,12 @@
   <!-- DO NOT DELETE -->
 
   <transition name="fade">
-    <div v-if="!unlocked">
+    <div v-show="!unlocked">
       <div class="splash">
-        <video autoplay loop muted playsinline class="splash_video" style="
+        <video autoplay muted playsinline class="splash_video" style="
   position: absolute;
   top: 0;
-  left: 0;">
+  left: 0;" @ended="onSplashEnded">
           <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/mov; codecs="hvc1"'> -->
           <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'> -->
 
@@ -31,7 +31,8 @@
           <!-- <div>
       <img class="home_logo img-fluid" :src="randomImage"  />
     </div> -->
-          <div :style="{ backgroundImage: `url(${randomImage})` }" class="home_logo img-fluid" rel="preload"></div>
+          <div :style="{ backgroundImage: `url(${randomImage})`, /* backgroundRepeat: `repeat-x` */backgroundSize: `cover`}"
+            class="home_logo img-fluid" rel="preload"></div>
 
           <svg class="mask-container" width="100%" height="100%" rel="preload">
             <!-- Define SVG mask -->
@@ -98,7 +99,7 @@
   </transition>
   <transition name="fade">
     <div v-if="unlocked">
-      <div :class="content">
+      <!-- <div :class="content">
         <div xmlns="http://www.w3.org/1999/xhtml">
           <div class="about">
             <h1>About Us</h1>
@@ -108,7 +109,16 @@
             <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
           </video>
         </div>
-      </div>
+      </div>-->
+      <v-container class="bg-surface-variant">
+        <v-row no-gutters>
+          <v-col v-for="n in 3" :key="n" cols="12" sm="4">
+            <v-sheet class="ma-2 pa-2">
+              One of three columns
+            </v-sheet>
+          </v-col>
+        </v-row>
+      </v-container>
     </div>
   </transition>
 </template>
@@ -118,7 +128,6 @@
 
 
 import { useState } from '#app';
-
 export default {
   data() {
     return {
@@ -167,62 +176,47 @@ export default {
         'papers/verde.jpg',
       ],// Array of imeage sources
       randomImage: '',// Randomly selected image
+      isCanvasReady: false,
+      deviceType: 'desktop',
+      unlocked: useState('unlocked', () => false)
     };
   },
-  mounted() {
-    this.initializeCanvas();
-    window.addEventListener('resize', this.initializeCanvas);
-
-    // Select a random image when the component mounts
+  created() {
+    // Select a random image as soon as the component is created
     this.selectRandomImage();
   },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.initializeCanvas);
-  },
-  setup() {
+  mounted() {
     useSeoMeta({
       title: "folllit",
       description: "I am a graphic designer with an artisanal approach, mixing editorial and upcycling.",
-    })
-    const deviceType = ref('desktop');
-
-    const updateDeviceType = () => {
-
-      if (window.innerWidth <= 768) {
-        deviceType.value = 'mobile';
-      } else if (window.innerWidth <= 1240) {
-        deviceType.value = 'tablet';
-      } else {
-        deviceType.value = 'desktop';
-      }
-    };
-
-    onMounted(() => {
-      updateDeviceType();  // Check device type on mount
-      window.addEventListener('resize', updateDeviceType);  // Listen for window resizing
-
-      /* splash screen */
-      const splash = document.querySelector('.splash');
-      setTimeout(() => {
-        splash.classList.add('display-none');
-      }, 1050);//700);//13000);
-      /* end splash screen */
     });
 
-    onUnmounted(() => {
-      window.removeEventListener('resize', updateDeviceType);
-    });
+    window.addEventListener('resize', this.updateDeviceType);  // Listen for window resizing
 
-    // Initialize `unlocked` as a global state using `useState`
-    const unlocked = useState('unlocked', () => false);
+    this.initializeCanvas();
+    window.addEventListener('resize', this.initializeCanvas);
 
-    // Return it so it's accessible in `data`
-    return {
-      deviceType, unlocked
-    };
+    this.updateDeviceType();  // Check device type on mount
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.initializeCanvas);
+    window.removeEventListener('resize', updateDeviceType);
   },
   methods: {
-
+    onSplashEnded() {
+      const splash = document.querySelector('.splash');
+      splash.classList.add('display-none');
+      this.isCanvasReady = true; // Allow canvas interaction after splash screen
+    },
+    updateDeviceType() {
+      if (window.innerWidth <= 768) {
+        this.deviceType = 'mobile';
+      } else if (window.innerWidth <= 1240) {
+        this.deviceType = 'tablet';
+      } else {
+        this.deviceType = 'desktop';
+      }
+    },
     initializeCanvas() {
       const canvas = this.$refs.canvas;
       this.canvasWidth = window.innerWidth;
@@ -236,10 +230,10 @@ export default {
       this.clearCanvas();
     },
     startDrawing(event) {
+      //if (!this.isCanvasReady) return; // Prevent drawing if canvas is not ready
       event.preventDefault();
       this.isDrawing = true;
       this.points = [];
-      /* this.unlocked = false; */
       this.clearCanvas();
       this.addPoint(event);
     },
@@ -302,7 +296,7 @@ export default {
       const isWideEnough = Math.abs(end.x - start.x) > this.canvasWidth * 0.2;
 
       if (isLowestInMiddle && areEndpointsHigher && isCurveDeepEnough && isWideEnough) {
-
+        this.isCanvasReady = false;
         setTimeout(() => {
           this.clearCanvas();
           this.startSVGAnimation();
@@ -314,11 +308,6 @@ export default {
     },
     clearCanvas() {
       this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
-    },
-    navigateToAboutUs() {
-      setTimeout(() => {
-        this.$router.push('/about');
-      }, 2000);
     },
     selectRandomImage() {
       // Select a random image from the array
@@ -351,6 +340,8 @@ export default {
 </script>
 
 <style scoped>
+/* utility */
+
 /* animations */
 .animate-eye {
   animation: blink 5s infinite;
