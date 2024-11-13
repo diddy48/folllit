@@ -110,12 +110,18 @@
           </video>
         </div>
       </div>-->
-      <v-container class="bg-surface-variant">
+      <v-container class="bg-brown ma-0 pa-0" height="100vh" max-width="100%">
         <v-row no-gutters>
-          <v-col v-for="n in 3" :key="n" cols="12" sm="4">
-            <v-sheet class="ma-2 pa-2">
-              One of three columns
-            </v-sheet>
+          <v-col cols="12" class="text-center"><!-- 
+            <v-img src="papers/giallo.jpg" max-height="100vh" max-width="100%" class="mx-auto" cover=""></v-img> -->
+          <video playsinline autoplay muted loop style="width: 100%; height: 100vh;">
+            <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
+          </video>
+          </v-col>
+        </v-row>
+        <v-row no-gutters>
+          <v-col cols="12" class="text-center">
+            <v-img src="papers/rosa.jpg" max-height="100vh" max-width="100%" class="mx-auto" cover=""></v-img>
           </v-col>
         </v-row>
       </v-container>
