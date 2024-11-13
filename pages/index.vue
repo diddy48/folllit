@@ -306,10 +306,10 @@ export default {
         setTimeout(() => {
           this.clearCanvas();
           this.startSVGAnimation();
-        }, 1000);
+        }, 200);
         setTimeout(() => {
           this.unlocked = true;
-        }, 2000);
+        }, 1200);
       }
     },
     clearCanvas() {
