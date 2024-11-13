@@ -1,94 +1,123 @@
 <template>
   <!-- DO NOT DELETE -->
-  <div class="splash">
-    <video width="600" height="100%" autoplay loop muted playsinline class="splash_video">
-      <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/mov; codecs="hvc1"'> -->
-      <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'> -->
-      
-      <source src="~/assets/video/load_ext_shadow.webm" type="video/webm"> 
-      <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'>
 
-      <!-- <source src="~/assets/video/load_ext_shadow-1.webm" type="video/webm"> 
+  <transition name="fade">
+    <div v-if="!unlocked">
+      <div class="splash">
+        <video autoplay loop muted playsinline class="splash_video" style="
+  position: absolute;
+  top: 0;
+  left: 0;">
+          <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/mov; codecs="hvc1"'> -->
+          <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'> -->
+
+          <source src="~/assets/video/load_ext_shadow.webm" type="video/webm">
+          <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'>
+
+          <!-- <source src="~/assets/video/load_ext_shadow-1.webm" type="video/webm"> 
       <source src="~/assets/video/load_ext_shadow-1.mov" type='video/quicktime; codecs="hevc"'> -->
 
-      <!-- ffmpeg -i .\l.mov -c:v libvpx -quality good -cpu-used 0 -b:v 7000k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1500k -threads 8 -vf scale=-1:1080 -c:a libvorbis -b:a 192k -auto-alt-ref 0 -f webm l.webm -->
-      <!-- <source src="https://rotato.netlify.app/alpha-demo/movie-webm.webm" type="video/webm"> -->
-    </video>
-  </div>
-  <div class="game-container">
-    <canvas ref="canvas" @mousedown="startDrawing" @mousemove="draw" @mouseup="stopDrawing" @touchstart="startDrawing"
-      @touchmove="draw" @touchend="stopDrawing"></canvas>
-    <div v-if="success" class="success-message">Success! You drew a smile! Redirecting to About Us...</div>
-  </div>
-  <div class="content">
-    <div>
-      <img class="home_logo img-fluid" :src="randomImage" rel="preload"/><!-- alt="background" -->
-    </div>
+          <!-- ffmpeg -i .\l.mov -c:v libvpx -quality good -cpu-used 0 -b:v 7000k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1500k -threads 8 -vf scale=-1:1080 -c:a libvorbis -b:a 192k -auto-alt-ref 0 -f webm l.webm -->
+          <!-- <source src="https://rotato.netlify.app/alpha-demo/movie-webm.webm" type="video/webm"> -->
+        </video>
+      </div>
+      <div class="unlocker">
+        <div class="game-container">
+          <canvas ref="canvas" @mousedown="startDrawing" @mousemove="draw" @mouseup="stopDrawing"
+            @touchstart="startDrawing" @touchmove="draw" @touchend="stopDrawing"></canvas>
+          <!-- <div v-if="success" class="success-message">Success! You drew a smile! Redirecting to About Us...</div> -->
+        </div>
+        <div class="unlocker_content">
+          <!-- <div>
+      <img class="home_logo img-fluid" :src="randomImage"  />
+    </div> -->
+          <div :style="{ backgroundImage: `url(${randomImage})` }" class="home_logo img-fluid" rel="preload"></div>
 
-    <svg class="mask-container" width="100%" height="100%">
-      <!-- Define SVG mask -->
-      <!-- <defs>
+          <svg class="mask-container" width="100%" height="100%" rel="preload">
+            <!-- Define SVG mask -->
+            <!-- <defs>
         <pattern id="mask-background" patternUnits="userSpaceOnUse" width="100" height="100">
           <image href="~/assets/img/white-paper-texture.jpg" x="0" y="0" width="100" height="100"/>
         </pattern>
       </defs> -->
-      <!-- <rect width="100%" height="100%"  fill="black"/> -->
-      <mask id="eye-mask">
+            <!-- <rect width="100%" height="100%"  fill="black"/> -->
+            <mask id="eye-mask">
 
-        <text v-if="deviceType === 'mobile'" x="1%" y="4%" font-size="200%" fill="white" class="folllit">folllit</text>
-        <text v-else-if="deviceType === 'tablet'" x="10" y="8%" font-size="400%" fill="white"
-          class="folllit">folllit</text>
-        <text v-else x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
+              <text v-if="deviceType === 'mobile'" x="1%" y="4%" font-size="200%" fill="white"
+                class="folllit">folllit</text>
+              <text v-else-if="deviceType === 'tablet'" x="10" y="8%" font-size="400%" fill="white"
+                class="folllit">folllit</text>
+              <text v-else x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
 
-        <text v-if="deviceType === 'mobile'" x="1%" y="85%" font-size="200%" fill="white" class="hint">draw a smile to
-          unlock</text>
-        <text v-else-if="deviceType === 'tablet'" x="10" y="85%" font-size="400%" fill="white" class="hint">draw a smile
-          to
-          unlock</text>
-        <text v-else x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text>
+              <text v-if="deviceType === 'mobile'" x="1%" y="85%" font-size="200%" fill="white" class="hint">draw a
+                smile to
+                unlock</text>
+              <text v-else-if="deviceType === 'tablet'" x="10" y="85%" font-size="400%" fill="white" class="hint">draw a
+                smile
+                to
+                unlock</text>
+              <text v-else x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text>
 
-        <!-- <text v-if="canvasWidth < 768" x="1%" y="90%" font-size="150%" fill="white" class="hint">if you read this you have a looooong phone</text> -->
-        <!-- Full black background -->
-        <!-- <image :href="randomImage" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" fill="black"/> -->
-        <!-- <rect width="100%" height="100%"  fill="url('mask-background')"/> -->
-        <!-- Two circular holes for the eyes (the video will show through these) -->
-        <!-- Desktop circles -->
-        <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye"
-          ref="mobileEye" />
-        <circle v-else-if="deviceType === 'tablet'" cx="27%" cy="42%" r="15%" fill="white" class="tablet-eye"
-          ref="tabletEye" />
-        <circle v-else cx="33%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
+              <!-- <text v-if="canvasWidth < 768" x="1%" y="90%" font-size="150%" fill="white" class="hint">if you read this you have a looooong phone</text> -->
+              <!-- Full black background -->
+              <!-- <image :href="randomImage" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" fill="black"/> -->
+              <!-- <rect width="100%" height="100%"  fill="url('mask-background')"/> -->
+              <!-- Two circular holes for the eyes (the video will show through these) -->
+              <!-- Desktop circles -->
+              <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye"
+                ref="mobileEyeSx" />
+              <circle v-else-if="deviceType === 'tablet'" cx="27%" cy="42%" r="15%" fill="white" class="tablet-eye"
+                ref="tabletEyeSx" />
+              <circle v-else cx="33%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEyeSx" />
 
-        <circle v-if="deviceType === 'mobile'" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye"
-          ref="mobileEye" />
-        <circle v-else-if="deviceType === 'tablet'" cx="73%" cy="42%" r="15%" fill="white" class="tablet-eye"
-          ref="tabletEye" />
-        <circle v-else cx="67%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEye" />
-        <!-- Mobile circles -->
-      </mask>
+              <circle v-if="deviceType === 'mobile'" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye"
+                ref="mobileEyeDx" />
+              <circle v-else-if="deviceType === 'tablet'" cx="73%" cy="42%" r="15%" fill="white" class="tablet-eye"
+                ref="tabletEyeDx" />
+              <circle v-else cx="67%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEyeDx" />
+              <!-- Mobile circles -->
+            </mask>
 
-      <!-- Video with the mask applied -->
+            <!-- Video with the mask applied -->
 
-      <!-- <image href="~/assets/img/prova_device.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" mask="url(#eye-mask)"/> -->
-      <foreignObject width="100%" height="100%">
-        <div class="masked-video" xmlns="http://www.w3.org/1999/xhtml">
+            <!-- <image href="~/assets/img/prova_device.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" mask="url(#eye-mask)"/> -->
+            <foreignObject width="100%" height="100%">
+              <div class="masked-video" xmlns="http://www.w3.org/1999/xhtml">
+                <video playsinline autoplay muted loop style="
+  position: absolute;
+  top: 0;
+  left: 0;">
+                  <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
+                </video>
+              </div>
+            </foreignObject>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </transition>
+  <transition name="fade">
+    <div v-if="unlocked">
+      <div :class="content">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <div class="about">
+            <h1>About Us</h1>
+            <p>Welcome to our application. Here is some information about us.</p>
+          </div>
           <video playsinline autoplay muted loop style="width: 100%; height: 100%;">
             <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
           </video>
         </div>
-      </foreignObject>
-    </svg>
-    <!-- <div class="masked-video" xmlns="http://www.w3.org/1999/xhtml">
-      <video playsinline autoplay muted loop style="width: 100%; height: 100%;">
-        <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
-      </video>
-    </div> -->
-  </div>
+      </div>
+    </div>
+  </transition>
 </template>
 
 
 <script>
 
+
+import { useState } from '#app';
 
 export default {
   data() {
@@ -96,7 +125,7 @@ export default {
       isDrawing: false,
       ctx: null,
       points: [],
-      success: false,
+      //unlocked: useState('unlocked', () => false), //unlocked global param 
       canvasWidth: 0,
       canvasHeight: 0,
       eyeRadius: 0,
@@ -151,14 +180,14 @@ export default {
     window.removeEventListener('resize', this.initializeCanvas);
   },
   setup() {
-useSeoMeta({
-  title: "folllit",
-  description: "I am a graphic designer with an artisanal approach, mixing editorial and upcycling.",
-})
+    useSeoMeta({
+      title: "folllit",
+      description: "I am a graphic designer with an artisanal approach, mixing editorial and upcycling.",
+    })
     const deviceType = ref('desktop');
 
     const updateDeviceType = () => {
-      
+
       if (window.innerWidth <= 768) {
         deviceType.value = 'mobile';
       } else if (window.innerWidth <= 1240) {
@@ -184,8 +213,12 @@ useSeoMeta({
       window.removeEventListener('resize', updateDeviceType);
     });
 
+    // Initialize `unlocked` as a global state using `useState`
+    const unlocked = useState('unlocked', () => false);
+
+    // Return it so it's accessible in `data`
     return {
-      deviceType,
+      deviceType, unlocked
     };
   },
   methods: {
@@ -206,7 +239,7 @@ useSeoMeta({
       event.preventDefault();
       this.isDrawing = true;
       this.points = [];
-      this.success = false;
+      /* this.unlocked = false; */
       this.clearCanvas();
       this.addPoint(event);
     },
@@ -269,8 +302,14 @@ useSeoMeta({
       const isWideEnough = Math.abs(end.x - start.x) > this.canvasWidth * 0.2;
 
       if (isLowestInMiddle && areEndpointsHigher && isCurveDeepEnough && isWideEnough) {
-        this.success = true;
-        this.navigateToAboutUs();
+
+        setTimeout(() => {
+          this.clearCanvas();
+          this.startSVGAnimation();
+        }, 1000);
+        setTimeout(() => {
+          this.unlocked = true;
+        }, 2000);
       }
     },
     clearCanvas() {
@@ -286,11 +325,52 @@ useSeoMeta({
       const randomIndex = Math.floor(Math.random() * this.images.length);
       this.randomImage = this.images[randomIndex];
     },
+    startSVGAnimation() {
+      const desktopEyeDx = this.$refs.desktopEyeDx;
+      const desktopEyeSx = this.$refs.desktopEyeSx;
+      const tabletEyeDx = this.$refs.tabletEyeDx;
+      const tabletEyeSx = this.$refs.tabletEyeSx;
+      const mobileEyeDx = this.$refs.mobileEyeDx;
+      const mobileEyeSx = this.$refs.mobileEyeSx;
+
+      if (this.deviceType === 'desktop' && desktopEyeDx && desktopEyeSx) {
+        desktopEyeDx.classList.add('animate-eye');
+        desktopEyeSx.classList.add('animate-eye');
+      }
+      if (this.deviceType === 'tablet' && tabletEyeDx && tabletEyeSx) {
+        tabletEyeDx.classList.add('animate-eye');
+        tabletEyeSx.classList.add('animate-eye');
+      }
+      if (this.deviceType === 'mobile' && mobileEyeDx && mobileEyeSx) {
+        mobileEyeDx.classList.add('animate-eye');
+        mobileEyeSx.classList.add('animate-eye');
+      }
+    },
   }
 };
 </script>
 
 <style scoped>
+/* animations */
+.animate-eye {
+  animation: blink 5s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    r: 15%;
+  }
+
+  50% {
+    r: 100%;
+  }
+}
+
+
+
+
 /* splash screen */
 .splash {
   position: fixed;
@@ -366,7 +446,7 @@ useSeoMeta({
   font-family: 'EB Garamond', sans-serif;
 }
 
-.content {
+.unlocker_content {
   position: fixed;
   top: 0;
   left: 0;
@@ -398,9 +478,10 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* 
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0; */
 }
 
 .game-container {
@@ -420,14 +501,14 @@ canvas {
   height: 100%;
 }
 
-.success-message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+/* CSS for the fade transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
