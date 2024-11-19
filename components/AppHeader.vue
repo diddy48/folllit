@@ -1,45 +1,109 @@
-<script setup lang="ts">
+<!-- <script lang="ts">
 
-import {
-  NLayout,
-  NSpace,
-  
-} from 'naive-ui'
+
 </script>
 
 <template>
+  <div id="navbar">
+<a class="active" href="/">folllit</a>
+</div>
   
-  <n-space vertical size="large">
-    <n-layout>
-      <n-layout-header>Yiheyuan Road</n-layout-header>
-      <n-layout-content content-style="padding: 24px;">
-        Pingshan Road
-      </n-layout-content>
-      <n-layout-footer>Chengfu Road</n-layout-footer>
-    </n-layout>
-    <n-layout>
-      <n-layout-header>Yiheyuan Road</n-layout-header>
-      <n-layout has-sider>
-        <n-layout-sider content-style="padding: 24px;">
-          Handian Bridge
-        </n-layout-sider>
-        <n-layout-content content-style="padding: 24px;">
-          Pingshan Road
-        </n-layout-content>
-      </n-layout>
-      <n-layout-footer>Chengfu Road</n-layout-footer>
-    </n-layout>
-    <n-layout has-sider>
-      <n-layout-sider content-style="padding: 24px;">
-        Handian Bridge
-      </n-layout-sider>
-      <n-layout>
-        <n-layout-header>Yiheyuan Road</n-layout-header>
-        <n-layout-content content-style="padding: 24px;">
-          Pingshan Road
-        </n-layout-content>
-        <n-layout-footer>Chengfu Road</n-layout-footer>
-      </n-layout>
-    </n-layout>
-  </n-space>
 </template>
+
+<style scoped>
+
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+</style> -->
+<template>
+  <div class="app-header" :class="{ hidden: isScrollingDown }">
+    <div class="pa-2" style="font-size: 60px;">folllit</div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      isScrollingDown: false,
+      lastScrollY: 0,
+    };
+  },
+  mounted() {
+    // Listen for scroll events
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    // Clean up the event listener
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const currentScrollY = window.scrollY;
+
+      // Detect scroll direction
+      this.isScrollingDown = currentScrollY > this.lastScrollY && currentScrollY > 50;
+
+      // Update the last scroll position
+      this.lastScrollY = currentScrollY;
+    },
+  },
+};
+</script>
+
+<style scoped>
+.app-header {
+  top: 0;
+  background-color: transparent; /* Transparent background */
+  color: white;
+  mix-blend-mode: difference;
+  z-index: 1004;
+  position: fixed;
+  line-height: 1;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
+}
+
+.app-header.hidden {
+  transform: translateY(-100%); /* Moves the header out of view */
+  opacity: 0; /* Fades it out */
+}
+</style>

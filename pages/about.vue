@@ -6,17 +6,17 @@ export default {
 }
 </script>
 
-<template><!-- 
-    <NuxtLayout>
-        
-    <div class="about">
+<template>
+    <!-- <div id="navbar">
+<a class="active" href="/">folllits</a>
+</div> -->
+<AppHeader/>
+<div class="about">
         <h1>About Us</h1>
         <p>Welcome to our application. Here is some information about us.</p>
     </div>
-    </NuxtLayout> -->
+    <div style="height:10000px;"></div>
 </template>
-
-
 
 <style scoped>
 .about {

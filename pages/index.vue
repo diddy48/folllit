@@ -1,6 +1,10 @@
-<template>
+<template><!-- 
+  <div>
+    {{ unlocked }}
+  </div> -->
   <!-- DO NOT DELETE -->
 
+  <v-app>
   <transition name="fade">
     <div v-show="!unlocked">
       <div class="splash">
@@ -31,7 +35,8 @@
           <!-- <div>
       <img class="home_logo img-fluid" :src="randomImage"  />
     </div> -->
-          <div :style="{ backgroundImage: `url(${randomImage})`, /* backgroundRepeat: `repeat-x` */backgroundSize: `cover`}"
+          <div
+            :style="{ backgroundImage: `url(${randomImage})`, /* backgroundRepeat: `repeat-x` */backgroundSize: `cover` }"
             class="home_logo img-fluid" rel="preload"></div>
 
           <svg class="mask-container" width="100%" height="100%" rel="preload">
@@ -110,37 +115,27 @@
           </video>
         </div>
       </div>-->
-      <v-container class="bg-brown ma-0 pa-0" height="100vh" max-width="100%">
-        <v-row no-gutters>
-          <v-col cols="12" class="text-center"><!-- 
-            <v-img src="papers/giallo.jpg" max-height="100vh" max-width="100%" class="mx-auto" cover=""></v-img> -->
-          <video playsinline autoplay muted loop style="width: 100%; height: 100vh;">
-            <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
-          </video>
-          </v-col>
-        </v-row>
-        <v-row no-gutters>
-          <v-col cols="12" class="text-center">
-            <v-img src="papers/rosa.jpg" max-height="100vh" max-width="100%" class="mx-auto" cover=""></v-img>
-          </v-col>
-        </v-row>
-      </v-container>
+      <!-- <v-btn @click="unlocked = false">Go back</v-btn> -->
+       
+      <AppHeader/>
+      <DashBoard />
+      <AppFooter/>
     </div>
   </transition>
+  </v-app>
 </template>
 
 
 <script>
-
-
 import { useState } from '#app';
+import { usePersistedState } from '~/composables/usePersistedState';
+
 export default {
   data() {
     return {
       isDrawing: false,
       ctx: null,
       points: [],
-      //unlocked: useState('unlocked', () => false), //unlocked global param 
       canvasWidth: 0,
       canvasHeight: 0,
       eyeRadius: 0,
@@ -184,7 +179,7 @@ export default {
       randomImage: '',// Randomly selected image
       isCanvasReady: false,
       deviceType: 'desktop',
-      unlocked: useState('unlocked', () => false)
+      unlocked: usePersistedState('unlocked', false)//useState('unlocked', () => false)
     };
   },
   created() {
@@ -309,6 +304,7 @@ export default {
         }, 200);
         setTimeout(() => {
           this.unlocked = true;
+
         }, 1200);
       }
     },
@@ -329,28 +325,30 @@ export default {
       const mobileEyeSx = this.$refs.mobileEyeSx;
 
       if (this.deviceType === 'desktop' && desktopEyeDx && desktopEyeSx) {
-        desktopEyeDx.classList.add('animate-eye');
-        desktopEyeSx.classList.add('animate-eye');
+        desktopEyeDx.classList.add('animate-eye-exit');
+        desktopEyeSx.classList.add('animate-eye-exit');
       }
       if (this.deviceType === 'tablet' && tabletEyeDx && tabletEyeSx) {
-        tabletEyeDx.classList.add('animate-eye');
-        tabletEyeSx.classList.add('animate-eye');
+        tabletEyeDx.classList.add('animate-eye-exit');
+        tabletEyeSx.classList.add('animate-eye-exit');
       }
       if (this.deviceType === 'mobile' && mobileEyeDx && mobileEyeSx) {
-        mobileEyeDx.classList.add('animate-eye');
-        mobileEyeSx.classList.add('animate-eye');
+        mobileEyeDx.classList.add('animate-eye-exit');
+        mobileEyeSx.classList.add('animate-eye-exit');
       }
     },
   }
 };
 </script>
 
+
 <style scoped>
 /* utility */
 
 /* animations */
-.animate-eye {
-  animation: blink 5s infinite;
+.animate-eye-exit {
+  animation: blink 5s;
+  animation-iteration-count: 1;
 }
 
 @keyframes blink {
@@ -411,20 +409,9 @@ export default {
   z-index: 100;
 }
 
-/* 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-} */
-/* 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
-} */
-
 /* end splash screen */
 
+/* unlocker */
 .home_logo {
   width: 100%;
   height: 100vh;
@@ -436,11 +423,11 @@ export default {
 }
 
 .hint {
-  font-family: 'EB Garamond', sans-serif;
+  /* font-family: 'EB Garamond', sans-serif; */
 }
 
 .folllit {
-  font-family: 'EB Garamond', sans-serif;
+  /* font-family: 'EB Garamond', sans-serif; */
 }
 
 .unlocker_content {
@@ -508,4 +495,11 @@ canvas {
 .fade-leave-to {
   opacity: 0;
 }
+
+/* end unlocker */
+
+/* xustom scrollbar */
+
+
+/* end home */
 </style>

@@ -20,10 +20,16 @@ useHead({
 </script>
 
 <template>
-  <!-- <AppHeader />  -->
-  <NuxtLayout>
+  <!-- <NuxtLayout> -->
     <NuxtPage />
-  </NuxtLayout> 
-
-  <!-- <AppFooter/> -->
+  <!-- </NuxtLayout>  -->
 </template>
+
+<style>
+  html,body {
+    font-family: 'EB Garamond', serif;
+  }
+  #app {
+    font-family: 'EB Garamond', serif;
+  }
+</style>

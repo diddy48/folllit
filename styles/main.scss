@@ -1,0 +1,25 @@
+@use 'vuetify' with (
+    $body-font-family: 'EB Garamond',
+);
+
+/* Scroll bar stylings */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(200, 200, 200, 0.5); /* Light grey with transparency */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.8); /* Darker grey */
+    border-radius: 0px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(85, 85, 85, 0.9); /* Even darker on hover */
+  }
