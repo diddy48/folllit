@@ -54,7 +54,7 @@ body {
 </style> -->
 <template>
   <div class="app-header" :class="{ hidden: isScrollingDown }">
-    <div class="pa-2" style="font-size: 60px;">folllit</div>
+    <div class="pa-5 text-h3 text-md-h3 text-lg-h2">folllit</div>
   </div>
 </template>
 

@@ -32,4 +32,12 @@ useHead({
   #app {
     font-family: 'EB Garamond', serif;
   }
+
+  .main_accent{
+    color: rgb(255, 91, 0);
+  }
+
+  .background_accent{
+    background-color: rgb(226, 221, 217);
+  }
 </style>

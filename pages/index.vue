@@ -41,15 +41,9 @@
 
           <svg class="mask-container" width="100%" height="100%" rel="preload">
             <!-- Define SVG mask -->
-            <!-- <defs>
-        <pattern id="mask-background" patternUnits="userSpaceOnUse" width="100" height="100">
-          <image href="~/assets/img/white-paper-texture.jpg" x="0" y="0" width="100" height="100"/>
-        </pattern>
-      </defs> -->
-            <!-- <rect width="100%" height="100%"  fill="black"/> -->
             <mask id="eye-mask">
 
-              <text v-if="deviceType === 'mobile'" x="1%" y="4%" font-size="200%" fill="white"
+              <!--      <text v-if="deviceType === 'mobile'" x="1%" y="4%" font-size="200%" fill="white"
                 class="folllit">folllit</text>
               <text v-else-if="deviceType === 'tablet'" x="10" y="8%" font-size="400%" fill="white"
                 class="folllit">folllit</text>
@@ -62,13 +56,10 @@
                 smile
                 to
                 unlock</text>
-              <text v-else x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text>
+              <text v-else x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text> -->
+              <text x="20px" y="8vh" fill="white" class="text-h3 text-md-h3 text-lg-h2" rel="preload">folllit</text>
+              <text x="20px" y="95vh" fill="white" class="text-h4 text-md-h2 text-lg-h2"  rel="preload">draw a smile to unlock</text>
 
-              <!-- <text v-if="canvasWidth < 768" x="1%" y="90%" font-size="150%" fill="white" class="hint">if you read this you have a looooong phone</text> -->
-              <!-- Full black background -->
-              <!-- <image :href="randomImage" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" fill="black"/> -->
-              <!-- <rect width="100%" height="100%"  fill="url('mask-background')"/> -->
-              <!-- Two circular holes for the eyes (the video will show through these) -->
               <!-- Desktop circles -->
               <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye"
                 ref="mobileEyeSx" />
@@ -104,19 +95,6 @@
   </transition>
   <transition name="fade">
     <div v-if="unlocked">
-      <!-- <div :class="content">
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          <div class="about">
-            <h1>About Us</h1>
-            <p>Welcome to our application. Here is some information about us.</p>
-          </div>
-          <video playsinline autoplay muted loop style="width: 100%; height: 100%;">
-            <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
-          </video>
-        </div>
-      </div>-->
-      <!-- <v-btn @click="unlocked = false">Go back</v-btn> -->
-       
       <AppHeader/>
       <DashBoard />
       <AppFooter/>
