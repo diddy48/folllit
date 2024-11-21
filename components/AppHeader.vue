@@ -60,6 +60,13 @@ body {
 
 <script>
 export default {
+  props: {
+    blended: {
+      type: Boolean, // Expected data type
+      required: false, // Ensures the prop is passed
+      default: false // Default value if not passed
+    }
+  },
   data() {
     return {
       isScrollingDown: false,
@@ -69,6 +76,10 @@ export default {
   mounted() {
     // Listen for scroll events
     window.addEventListener("scroll", this.handleScroll);
+    if(this.blended) {
+      this.$el.style.mixBlendMode = "difference";
+      this.$el.style.color = "white";
+    }
   },
   beforeDestroy() {
     // Clean up the event listener
@@ -92,8 +103,8 @@ export default {
 .app-header {
   top: 0;
   background-color: transparent; /* Transparent background */
-  color: white;
-  mix-blend-mode: difference;
+  color: rgb(255, 91, 0);
+  /* mix-blend-mode: difference; */
   z-index: 1004;
   position: fixed;
   line-height: 1;

@@ -80,7 +80,7 @@
   </transition>
   <transition name="fade">
     <div v-if="unlocked" class="background_accent">
-      <AppHeader/>
+      <AppHeader :blended="true"/>
       <DashBoard />
       <AppFooter/>
     </div>

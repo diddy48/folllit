@@ -148,8 +148,7 @@
             </div>
         </v-col>
         <v-col cols="12" class="d-flex justify-center align-center ">
-            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 main_accent text-center">§
-            </div>
+            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 main_accent text-center">§</div>
         </v-col>
     </v-row>
 
