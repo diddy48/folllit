@@ -1,11 +1,11 @@
 <template>
     <v-row no-gutters id="snap-1" class="section">
         <v-col cols="12" class="text-center ">
-            <video playsinline autoplay muted loop style="width: 100%; height: 100dvh;">
+            <video playsinline autoplay muted loop style="width: 100%; height: 100svh;">
                 <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
             </video>
             <v-container class="fill-height overlay-text pa-5" fluid>
-                <v-row no-gutters class="d-flex align-center" style="height: 100dvh;">
+                <v-row no-gutters class="d-flex align-center" style="height: 100svh;">
                     <v-col cols="12" sm="8" class="text-left">
                         <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 blend-text" :style="{
                             lineHeight: 1.2
@@ -54,9 +54,8 @@
             <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">We can <span class="font-italic">draw</span> together
             </div>
         </v-col>
-        <v-col cols="12" class="d-flex justify-end"
-            style="position: absolute; bottom: 0; right: 0; padding: 20px;">
-            
+        <v-col cols="12" class="d-flex justify-end" style="position: absolute; bottom: 0; right: 0; padding: 20px;">
+
             <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">&</div>
         </v-col>
     </v-row>
@@ -74,9 +73,8 @@
             <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">to design
             </div>
         </v-col>
-        <v-col cols="12" class="d-flex justify-end"
-            style="position: absolute; bottom: 0; right: 0; padding: 20px;">
-            
+        <v-col cols="12" class="d-flex justify-end" style="position: absolute; bottom: 0; right: 0; padding: 20px;">
+
             <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">♾</div>
         </v-col>
     </v-row>
@@ -94,31 +92,81 @@
             <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">the best ideas
             </div>
         </v-col>
-        <v-col cols="12" class="d-flex justify-end"
-            style="position: absolute; bottom: 0; right: 0; padding: 20px;">
-            
+        <v-col cols="12" class="d-flex justify-end" style="position: absolute; bottom: 0; right: 0; padding: 20px;">
+
             <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">!</div>
         </v-col>
     </v-row>
     <v-row no-gutters id="snap-1" class="section">
-  <v-col cols="12" class="d-flex justify-center align-center">
-    <img src="~/assets/img/_W4A3479.jpg" style="height: 100dvh; width: 100%; object-fit: cover;" />
-  </v-col>
-</v-row>
-<v-row no-gutters id="snap-1" class="sub-section justify-center">
-  <v-col cols="10" sm="5" class="d-flex justify-center align-center ">
-            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-decoration-underline text-center"> The complete website will be ready 
+        <v-col cols="12" class="d-flex justify-center align-center">
+            <img src="~/assets/img/_W4A3479.jpg" style="height: 100dvh; width: 100%; object-fit: cover;" />
+        </v-col>
+    </v-row>
+    <v-row no-gutters id="snap-1" class="sub-section justify-center">
+        <v-col cols="10" sm="5" class="d-flex justify-center align-center ">
+            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-decoration-underline text-center"> The complete
+                website will be ready
                 on October 2025
             </div>
-  </v-col>
-</v-row>
+        </v-col>
+    </v-row>
 
-<v-row no-gutters id="snap-1" class="sub-section justify-center">
-  <v-col cols="8" sm="3" class="d-flex justify-center align-center">
-            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-center">While waiting you can <span class="font-italic">draw</span> something.
+    <v-row no-gutters id="snap-1" class="sub-section justify-center">
+        <v-col cols="8" sm="3" class="d-flex justify-center align-center">
+            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-center">While waiting you can <span
+                    class="font-italic">draw</span> something.
             </div>
-  </v-col>
-</v-row>
+        </v-col>
+    </v-row>
+
+    <v-row no-gutters id="snap-1" class="section">
+        <v-col cols="12" class="d-flex justify-center align-start" style="position: relative;">
+            <!-- Image -->
+            <img src="assets/img/righe1.jpg" style="height: 90dvh; width: 100%; object-fit: cover;" />
+
+            <v-row no-gutters class="circles-container">
+                <v-col cols="6" class="d-flex justify-center align-start">
+                    <div class="background_accent circle1 circles"></div>
+                </v-col>
+                <v-col cols="6" class="d-flex justify-center align-start">
+                    <div class="background_accent circle2 circles"></div>
+                </v-col>
+            </v-row>
+        </v-col>
+        <v-row>
+
+            <v-col cols="8" sm="6" class="d-flex justify-start align-start">
+                <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 px-5">Just one brush</div>
+            </v-col>
+            <v-col cols="4" sm="6" class="d-flex justify-end align-start">
+                <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 px-5 text-decoration-underline">Save</div>
+            </v-col>
+        </v-row>
+    </v-row>
+
+
+    <v-row no-gutters id="snap-1" class="sub-section justify-center">
+        <v-col cols="12" class="d-flex justify-center align-center ">
+            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-decoration-underline text-center"> follow and send
+                on IG to submit.
+            </div>
+        </v-col>
+        <v-col cols="12" class="d-flex justify-center align-center ">
+            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 main_accent text-center">§
+            </div>
+        </v-col>
+    </v-row>
+
+    <v-row no-gutters id="snap-1" class="sub-section justify-center">
+        <v-col cols="12" class="d-flex justify-center align-center">
+            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-center">Otherwise contact me in a traditional way
+            </div>
+        </v-col>
+        <v-col cols="12" class="d-flex justify-center align-center ">
+            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 main-accent text-center">👇
+            </div>
+        </v-col>
+    </v-row>
 
 </template>
 
@@ -127,6 +175,39 @@
 </script>
 
 <style scoped>
+.circles-container {
+    position: absolute;
+    top: 20vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* Ensures the circles are spaced evenly */
+}
+
+.circles {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle1 {
+    width: 20vw;
+    /* Adjust the size of the first circle */
+    height: 20vw;
+}
+
+.circle2 {
+    width: 20vw;
+    /* Adjust the size of the second circle */
+    height: 20vw;
+}
+
+.masked {
+    mask: url(#eye-mask);
+    -webkit-mask: url(#eye-mask);
+}
+
 .sub-section {
     position: relative;
     height: 50dvh;

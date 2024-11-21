@@ -42,21 +42,6 @@
           <svg class="mask-container" width="100%" height="100%" rel="preload">
             <!-- Define SVG mask -->
             <mask id="eye-mask">
-
-              <!--      <text v-if="deviceType === 'mobile'" x="1%" y="4%" font-size="200%" fill="white"
-                class="folllit">folllit</text>
-              <text v-else-if="deviceType === 'tablet'" x="10" y="8%" font-size="400%" fill="white"
-                class="folllit">folllit</text>
-              <text v-else x="10" y="6%" font-size="400%" fill="white" class="folllit">folllit</text>
-
-              <text v-if="deviceType === 'mobile'" x="1%" y="85%" font-size="200%" fill="white" class="hint">draw a
-                smile to
-                unlock</text>
-              <text v-else-if="deviceType === 'tablet'" x="10" y="85%" font-size="400%" fill="white" class="hint">draw a
-                smile
-                to
-                unlock</text>
-              <text v-else x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text> -->
               <text x="20px" y="8dvh" fill="white" class="text-h3 text-md-h3 text-lg-h2" rel="preload">folllit</text>
               <text x="20px" y="95dvh" fill="white" class="text-h4 text-md-h2 text-lg-h2"  rel="preload">draw a smile to unlock</text>
 

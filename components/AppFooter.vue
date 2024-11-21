@@ -3,13 +3,6 @@
 
 <template>
   <v-col>
-    <v-row no-gutters class="">
-      <v-col cols="12" class="d-flex flex-column align-center justify-center">
-        <v-spacer style="height: 30px;"></v-spacer>
-        <v-row no-gutters class="text-h4">⬇</v-row>
-        <v-spacer style="height: 30px;"></v-spacer>
-      </v-col>
-    </v-row>
     <v-row>
       <v-col cols="4" class="d-flex flex-column align-start justify-start">
           <p class="text-h5">Valerio Romano</p>
