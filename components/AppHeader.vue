@@ -53,7 +53,7 @@ body {
 
 </style> -->
 <template>
-  <div class="app-header" :class="{ hidden: isScrollingDown }">
+  <div class="app-header" :class="{ /* hidden: isScrollingDown  */}">
     <div class="pa-5 text-h3 text-md-h2 text-lg-h1">folllit</div>
   </div>
 </template>
@@ -98,8 +98,8 @@ export default {
   position: fixed;
   line-height: 1;
   left: 0;
-  width: 100%;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
+  width: 100%;/* 
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;  *//* Smooth transition */
 }
 
 .app-header.hidden {

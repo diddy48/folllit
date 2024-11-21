@@ -80,11 +80,7 @@
     </v-row>
     <v-row no-gutters id="snap-1" class="section">
         <v-col cols="12" class="text-center ">
-            <video playsinline autoplay muted loop style="width: 100%; height: 100dvh;">
-                <source src="~/assets/video/1.mov" type="video/mov" />
-                <source src="~/assets/video/1.webm" type="video/webm" />
-            </video>
-
+            <img src="~/assets/img/_W4A0594-l-immenso-acquitrino-celeste.jpg" style="height: 100dvh; width: 100%; object-fit: cover;" />
         </v-col>
     </v-row>
     <v-row no-gutters id="snap-3" class="section d-flex align-center">
