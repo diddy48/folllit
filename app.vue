@@ -20,9 +20,7 @@ useHead({
 </script>
 
 <template>
-  <!-- <NuxtLayout> -->
     <NuxtPage />
-  <!-- </NuxtLayout>  -->
 </template>
 
 <style>

@@ -94,7 +94,7 @@
     </div>
   </transition>
   <transition name="fade">
-    <div v-if="unlocked">
+    <div v-if="unlocked" class="background_accent">
       <AppHeader/>
       <DashBoard />
       <AppFooter/>
@@ -476,8 +476,20 @@ canvas {
 
 /* end unlocker */
 
-/* xustom scrollbar */
+/* Scroill snap */
+/* UNUSED */
 
+.scroll-snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+ /*  scroll-behavior: smooth; */ /* Smooth scrolling */
+}
 
-/* end home */
+.scroll-snap-item {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+/* end scroll snap */
 </style>
