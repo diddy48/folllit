@@ -42,13 +42,13 @@
 <style scoped>
 .section {
     position: relative;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 }
 
 video {
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     object-fit: cover;
     /* 
   position: absolute;

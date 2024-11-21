@@ -366,13 +366,13 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  min-height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
   /*background: black;*/
   color: white;
   z-index: -10;
   text-align: center;
-  line-height: 99vh;
+  line-height: 99dvh;
   /* transition: all 0.5s; */
   object-fit: fill;
 }
@@ -392,8 +392,8 @@ export default {
 /* unlocker */
 .home_logo {
   width: 100%;
-  height: 100vh;
-  min-height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
   object-fit: cover;
   top: 0;
   left: 0;
@@ -413,14 +413,14 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   z-index: 0;
   overflow: hidden;
 }
 
 .mask-container {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   position: absolute;
   top: 0;
   left: 0;
@@ -451,7 +451,7 @@ video {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   z-index: 200;
   /* Above the mask layer */
