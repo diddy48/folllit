@@ -1,19 +1,20 @@
 <template>
     <v-row no-gutters id="snap-1" class="section">
         <v-col cols="12" class="text-center ">
-            <video playsinline autoplay muted loop style="width: 100%; height: 100vh;">
+            <video playsinline autoplay muted loop style="width: 100%; height: 100dvh;">
                 <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
             </video>
             <v-container class="fill-height overlay-text pa-5" fluid>
-                <v-row no-gutters class="d-flex align-center" style="height: 100vh;">
+                <v-row no-gutters class="d-flex align-center" style="height: 100dvh;">
                     <v-col cols="12" sm="8" class="text-left">
                         <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 blend-text" :style="{
-                            lineHeight: 1.2}">
+                            lineHeight: 1.2
+                        }">
                             I am a <u>graphic</u>
                             designer with an artisanal approach, mixing <u>editorial</u> and <u>upcycling</u>.
                         </div>
                     </v-col>
-                    <v-col cols="12" class="d-flex justify-end align-end"
+                    <v-col cols="12" class="d-flex justify-end"
                         style="position: absolute; bottom: 0; right: 0; padding: 20px;">
                         <img src="assets/logo/bollino.png" style="height: 100px;" alt="logo circle" />
                     </v-col>
@@ -22,17 +23,103 @@
 
         </v-col>
     </v-row>
-    <v-row no-gutters id="snap-2" class="section">
-        <v-col cols="12" class="text-center" style="height: 100vh;">
+    <v-row no-gutters id="snap-2" class="section d-flex align-center">
+        <v-col cols="10" offset="1" class="text-center">
+            <v-card style="height: 80dvh; border-radius: 70px;" elevation="0" class=" pa-5 pa-md-15 d-flex flex-column">
+                <v-card-title class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 text-left">
+                    Taqquini
+                </v-card-title>
+                <v-card-text class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-left">
+                    All papers, without exception, deserve to be repurposed.
+                    <q>Taqquini</q> is an upcycling project to produce handcrafted notebooks
+                    made from various types of paper.
+                </v-card-text>
+
+                <!-- Actions -->
+                <v-spacer></v-spacer> <!-- Pushes content above -->
+                <v-card-actions class="justify-end py-5 py-md-15">
+                    <!-- <v-btn class="main_accent text-h5 text-sm-h4 text-md-h3 text-lg-h2" text="Archive"
+                        @click="() => $router.push('/archive')">Archive 👉
+                    </v-btn> -->
+                    <a href="/archive" class="main_accent text-h5 text-sm-h4 text-md-h3 text-lg-h2"
+                        text="Archive">Archive</a><span
+                        class="main_accent text-h5 text-sm-h4 text-md-h3 text-lg-h2">👉</span>
+                </v-card-actions>
+            </v-card>
             <!-- <v-img src="papers/rosa.jpg" max-height="100vh" max-width="100%" cover></v-img> -->
         </v-col>
     </v-row>
-    <!-- 
-        <v-row no-gutters id="snap-3">
-            <v-col cols="12" class="text-center">
-                <v-img src="papers/atoma.jpg" max-height="100vh" max-width="100%" cover=""></v-img>
-            </v-col>
-        </v-row> -->
+    <v-row no-gutters id="snap-3" class="section d-flex align-center">
+        <v-col cols="12" class="text-center">
+            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">We can <span class="font-italic">draw</span> together
+            </div>
+        </v-col>
+        <v-col cols="12" class="d-flex justify-end"
+            style="position: absolute; bottom: 0; right: 0; padding: 20px;">
+            
+            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">&</div>
+        </v-col>
+    </v-row>
+    <v-row no-gutters id="snap-1" class="section">
+        <v-col cols="12" class="text-center ">
+            <video playsinline autoplay muted loop style="width: 100%; height: 100dvh;">
+                <source src="~/assets/video/3_4.mov" type="video/mov" />
+                <source src="~/assets/video/3_4.webm" type="video/webm" />
+            </video>
+
+        </v-col>
+    </v-row>
+    <v-row no-gutters id="snap-3" class="section d-flex align-center">
+        <v-col cols="12" class="text-center">
+            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">to design
+            </div>
+        </v-col>
+        <v-col cols="12" class="d-flex justify-end"
+            style="position: absolute; bottom: 0; right: 0; padding: 20px;">
+            
+            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">♾</div>
+        </v-col>
+    </v-row>
+    <v-row no-gutters id="snap-1" class="section">
+        <v-col cols="12" class="text-center ">
+            <video playsinline autoplay muted loop style="width: 100%; height: 100dvh;">
+                <source src="~/assets/video/1.mov" type="video/mov" />
+                <source src="~/assets/video/1.webm" type="video/webm" />
+            </video>
+
+        </v-col>
+    </v-row>
+    <v-row no-gutters id="snap-3" class="section d-flex align-center">
+        <v-col cols="12" class="text-center">
+            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">the best ideas
+            </div>
+        </v-col>
+        <v-col cols="12" class="d-flex justify-end"
+            style="position: absolute; bottom: 0; right: 0; padding: 20px;">
+            
+            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">!</div>
+        </v-col>
+    </v-row>
+    <v-row no-gutters id="snap-1" class="section">
+  <v-col cols="12" class="d-flex justify-center align-center">
+    <img src="~/assets/img/_W4A3479.jpg" style="height: 100dvh; width: 100%; object-fit: cover;" />
+  </v-col>
+</v-row>
+<v-row no-gutters id="snap-1" class="sub-section justify-center">
+  <v-col cols="10" sm="5" class="d-flex justify-center align-center ">
+            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-decoration-underline text-center"> The complete website will be ready 
+                on October 2025
+            </div>
+  </v-col>
+</v-row>
+
+<v-row no-gutters id="snap-1" class="sub-section justify-center">
+  <v-col cols="8" sm="3" class="d-flex justify-center align-center">
+            <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-center">While waiting you can <span class="font-italic">draw</span> something.
+            </div>
+  </v-col>
+</v-row>
+
 </template>
 
 <script>
@@ -40,6 +127,12 @@
 </script>
 
 <style scoped>
+.sub-section {
+    position: relative;
+    height: 50dvh;
+    overflow: hidden;
+}
+
 .section {
     position: relative;
     height: 100dvh;
