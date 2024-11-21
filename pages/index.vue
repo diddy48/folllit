@@ -57,8 +57,8 @@
                 to
                 unlock</text>
               <text v-else x="10" y="98%" font-size="400%" fill="white" class="hint">draw a smile to unlock</text> -->
-              <text x="20px" y="8vh" fill="white" class="text-h3 text-md-h3 text-lg-h2" rel="preload">folllit</text>
-              <text x="20px" y="95vh" fill="white" class="text-h4 text-md-h2 text-lg-h2"  rel="preload">draw a smile to unlock</text>
+              <text x="20px" y="8dvh" fill="white" class="text-h3 text-md-h3 text-lg-h2" rel="preload">folllit</text>
+              <text x="20px" y="95dvh" fill="white" class="text-h4 text-md-h2 text-lg-h2"  rel="preload">draw a smile to unlock</text>
 
               <!-- Desktop circles -->
               <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye"
