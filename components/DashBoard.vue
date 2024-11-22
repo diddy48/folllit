@@ -1,5 +1,5 @@
 <template>
-    <v-row no-gutters id="snap-1" class="section snap-item">
+    <v-row no-gutters id="snap-1" class="section-first snap-item">
         <v-col cols="12" class="text-center ">
             <video playsinline autoplay muted loop style="width: 100%; height: 100svh;">
                 <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
@@ -215,6 +215,11 @@
 .section {
     position: relative;
     height: 100dvh;
+    overflow: hidden;
+}
+.section-first {
+    position: relative;
+    height: 100svh;
     overflow: hidden;
 }
 
