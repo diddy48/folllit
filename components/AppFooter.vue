@@ -1,8 +1,8 @@
 <script>
 </script>
 
-<template>
-  <v-col>
+<template >
+  <v-col class="snap-item">
     <v-row>
       <v-col cols="4" class="d-flex flex-column align-start justify-start">
           <p class="text-h5">Valerio Romano</p>

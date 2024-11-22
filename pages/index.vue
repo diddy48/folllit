@@ -79,7 +79,7 @@
     </div>
   </transition>
   <transition name="fade">
-    <div v-if="unlocked" class="background_accent">
+    <div v-if="unlocked" class="background_accent scroll-container">
       <AppHeader :blended="true"/>
       <DashBoard />
       <AppFooter/>
@@ -87,7 +87,6 @@
   </transition>
   </v-app>
 </template>
-
 
 <script>
 import { useState } from '#app';

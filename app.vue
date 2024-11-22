@@ -38,4 +38,17 @@ useHead({
   .background_accent{
     background-color: rgb(226, 221, 217);
   }
+  
+/* scroll snaè */
+
+.scroll-container {
+    scroll-snap-type: y;
+    overflow-y: scroll;
+    height: 100dvh;
+    grid-auto-rows: 100%;
+}
+.snap-item {
+    scroll-snap-align: start;
+    scroll-snap-stop:initial;
+}
 </style>
