@@ -220,7 +220,7 @@
 
 video {
     width: 100%;
-    height: 100svh;
+    height: 100dvh;
     object-fit: cover;
     /* 
   position: absolute;
@@ -231,13 +231,13 @@ video {
 .video-container {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100svh;
     overflow: hidden;
 }
 
 .video {
     width: 100%;
-    height: auto;
+    height: 100svh;
     display: block;
 }
 
