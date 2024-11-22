@@ -208,7 +208,7 @@
 
 .sub-section {
     position: relative;
-    height: 50dvh;
+    height: 50vh;
     overflow: hidden;
 }
 
