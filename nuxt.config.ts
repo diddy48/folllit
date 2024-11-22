@@ -1,5 +1,5 @@
 import vuetify from "./plugins/vuetify"
-
+import 'dotenv/config';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   ],
   build: {
     transpile: ['vuetify']
-  }, 
+  },
   vite: {
     css: {
       preprocessorOptions: {
@@ -20,10 +20,10 @@ export default defineNuxtConfig({
       },
     },
   },
- //server side rendering
- ssr: true,
-  
- modules: [
+  //server side rendering
+  ssr: true,
+
+  modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
     /* 
@@ -47,10 +47,10 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/png', href: 'favicon_small.png' }], */
       link: [
         { rel: 'icon', type: 'image/png', href: 'icon/favicon.ico' },
-        {rel:"apple-touch-icon" ,sizes:"180x180", href:"icon/apple-touch-icon.png"},
-        {rel:"icon" ,type:"image/png",sizes:"32x32", href:"icon/favicon-32x32.png"},
-        {rel:"icon" ,type:"image/png",sizes:"16x16", href:"icon/favicon-16x16.png"},
-        {rel:"manifest" ,href:"icon/site.webmanifest"},
+        { rel: "apple-touch-icon", sizes: "180x180", href: "icon/apple-touch-icon.png" },
+        { rel: "icon", type: "image/png", sizes: "32x32", href: "icon/favicon-32x32.png" },
+        { rel: "icon", type: "image/png", sizes: "16x16", href: "icon/favicon-16x16.png" },
+        { rel: "manifest", href: "icon/site.webmanifest" },
       ],
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1.0",
@@ -61,20 +61,19 @@ export default defineNuxtConfig({
         }
       ]
     }
-  }, 
+  },
   runtimeConfig: {
     // Private config options are only available on the server side
-    apiKeyFirebase: 'AIzaSyBlwNTES0jBDqVKbwPTcEMMtjp5I4VmZIE',
-    authDomain: 'folllit.firebaseapp.com',
-    projectId: 'folllit',
-    storageBucket: 'folllit.firebasestorage.app',
-    messagingSenderId: '489241988958',
-    appId: '1:489241988958:web:3587ad4fa427cc78c209cf',
-    measurementId: 'G-VX67VQZCQB',
-    
+
     // Public config options are available on both server and client sides
     public: {
-      //apiBase: 'https://api.example.com'
+      firebaseApiKey:process.env.FIREBASE_API_KEY,
+      firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      firebaseProjectId: process.env.FIREBASE_PROJECT_ID,
+      firebaseStorageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+      firebaseMessagingSenderId:process.env.FIREBASE_MESSAGING_SENDER_ID,
+      firebaseAppId:process.env.FIREBASE_APP_ID,
+      firebaseMeasurementId: process.env.FIREBASE_MEASUREMENT_ID,
     }
   },
 })

@@ -1,8 +1,29 @@
 <script>
 /* import { NuxtLayout } from '/layouts/default_layout'; */
 
+import { collection, getDocs } from 'firebase/firestore';
+
 export default {
-    name: 'Archive'
+    name: 'Archive',
+    data() {
+        return {
+            data: [],
+            loading: false,
+            error: null,
+        }
+    },
+    async mounted() {
+        const { $firestore } = useNuxtApp(); // Access the provided Firestore instance
+        this.loading = true;
+        try {
+            const querySnapshot = await getDocs(collection($firestore, "progetti"));
+            this.data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        } catch (err) {
+            this.error = `Error fetching data: ${err.message}`;
+        } finally {
+            this.loading = false;
+        }
+    },
 }
 </script>
 
@@ -19,6 +40,17 @@ export default {
                 handcrafted notebooks made from
                 various types of paper.
             </div>
+        </v-col>
+    </v-row>
+    <v-row>
+        <v-col cols="12" class="text-center">
+
+            <h1>Firestore Data</h1>
+            <ul>
+                <li v-for="item in data" :key="item.id">{{ item.name }}</li>
+            </ul>
+            <p v-if="loading">Loading...</p>
+            <p v-if="error">{{ error }}</p>
         </v-col>
     </v-row>
 </template>

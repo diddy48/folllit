@@ -1,43 +1,46 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth"
-import { getFirestore } from 'firebase/firestore'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// plugins/firebase.client.ts
+import { initializeApp, getApps } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
+import { getAnalytics } from 'firebase/analytics';
 
-export default defineNuxtPlugin(nuxtApp => {
-    const config = useRuntimeConfig()
+export default defineNuxtPlugin(() => {
+  const config = useRuntimeConfig().public;
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {/* 
-        apiKey: config.apiKeyFirebase,
-        authDomain: config.authDomain,
-        projectId: config.projectId,
-        storageBucket: config.storageBucket,
-        messagingSenderId: config.messagingSenderId,
-        appId: config.appId,
-        measurementId: config.measurementId */
-        apiKey: "AIzaSyBlwNTES0jBDqVKbwPTcEMMtjp5I4VmZIE",
-        authDomain: "folllit.firebaseapp.com",
-        projectId: "folllit",
-        storageBucket: "folllit.firebasestorage.app",
-        messagingSenderId: "489241988958",
-        appId: "1:489241988958:web:3587ad4fa427cc78c209cf",
-        measurementId: "G-VX67VQZCQB"
-    };
+  const firebaseConfig = {
+    apiKey: config.firebaseApiKey,
+    authDomain: config.firebaseAuthDomain,
+    projectId: config.firebaseProjectId,
+    storageBucket: config.firebaseStorageBucket,
+    messagingSenderId: config.firebaseMessagingSenderId,
+    appId: config.firebaseAppId,
+    measurementId: config.firebaseMeasurementId,
+    
+  };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+  // Ensure Firebase is only initialized once
+  let app;
+  if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+  }else{
+    app = getApps()[0];
+  }
 
-    const auth = getAuth(app)
-    const firestore = getFirestore(app)
+  let analytics;
+  if (import.meta.client) {
+    analytics = getAnalytics(app);
+  }
 
-    nuxtApp.vueApp.provide('auth', auth)
-    nuxtApp.provide('auth', auth)
+  const auth = getAuth(app);
+  const firestore = getFirestore(app);
+  const storage = getStorage(app);
 
-    nuxtApp.vueApp.provide('firestore', firestore)
-    nuxtApp.provide('firestore', firestore)
-})
+  return {
+    provide: {
+      auth,
+      firestore,
+      storage,
+    },
+  };
+});
