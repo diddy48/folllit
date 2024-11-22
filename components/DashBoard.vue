@@ -25,7 +25,7 @@
     </v-row>
     <v-row no-gutters id="snap-2" class="section d-flex align-center snap-item">
         <v-col cols="10" offset="1" class="text-center">
-            <v-card style="height: 80dvh; border-radius: 70px;" elevation="0" class=" pa-5 pa-md-15 d-flex flex-column">
+            <v-card style="height: 80vh; border-radius: 70px;" elevation="0" class=" pa-5 pa-md-15 d-flex flex-column">
                 <v-card-title class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 text-left">
                     Taqquini
                 </v-card-title>
@@ -61,7 +61,7 @@
     </v-row>
     <v-row no-gutters id="snap-1" class="section snap-item">
         <v-col cols="12" class="text-center ">
-            <video playsinline autoplay muted loop style="width: 100%; height: 100dvh;">
+            <video playsinline autoplay muted loop style="width: 100%; height: 100vh;">
                 <source src="~/assets/video/3_4.mov" type="video/mov" />
                 <source src="~/assets/video/3_4.webm" type="video/webm" />
             </video>
@@ -80,7 +80,7 @@
     </v-row>
     <v-row no-gutters id="snap-1" class="section snap-item">
         <v-col cols="12" class="text-center ">
-            <img src="~/assets/img/_W4A0594-l-immenso-acquitrino-celeste.jpg" style="height: 100dvh; width: 100%; object-fit: cover;" />
+            <img src="~/assets/img/_W4A0594-l-immenso-acquitrino-celeste.jpg" style="height: 100vh; width: 100%; object-fit: cover;" />
         </v-col>
     </v-row>
     <v-row no-gutters id="snap-3" class="section d-flex align-center snap-item">
@@ -95,7 +95,7 @@
     </v-row>
     <v-row no-gutters id="snap-1" class="section snap-item">
         <v-col cols="12" class="d-flex justify-center align-center">
-            <img src="~/assets/img/_W4A3479.jpg" style="height: 100dvh; width: 100%; object-fit: cover;" />
+            <img src="~/assets/img/_W4A3479.jpg" style="height: 100vh; width: 100%; object-fit: cover;" />
         </v-col>
     </v-row>
     <div class=" snap-item">
@@ -120,7 +120,7 @@
     <v-row no-gutters id="snap-1" class="section  snap-item">
         <v-col cols="12" class="d-flex justify-center align-start" style="position: relative;">
             <!-- Image -->
-            <img src="assets/img/righe1.jpg" style="height: 90dvh; width: 100%; object-fit: cover;" />
+            <img src="assets/img/righe1.jpg" style="height: 90vh; width: 100%; object-fit: cover;" />
 
             <v-row no-gutters class="circles-container">
                 <v-col cols="6" class="d-flex justify-center align-start">
