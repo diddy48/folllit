@@ -214,7 +214,7 @@
 
 .section {
     position: relative;
-    height: 100dvh;
+    height: 100vh;
     overflow: hidden;
 }
 .section-first {
