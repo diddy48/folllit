@@ -78,7 +78,7 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
     if(this.blended) {
       this.$el.style.mixBlendMode = "difference";
-      this.$el.style.color = "white";
+      /* this.$el.style.color = "white"; */
     }
   },
   beforeDestroy() {

@@ -31,7 +31,7 @@
             @touchstart="startDrawing" @touchmove="draw" @touchend="stopDrawing"></canvas>
           <!-- <div v-if="success" class="success-message">Success! You drew a smile! Redirecting to About Us...</div> -->
         </div>
-        <div class="unlocker_content">
+        <div class="unlocker_content" >
           <!-- <div>
       <img class="home_logo img-fluid" :src="randomImage"  />
     </div> -->
@@ -39,24 +39,24 @@
             :style="{ backgroundImage: `url(${randomImage})`, /* backgroundRepeat: `repeat-x` */backgroundSize: `cover` }"
             class="home_logo img-fluid" rel="preload"></div>
 
-          <svg class="mask-container" width="100%" height="100%" rel="preload">
+          <svg class="mask-container" width="10vw" height="10dvh">
             <!-- Define SVG mask -->
             <mask id="eye-mask">
-              <text x="20px" y="8dvh" fill="white" class="text-h3 text-md-h3 text-lg-h2" rel="preload">folllit</text>
-              <text x="20px" y="95dvh" fill="white" class="text-h4 text-md-h2 text-lg-h2"  rel="preload">draw a smile to unlock</text>
+              <text x="20px" y="10svh" fill="white" class="text-h3 text-md-h2 text-lg-h1" >folllit</text>
+              <text x="20px" y="95svh" fill="white" class="text-h4 text-md-h2 text-lg-h1"  >draw a smile to unlock</text>
 
               <!-- Desktop circles -->
               <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye"
                 ref="mobileEyeSx" />
-              <circle v-else-if="deviceType === 'tablet'" cx="27%" cy="42%" r="15%" fill="white" class="tablet-eye"
+              <circle v-else-if="deviceType === 'tablet'" cx="33%" cy="42%" r="15%" fill="white" class="tablet-eye"
                 ref="tabletEyeSx" />
-              <circle v-else cx="33%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEyeSx" />
+              <circle v-else cx="35%" cy="42%" r="14%" fill="white" class="desktop-eye" ref="desktopEyeSx" />
 
               <circle v-if="deviceType === 'mobile'" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye"
                 ref="mobileEyeDx" />
-              <circle v-else-if="deviceType === 'tablet'" cx="73%" cy="42%" r="15%" fill="white" class="tablet-eye"
+              <circle v-else-if="deviceType === 'tablet'" cx="67%" cy="42%" r="15%" fill="white" class="tablet-eye"
                 ref="tabletEyeDx" />
-              <circle v-else cx="67%" cy="42%" r="15%" fill="white" class="desktop-eye" ref="desktopEyeDx" />
+              <circle v-else cx="65%" cy="42%" r="14%" fill="white" class="desktop-eye" ref="desktopEyeDx" />
               <!-- Mobile circles -->
             </mask>
 
@@ -80,7 +80,8 @@
   </transition>
   <transition name="fade">
     <div v-if="unlocked" class="background_accent scroll-container">
-      <AppHeader :blended="true"/>
+      <!-- <AppHeader :blended="true"/> -->
+       <AppHeader blended="true" />
       <DashBoard />
       <AppFooter/>
     </div>

@@ -39,6 +39,10 @@ useHead({
     background-color: rgb(226, 221, 217);
   }
   
+  .maiuscoletto {
+      font-variant: small-caps;
+    }
+  
 /* scroll snaè */
 
 .scroll-container {
@@ -51,4 +55,5 @@ useHead({
     scroll-snap-align: start;
     scroll-snap-stop:always;
 }
+
 </style>
