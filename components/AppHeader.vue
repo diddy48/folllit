@@ -53,7 +53,7 @@ body {
 
 </style> -->
 <template>
-  <div class="app-header" :class="{ /* hidden: isScrollingDown  */}">
+  <div @click="scrollToTop" class="app-header" >
     <div class="pa-5 text-h3 text-md-h2 text-lg-h1">folllit</div>
   </div>
 </template>
@@ -67,33 +67,18 @@ export default {
       default: false // Default value if not passed
     }
   },
-  data() {
-    return {
-      isScrollingDown: false,
-      lastScrollY: 0,
-    };
-  },
   mounted() {
-    // Listen for scroll events
-    window.addEventListener("scroll", this.handleScroll);
     if(this.blended) {
       this.$el.style.mixBlendMode = "difference";
       /* this.$el.style.color = "white"; */
     }
   },
-  beforeDestroy() {
-    // Clean up the event listener
-    window.removeEventListener("scroll", this.handleScroll);
-  },
   methods: {
-    handleScroll() {
-      const currentScrollY = window.scrollY;
-
-      // Detect scroll direction
-      this.isScrollingDown = currentScrollY > this.lastScrollY && currentScrollY > 50;
-
-      // Update the last scroll position
-      this.lastScrollY = currentScrollY;
+     scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth', // Enables smooth scrolling
+      });
     },
   },
 };

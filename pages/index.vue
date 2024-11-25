@@ -81,7 +81,7 @@
   <transition name="fade">
     <div v-if="unlocked" class="background_accent scroll-container">
       <!-- <AppHeader :blended="true"/> -->
-       <AppHeader blended="true" />
+       <AppHeader :blended="true" />
       <DashBoard />
       <AppFooter/>
     </div>

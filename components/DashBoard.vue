@@ -177,11 +177,11 @@
         </v-row>
 
         <v-row no-gutters id="snap-1" class="sub-section justify-center">
-                <div class="text-subtitle-1 text-md-h4 main_accent text-center" style="
+            <div class="text-subtitle-1 text-md-h4 main_accent text-center" style="
 writing-mode: vertical-lr; 
 transform: rotate(180deg);
 position: absolute; left: 0px; bottom: 20px;">Do you like Interstellar?
-                </div>
+            </div>
             <v-col cols="12" class="d-flex justify-center align-center">
                 <div class="text-h5 text-md-h5 text-lg-h4 text-center">Otherwise contact me in a traditional
                     way
@@ -270,7 +270,7 @@ position: absolute; left: 0px; bottom: 20px;">Do you like Interstellar?
 
 .section {
     position: relative;
-    height: 100dvh;
+    height: 100svh;
     overflow: hidden;
 }
 
