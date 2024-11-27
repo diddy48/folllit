@@ -35,9 +35,14 @@
                         </div>
 
                     </v-col>
-                    <v-col cols="12" class="d-flex justify-end"
+                    <!-- <v-col cols="12" class="d-flex justify-end"
                         style="position: absolute; bottom: 0; right: 0; padding: 20px;">
                         <a href="assets/file/resume.pdf"><img src="assets/logo/bollino.png" class="bollino"
+                                target="_blank" alt="logo circle" /></a>
+                    </v-col> -->
+                    <v-col cols="12" class="d-flex justify-end"
+                        style="position: absolute; bottom: 0; right: 0; padding: 0px;">
+                        <a href="assets/file/resume.pdf"><img style="" src="assets/gif/get_in_touch.gif" class="bollino"
                                 target="_blank" alt="logo circle" /></a>
                     </v-col>
                 </v-row>
@@ -50,12 +55,13 @@
             <div class="text-h3 text-sm-h2 text-md-h1 text-lg-h1" style="color: white"><i>Taqquini</i>
             </div>
         </v-col> -->
-        <WonderTaqquini />
+        <WonderTaqquini :random="false" class="d-none d-md-flex" />
+        <WonderTaqquini :random="true" class="d-md-none" />
         <!-- <v-col cols="12" class="text-center"> -->
-        <div class="book-container">
+        <!-- <div class="book-container">
             <div class="book" id="book1">
                 <img src="assets/taqquini/2.png" alt="Book 1" class="book-image">
-            </div><!-- 
+            </div> --><!-- 
             <div class="book" id="book2">
                 <img src="assets/taqquini/9.png" alt="Book 1" class="book-image">
             </div>
@@ -65,7 +71,7 @@
             <div class="book" id="book4">
                 <img src="assets/taqquini/39.png" alt="Book 1" class="book-image">
             </div> -->
-        </div>
+        <!-- </div> -->
         <!-- <a href="/archive" class="main_accent text-h5 text-sm-h4 text-md-h3 text-lg-h2" text="Archive">Taqquini
                 archive</a><span class="main_accent text-h5 text-sm-h4 text-md-h3 text-lg-h2">❧</span> -->
         <!--  <v-card style="height: 80vh; " elevation="0" class=" pa-5 pa-md-15 d-flex flex-column background_accent"> -->
@@ -384,7 +390,7 @@ video {
 
 @media only screen and (max-width: 767px) {
     .bollino {
-        height: 100px;
+        height: 200px;
     }
 }
 </style>
