@@ -1,13 +1,42 @@
-<script>
+<script>export default {
+  name: "Footer",
+  mounted() {
+    this.$nextTick(() => {
+      this.initializeRepetition();
+    });
+  },
+  methods: {
+    initializeRepetition() {
+      const outerElement = document.querySelector(".outer");
+      const contentElement = outerElement.querySelector(".content");
+      const loopElement = outerElement.querySelector(".loop");
+
+      this.repeatContent(contentElement, outerElement.offsetWidth);
+
+      // Duplicate the content of the slider for continuous loop
+      loopElement.innerHTML = loopElement.innerHTML + loopElement.innerHTML;
+    },
+    repeatContent(el, till) {
+      let html = el.innerHTML;
+      let counter = 0; // To prevent infinite loops
+
+      // Keep appending the content until the width requirement is met
+      while (el.offsetWidth < till && counter < 100) {
+        el.innerHTML += html;
+        counter++;
+      }
+    },
+  },
+};
+
 </script>
 
 <template>
-  <div class="px-3">
-    
-  <div class="dotted-line my-0"></div>
+  <div class="pa-3">
+    <div class="dotted-line my-0"></div>
   </div>
-  <v-col class="snap-item" style="background-color: white;">
-    <v-row>
+  <v-col class="snap-item pa-0" style="background-color: white; overflow-x: hidden;">
+    <v-row class="px-3">
       <v-col cols="4" class="d-flex flex-column align-start justify-start">
         <p class="text-subtitle-1 text-md-h4">Valerio Romano</p>
         <p class="text-subtitle-1 text-md-h4 main_accent font-italic">Designer</p>
@@ -18,15 +47,25 @@
       <v-col cols="4" class="d-flex flex-column align-end justify-start">
         <p class="text-subtitle-1 text-md-h4">IG: FOLLLIT</p><!-- 
         <p class="text-subtitle-1 main_accent">✌️</p> -->
-        <p class="text-subtitle-1 text-md-h4 main_accent text-decoration-underline">+39 333 8202323</p>
+        <a href="tel:+393338202323" class="text-subtitle-1 text-md-h4 main_accent">+39 333 8202323</a>
       </v-col>
     </v-row>
-<v-spacer style="height: 5px;"></v-spacer>
+    <v-spacer style="height: 5px;"></v-spacer><!-- 
     <v-row no-gutters>
       <v-col cols="12" class="d-flex flex-column align-center justify-center">
-        <a href="mailto:hello@folllit.it" class="dynamic-font main_accent text-decoration-none ma-0">hello@folllit.com</a>
+        <a href="mailto:hello@folllit.it"
+          class="dynamic-font main_accent text-decoration-none ma-0">hello@folllit.com</a>
       </v-col>
-    </v-row>
+    </v-row> -->
+    <div class="outer">
+      <!-- This div is important! It lets us specify margin-left later on. -->
+      <!-- <v-col cols="12" class="d-flex flex-column align-center justify-center"> -->
+      <div class="loop">
+        <!-- <div class="content"> Make sure you subscribe ✦</div> -->
+        <a href="mailto:hello@folllit.it" class="dynamic-font main_accent text-decoration-none ma-0 content">❧ hello@folllit.com</a>
+      </div>
+      <!-- </v-col> -->
+    </div>
 
     <v-row no-gutters>
       <v-col cols="8" offset="2" class="d-flex flex-column align-center text-center justify-end">
@@ -46,14 +85,67 @@
 
 </template>
 <style scoped>
+/* rolling mail */
+.content {
+  padding-left: 0.25em;
+}
+
+@media only screen and (max-width: 767px) {
+  .content {
+    font-size: 2rem !important;
+    padding-left: 0.25em;
+  }
+}
+/* 
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
+  .content {
+    font-size: 2.25rem !important;
+    padding-left: 0.25em;
+  }
+} */
+
+.outer {
+  overflow: hidden !important;
+}
+
+.outer div {
+  display: inline-block;
+}
+.loop {
+  white-space: nowrap;
+  animation: loop-anim 15s linear infinite;
+}
+
+@keyframes loop-anim {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+    /* Moves one full copy out of view */
+  }
+}
+@media only screen and (max-width: 767px) {
+  .loop {
+    animation: loop-anim 10s linear infinite;
+  }
+}
+/* END rolling mail */
+
+
 
 .dotted-line {
-      border-bottom:2px dashed rgb(155, 151, 148); /* Creates a dotted line */
-      
+  border-bottom: 2px dashed rgb(155, 151, 148);
+  /* Creates a dotted line */
+
   /* border-bottom: 10px dotted rebeccapurple; */
-      width: 100%; /* Full width */
-      margin: 0px ; /* Adds space around the line */
-    }
+  width: 100%;
+  /* Full width */
+  margin: 0px;
+  /* Adds space around the line */
+}
+
 .dynamic-font {
   font-size: clamp(30px, 15vw, 250px);
   /* Minimum 16px, responsive scaling, maximum 60px */

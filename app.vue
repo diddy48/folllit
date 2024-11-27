@@ -20,7 +20,7 @@ useHead({
 </script>
 
 <template>
-    <NuxtPage />
+  <NuxtPage />
 </template>
 
 <style>
@@ -55,5 +55,4 @@ useHead({
     scroll-snap-align: start;
     scroll-snap-stop:always;
 }
-
 </style>

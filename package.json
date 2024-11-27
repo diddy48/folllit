@@ -10,8 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@animxyz/core": "latest",
+    "@animxyz/vue3": "latest",
     "@mdi/font": "^7.4.47",
     "@nuxt/fonts": "^0.10.2",
+    "animate.css": "^4.1.1",
     "dotenv": "^16.4.5",
     "firebase": "^11.0.1",
     "naive-ui": "^2.40.1",

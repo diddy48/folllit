@@ -7,17 +7,38 @@
             <v-container class="fill-height overlay-text pa-5" fluid>
                 <v-row no-gutters class="d-flex align-center" style="height: 100svh;">
                     <v-col cols="12" md="9" lg="8" class="text-left">
-                        <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 blend-text" :style="{
+                        <!-- <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 blend-text animate__animated animate__fadeInLeft"
+                            :style="{
                             lineHeight: 1.2,
                         }">
                             I am a <i class="main_accent">graphic</i>
                             designer with an artisanal approach, mixing <i class="main_accent">editorial</i> and <i
                                 class="main_accent">upcycling</i>.
+                        </div> -->
+                        <div class="item-group" xyz="fade delay-2 origin-right left-4 duration-20">
+                            <div class="xyz-in text-h4 text-sm-h3 text-md-h2 text-lg-h1 blend-text"
+                                :style="{ lineHeight: 1.2 }">
+                                I am a
+                                <i :class="{ main_accent: isGraphicVisible }"
+                                    style="transition: color 0.5s ease;/* Smooth transition */"> graphic </i>
+                                designer with an artisanal approach, mixing
+                                <i :class="{ main_accent: isEditorialVisible }"
+                                    style="transition: color 0.5s ease;/* Smooth transition */">
+                                    editorial
+                                </i>
+                                and
+                                <i :class="{main_accent:isUpcyclingVisible}"
+                                    style="transition: color 0.5s ease;/* Smooth transition */">
+                                    upcycling
+                                </i>.
+                            </div>
                         </div>
+
                     </v-col>
                     <v-col cols="12" class="d-flex justify-end"
                         style="position: absolute; bottom: 0; right: 0; padding: 20px;">
-                        <img src="assets/logo/bollino.png" style="height: 100px;" alt="logo circle" />
+                        <a href="assets/file/resume.pdf"><img src="assets/logo/bollino.png" class="bollino"
+                                target="_blank" alt="logo circle" /></a>
                     </v-col>
                 </v-row>
             </v-container>
@@ -25,46 +46,48 @@
         </v-col>
     </v-row>
     <v-row no-gutters id="snap-2" class="section d-flex align-center snap-item" style="background-color: black;">
-        <v-col cols="12" class="text-center">
+        <!-- <v-col cols="12" class="text-center">
             <div class="text-h3 text-sm-h2 text-md-h1 text-lg-h1" style="color: white"><i>Taqquini</i>
             </div>
-        </v-col>
-        <v-col cols="12" class="text-center">
-            <div class="book-container">
-                <div class="book" id="book1">
-                    <img src="assets/taqquini/2.png" alt="Book 1" class="book-image">
-                </div>
-                <div class="book" id="book2">
-                    <img src="assets/taqquini/9.png" alt="Book 1" class="book-image">
-                </div>
-                <div class="book" id="book3">
-                    <img src="assets/taqquini/11.png" alt="Book 1" class="book-image">
-                </div>
-                <div class="book" id="book4">
-                    <img src="assets/taqquini/39.png" alt="Book 1" class="book-image">
-                </div>
+        </v-col> -->
+        <WonderTaqquini />
+        <!-- <v-col cols="12" class="text-center"> -->
+        <div class="book-container">
+            <div class="book" id="book1">
+                <img src="assets/taqquini/2.png" alt="Book 1" class="book-image">
+            </div><!-- 
+            <div class="book" id="book2">
+                <img src="assets/taqquini/9.png" alt="Book 1" class="book-image">
             </div>
-
-            <!--  <v-card style="height: 80vh; " elevation="0" class=" pa-5 pa-md-15 d-flex flex-column background_accent"> -->
-            <!--  <v-card-title class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 text-left">
+            <div class="book" id="book3">
+                <img src="assets/taqquini/11.png" alt="Book 1" class="book-image">
+            </div>
+            <div class="book" id="book4">
+                <img src="assets/taqquini/39.png" alt="Book 1" class="book-image">
+            </div> -->
+        </div>
+        <!-- <a href="/archive" class="main_accent text-h5 text-sm-h4 text-md-h3 text-lg-h2" text="Archive">Taqquini
+                archive</a><span class="main_accent text-h5 text-sm-h4 text-md-h3 text-lg-h2">❧</span> -->
+        <!--  <v-card style="height: 80vh; " elevation="0" class=" pa-5 pa-md-15 d-flex flex-column background_accent"> -->
+        <!--  <v-card-title class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 text-left">
                     Taqquini
                 </v-card-title> -->
-            <!--  <v-card-text class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-left">
+        <!--  <v-card-text class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-left">
                     All papers, without exception, deserve to be repurposed.
                     <q>Taqquini</q> is an upcycling project to produce handcrafted notebooks
                     made from various types of paper.
                 </v-card-text> -->
 
-            <!-- Actions -->
-            <!-- <v-spacer></v-spacer> 
+        <!-- Actions -->
+        <!-- <v-spacer></v-spacer> 
                 <v-card-actions class="justify-end py-5 py-md-15">
                     <a href="/archive" class="main_accent text-h5 text-sm-h4 text-md-h3 text-lg-h2"
                         text="Archive">Taqquini archive</a><span
                         class="main_accent text-h5 text-sm-h4 text-md-h3 text-lg-h2">❧</span>
                 </v-card-actions> -->
-            <!--  </v-card> -->
-            <!-- <v-img src="papers/rosa.jpg" max-height="100vh" max-width="100%" cover></v-img> -->
-        </v-col>
+        <!--  </v-card> -->
+        <!-- <v-img src="papers/rosa.jpg" max-height="100vh" max-width="100%" cover></v-img> -->
+        <!-- </v-col> -->
     </v-row>
     <v-row no-gutters id="snap-3" class="section d-flex align-center snap-item">
         <v-col cols="12" class="text-center">
@@ -197,10 +220,45 @@ position: absolute; left: 0px; bottom: 20px;">Do you like Interstellar?
 </template>
 
 <script>
+import WonderTaqquini from './WonderTaqquini.vue';
 
+/* import 'animate.css'; */
+export default {
+    data() {
+        return {
+            isGraphicVisible: false,
+            isEditorialVisible: false,
+            isUpcyclingVisible: false,
+        };
+    },
+    mounted() {
+        setTimeout(() => {
+            this.isGraphicVisible = true; // Activate "graphic" after 8 seconds
+        }, 1000);
+
+        setTimeout(() => {
+            this.isEditorialVisible = true; // Activate "editorial" after 10 seconds
+        }, 2000);
+
+        setTimeout(() => {
+            this.isUpcyclingVisible = true; // Activate "upcycling" after 12 seconds
+        }, 3000);
+    },
+};
 </script>
 
 <style scoped>
+/* Animations */
+/* 
+.animate__animated.animate__fadeInLeft {
+    --animate-duration: 3s;
+} */
+
+
+/* END Animations */
+
+
+
 .book-container {
     display: flex;
     justify-content: space-between;
@@ -318,5 +376,15 @@ video {
 
 .blend-text {
     mix-blend-mode: difference;
+}
+
+.bollino {
+    height: 200px;
+}
+
+@media only screen and (max-width: 767px) {
+    .bollino {
+        height: 100px;
+    }
 }
 </style>
