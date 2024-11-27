@@ -103,13 +103,13 @@
         </v-col>
         <v-col cols="12" class="d-flex justify-end" style="position: absolute; bottom: 0; right: 0; padding: 20px;">
 
-            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 main_accent">&</div>
+            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1 main_accent">§</div>
         </v-col>
     </v-row>
     <v-row no-gutters id="snap-1" class="section snap-item">
         <v-col cols="12" class="text-center ">
-            <video playsinline autoplay muted loop style="width: 100%; height: 100vh;">
-                <source src="~/assets/video/3_4.mov" type="video/mov" />
+            <video playsinline autoplay muted loop style="width: 100%; height: 100vh;"><!-- 
+                <source src="~/assets/video/3_4.mov" type="video/mov" /> -->
                 <source src="~/assets/video/3_4.webm" type="video/webm" />
             </video>
 
@@ -236,7 +236,7 @@ export default {
             isEditorialVisible: false,
             isUpcyclingVisible: false,
         };
-    },
+    }, 
     mounted() {
         setTimeout(() => {
             this.isGraphicVisible = true; // Activate "graphic" after 8 seconds
