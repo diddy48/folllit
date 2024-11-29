@@ -2,7 +2,6 @@
   <div>
     {{ unlocked }}
   </div> -->
-  <!-- DO NOT DELETE -->
 
   <v-app>
     <transition name="fade">
@@ -385,14 +384,6 @@ export default {
   top: 0;
   left: 0;
   z-index: 100;
-}
-
-.hint {
-  /* font-family: 'EB Garamond', sans-serif; */
-}
-
-.folllit {
-  /* font-family: 'EB Garamond', sans-serif; */
 }
 
 .unlocker_content {
