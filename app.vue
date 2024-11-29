@@ -24,11 +24,23 @@ useHead({
 </template>
 
 <style>
-  html,body {
-    font-family: 'EB Garamond', serif;
+  html,body {/* 
+    font-family: 'EB Garamond', serif; */
+    font-family: 'Inter', sans-serif;
   }
   #app {
+    /* font-family: 'EB Garamond', serif; */
+    font-family: 'Inter', sans-serif;
+  }
+
+  .main_font{
     font-family: 'EB Garamond', serif;
+    font-size: 1.5em;
+  }
+
+  .alt_font{
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
   }
 
   .main_accent{
@@ -42,6 +54,25 @@ useHead({
   .maiuscoletto {
       font-variant: small-caps;
     }
+
+/* sections */
+.sub-section {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.section {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.section-first {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+}
   
 /* scroll snaè */
 

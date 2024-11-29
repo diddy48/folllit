@@ -16,9 +16,9 @@
                                 class="main_accent">upcycling</i>.
                         </div> -->
                         <div class="item-group" xyz="fade delay-2 origin-right left-4 duration-20">
-                            <div class="xyz-in text-h4 text-sm-h3 text-md-h2 text-lg-h1 blend-text"
+                            <div class="xyz-in text-h3 text-sm-h3 text-md-h2 text-lg-h1 blend-text"
                                 :style="{ lineHeight: 1.2 }">
-                                I am a
+                                <!--  I am a
                                 <i :class="{ main_accent: isGraphicVisible }"
                                     style="transition: color 0.5s ease;/* Smooth transition */"> graphic </i>
                                 designer with an artisanal approach, mixing
@@ -27,10 +27,22 @@
                                     editorial
                                 </i>
                                 and
-                                <i :class="{main_accent:isUpcyclingVisible}"
+                                <i :class="{ main_accent: isUpcyclingVisible }"
                                     style="transition: color 0.5s ease;/* Smooth transition */">
                                     upcycling
-                                </i>.
+                                </i>. -->
+                                <span class="alt_font">I am a</span>
+                                <i :class="{ main_accent: isGraphicVisible }"
+                                    style="transition: color 0.5s ease;/* Smooth transition */"> graphic </i>
+                                <span class="alt_font">designer with an
+                                    artisanal approach, mixing</span>
+                                <i :class="{ main_accent: isEditorialVisible }"
+                                    style="transition: color 0.5s ease;/* Smooth transition */"> editorial
+                                </i>
+                                <span class="alt_font">and</span>
+                                <i :class="{ main_accent: isUpcyclingVisible }"
+                                    style="transition: color 0.5s ease;/* Smooth transition */"> upcycling.</i>
+                                
                             </div>
                         </div>
 
@@ -236,7 +248,7 @@ export default {
             isEditorialVisible: false,
             isUpcyclingVisible: false,
         };
-    }, 
+    },
     mounted() {
         setTimeout(() => {
             this.isGraphicVisible = true; // Activate "graphic" after 8 seconds
@@ -326,24 +338,6 @@ export default {
     -webkit-mask: url(#eye-mask);
 }
 
-.sub-section {
-    position: relative;
-    height: 50vh;
-    overflow: hidden;
-}
-
-.section {
-    position: relative;
-    height: 100svh;
-    overflow: hidden;
-}
-
-.section-first {
-    position: relative;
-    height: 100svh;
-    overflow: hidden;
-}
-
 video {
     width: 100%;
     height: 100svh;
@@ -381,7 +375,7 @@ video {
 }
 
 .blend-text {
-    mix-blend-mode: difference;
+    mix-blend-mode:overlay;
 }
 
 .bollino {
@@ -390,7 +384,7 @@ video {
 
 @media only screen and (max-width: 767px) {
     .bollino {
-        height: 200px;
+        height: 150px;
     }
 }
 </style>
