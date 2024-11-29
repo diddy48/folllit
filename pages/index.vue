@@ -82,7 +82,7 @@
     <transition name="fade">
       <div v-if="unlocked" class="background_accent scroll-container">
         <!-- <AppHeader :blended="true"/> -->
-        <AppHeader :blended="true" />
+        <AppHeader :blended="false" />
         <DashBoard />
         <AppFooter />
       </div>
@@ -361,6 +361,7 @@ export default {
   line-height: 99dvh;
   /* transition: all 0.5s; */
   object-fit: fill;
+  transition: 2s ease-in-out;
 }
 
 .splash_video {
@@ -452,7 +453,7 @@ canvas {
 /* CSS for the fade transition */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.8s ease-in-out;
 }
 
 .fade-enter-from,

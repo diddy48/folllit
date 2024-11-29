@@ -1,10 +1,11 @@
 <template>
-    <v-col cols="12" md="3">
+    <v-col cols="12" md="3" class="mx-1 mb-10">
 
         <div class="taqquini-card" height="60vh">
-            <img src="/assets/taqquini/2.png" :alt="photo" class="taqquini-card__photo bg-black" >
-            <div class="text-h5">{{ name }}</div>
-            <div class="text-h5">{{ date }}</div>
+            <img src="/assets/taqquini/2.png" :alt="photo" class="taqquini-card__photo bg-black">
+
+            <div class="text-h6 alt_font">{{ date }}</div>
+            <div class="text-h4">{{ name }}</div>
             <div class="text-h6 font-italic">{{ info }}</div>
 
         </div>
@@ -33,7 +34,8 @@ export default {
         }
     }
 }
-</script><style scoped>
+</script>
+<style scoped>
 .taqquini-card {
     height: 60vh;
     /* Limit the height of the card to 40% of the viewport height */

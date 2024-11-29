@@ -86,4 +86,66 @@ useHead({
     scroll-snap-align: start;
     scroll-snap-stop:always;
 }
+
+/* Animate line */
+.animated-line {
+  top: 10px;
+  height: 2px;
+  /* Thickness of the line */
+  background-color: rgb(255, 91, 0);
+  mix-blend-mode: overlay;
+  /* Line color */
+  width: 0;
+  /* Start at 0% width */
+  animation: grow-line 5s forwards;
+  /* 1-second animation, runs once */
+}
+
+/* Keyframes for the line animation */
+@keyframes grow-line {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+/* links */
+.link {
+  /* color: rgb(255, 91, 0); */
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+  opacity: 0.5;
+}
+
+:hover.link {
+  /* color: white; */
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+  opacity: 1;
+}
+.link.active {
+  opacity: 1;
+}
+
+
+/* useful */
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* transform: translate(-50%, -50%); */
+  color: white;
+  /* text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); */
+  text-align: left;
+  /* font-family: "EB Garamond", serif; */
+  /* font-size: 4em;
+    line-height: 1; */
+}
+
+.blend-text {
+  mix-blend-mode: overlay;
+}
 </style>

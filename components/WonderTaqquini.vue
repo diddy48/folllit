@@ -1,51 +1,53 @@
 <template>
     <div ref="targetDiv" id="target-div" @mousemove="spawnImage"
-        style="width: 100%; height: 100%; background-color: transparent; z-index: 9999;">
-        <v-row no-gutters class="d-flex align-center fill-height">
-            <v-col cols="4" class="text-center d-none d-md-inline">
+        style="width: 100%; height: 100%; background-color: transparent;">
+        <v-row no-gutters class="d-none d-md-flex align-center fill-height">
+            <v-col cols="4" class="text-center">
                 <div ref="firstElement" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1" style="color: white"
                     :class="elementClass('taqquiniElement')" xyz="fade delay-2 origin-right left-4 duration-20">·
                 </div>
             </v-col>
-            <v-col cols="12" class="text-center d-md-none d-flex align-self-end justify-center "
-                style="margin-top: -10px;">
-                <div ref="firstElement" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1" style="color: white"
-                    :class="elementClass('taqquiniElement')" xyz="fade delay-2 origin-up down-4 duration-20">·
-                </div>
-            </v-col>
-            <v-col cols="12" md="4" class="text-center d-none d-md-inline">
+            <v-col cols="12" md="4" class="text-center">
                 <div ref="taqquiniElement" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1 text-center"
                     style="color: white" :class="elementClass('taqquiniElement')"
                     xyz="fade delay-2 origin-right up-4 duration-20">
                     <i>Taqquini</i>
                 </div>
             </v-col>
-            <v-col cols="12" md="4" class="text-center d-md-none">
-                <div ref="taqquiniElement" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1 text-center"
-                    style="color: white" :class="elementClass('taqquiniElement')" xyz="fade delay-2 duration-20">
-                    <i>Taqquini</i>
-                </div>
-            </v-col>
-            <v-col cols="12" class="text-center d-md-none  align-self-start justify-center">
-                <div ref="firstElement" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1" style="color: white"
-                    :class="elementClass('taqquiniElement')" xyz="fade delay-2 origin-down up-4 duration-20">·
-                </div>
-            </v-col>
-            <v-col cols="4" class="text-center d-none d-md-inline">
+            <v-col cols="4" class="text-center">
                 <div ref="thirdElement" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1" style="color: white"
                     :class="elementClass('taqquiniElement')" xyz="fade delay-2 origin-left right-4 duration-20">·
                 </div>
             </v-col>
         </v-row>
+        <v-row no-gutters class=" d-md-none align-center fill-height">
+            <v-col cols="12" class="text-center d-flex align-self-end justify-center " style="margin-top: -10px;">
+                <div ref="firstElementM" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1" style="color: white"
+                    :class="elementClass('taqquiniElement')" xyz="fade delay-2 origin-up down-4 duration-20">·
+                </div>
+            </v-col>
+            <v-col cols="12" md="4" class="text-center">
+                <div ref="taqquiniElementM" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1 text-center"
+                    style="color: white" :class="elementClass('taqquiniElement')" xyz="fade delay-2 duration-20">
+                    <i>Taqquini</i>
+                </div>
+            </v-col>
+            <v-col cols="12" class="text-center align-self-start justify-center">
+                <div ref="thirdElementM" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1" style="color: white"
+                    :class="elementClass('taqquiniElement')" xyz="fade delay-2 origin-down up-4 duration-20">·
+                </div>
+            </v-col>
+        </v-row>
         <v-row style="position: absolute; bottom:0px" class="d-none d-md-flex pa-5">
             <v-col cols="12" class="" style="color:white;">
-                <div class="text-h3 text-center" :class="elementClass('taqquiniElement')"
-                    xyz="fade delay-2 origin-up down-4 duration-20">link the dots</div>
+                <div class="text-h4 text-sm-h3 text-md-h2 text-center " :class="elementClass('taqquiniElement')"
+                    xyz="fade delay-2 origin-up down-4 duration-20">link the
+                    dots</div>
             </v-col>
         </v-row>
         <v-row style="position: absolute; bottom:0px" class="d-md-none pa-5">
             <v-col cols="12" class="" style="color:white;">
-                <div class="text-h3 text-sm-h2 text-md-h1 text-lg-h1 text-center"
+                <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h3 text-center alt_font"
                     :class="elementClass('taqquiniElement')" xyz="fade delay-2 origin-up down-4 duration-20">click the
                     dots</div>
             </v-col>
@@ -56,8 +58,8 @@ writing-mode: vertical-lr;
 transform: rotate(180deg);
 z-index: 9999;
 ">
-                <a href="/archive" class="text-decoration-none archive_link">
-                    <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h3 text-center  alt_font"
+                <a href="/archive" class="text-decoration-none link">
+                    <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h3 text-center alt_font main_accent"
                         :class="elementClass('taqquiniElement')" xyz="fade delay-2 origin-right left-4 duration-20">
                         archive
                     </div>
@@ -71,6 +73,7 @@ z-index: 9999;
 import { useMouse } from '@vueuse/core';
 import { reactive } from 'vue'; // Import reactive
 import 'animate.css';
+import { en } from 'vuetify/locale';
 export default {
     data() {
         return {
@@ -85,6 +88,11 @@ export default {
     },
     props: {
         random: {
+            type: Boolean,
+            required: false,
+            default: false
+        },
+        mobile: {
             type: Boolean,
             required: false,
             default: false
@@ -112,7 +120,7 @@ export default {
             img.style.height = `${this.random ? 400 : 500}px`;
             img.style.width = 'auto';
             img.style.pointerEvents = 'none';
-            img.style.zIndex = '9998';
+            img.style.zIndex = '1000';
 
             this.$refs.targetDiv.appendChild(img);
             this.images.push(img);
@@ -141,18 +149,18 @@ export default {
             const distance = Math.sqrt(
                 Math.pow(x - this.lastPosition.x, 2) + Math.pow(y - this.lastPosition.y, 2)
             );
-            var def = 30;
+            var offset = 20;
             var dif = 250;
-            if (this.random) {
-                def = 0;
+            if (this.mobile) {
+                offset = 0;
                 dif = 200;
             }
-            if (distance >= def) {
+            if (distance >= offset) {
                 this.spawnImageAtPosition(x - dif, y - dif, 20, 2000);
                 this.lastPosition = { x, y };
             }
         },
-        startRandomSpawning() {
+        /* startRandomSpawning() {
             this.spawnInterval = setInterval(() => {
                 // Generate random x and y positions within the target div
                 const targetRect = this.$refs.targetDiv.getBoundingClientRect();
@@ -166,29 +174,41 @@ export default {
                 clearInterval(this.spawnInterval);
                 this.spawnInterval = null;
             }
-        },
+        }, */
         observeVisibility() {
             // Observe the 'Taqquini' element for visibility
             const targetElement = this.$refs.taqquiniElement;
-            if (targetElement) {
+            const targetElementM = this.$refs.taqquiniElementM;
+            if (!targetElement || !targetElementM) {
+                console.warn("Target element not found for IntersectionObserver.");
+                return;
+            }
+            if (targetElement || targetElementM) {
                 const elementObserver = new IntersectionObserver((entries) => {
                     const entry = entries[0];
+
+                        console.log(entry);
                     if (entry.isIntersecting) {
                         // Element is in the viewport, apply fade-in effect
                         this.elementVisibility.taqquiniElement = true;
+                        targetElement.setAttribute('xyz','fade delay-2 origin-right up-4 duration-20');
+                        targetElementM.setAttribute('xyz','fade delay-2 duration-20');
                         /* if (this.random) { this.startRandomSpawning(); } */
 
                     } else {
                         // Element is out of the viewport, apply fade-out effect
                         this.elementVisibility.taqquiniElement = false;
+                        targetElement.setAttribute('xyz', 'fade origin-right down-4');
+                        targetElementM.setAttribute('xyz', 'fade origin-down up-4');
 
                         /*  if (this.random) { this.stopRandomSpawning(); } */
                     }
                 }, {
-                    threshold: 0.1 // Trigger when 10% of the element is visible
+                    threshold: 0.0 // Trigger when 10% of the element is visible
                 });
 
                 elementObserver.observe(targetElement);
+                elementObserver.observe(targetElementM);
             }
         },
 
@@ -207,13 +227,14 @@ export default {
     z-index: 9999;
 }
 
+/* 
 .archive_link {
     color: white;
-    transition: 1s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .archive_link:hover {
     color: rgb(255, 91, 0);
-    transition: 1s ease-in-out;
-}
+    transition: 0.5s ease-in-out;
+} */
 </style>

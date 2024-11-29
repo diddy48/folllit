@@ -1,6 +1,6 @@
 
 <template>
-  <div class="app-header" style="cursor: pointer;" @click="scrollToTop">
+  <div class="app-header" @click="scrollToTop">
     <!-- <v-row no-gutters>
       <v-col cols="6" lg="9" class="text-center d-flex px-5 pt-3">
         <div class="text-h3 text-sm-h2 text-md-h1 text-lg-h1">folllit</div>
@@ -14,12 +14,16 @@
     </v-row> -->
     <div class="header">
       <div class="left">
-        <div class="text-h3 text-sm-h2 text-md-h1 text-lg-h1" >folllit</div>
+        <a href="/" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1 text-decoration-none main_accent"
+          >folllit</a>
       </div>
       <!-- Right-aligned text -->
       <div class="right">
-        <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h3 alt_font">projects</div>
-        <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h3 alt_font">about</div>
+        <a href="/projects"
+          class="text-h5 text-sm-h4 text-md-h3 text-lg-h3 alt_font text-decoration-none main_accent link"
+          :class="{ active: isActive('/projects') }">projects</a>
+        <a href="/about" class="text-h5 text-sm-h4 text-md-h3 text-lg-h3 alt_font text-decoration-none main_accent link"
+          :class="{ active: isActive('/about') }">about</a>
       </div>
     </div>
     <!-- <div class="px-5 pt-0 pb-5">
@@ -45,6 +49,9 @@ export default {
     }
   },
   methods: {
+    isActive(path) {
+      return window.location.pathname === path;
+    },
      scrollToTop() {
       console.log('scrolling to top');
       window.scrollTo({
@@ -62,7 +69,7 @@ export default {
   background-color: transparent; /* Transparent background */
   color: rgb(255, 91, 0);
   /* mix-blend-mode: difference; */
-  z-index: 1004;
+  z-index: 9999;
   position: fixed;
   line-height: 1;
   left: 0;
@@ -92,29 +99,5 @@ export default {
   display: flex;
   gap: 16px;
   /* Space between "projects" and "about" */
-}
-/* Animate line */
-.animated-line {
-  top: 10px;
-  height: 2px;
-  /* Thickness of the line */
-  background-color: rgb(255, 91, 0);
-  mix-blend-mode: difference;
-  /* Line color */
-  width: 0;
-  /* Start at 0% width */
-  animation: grow-line 5s forwards;
-  /* 1-second animation, runs once */
-}
-
-/* Keyframes for the line animation */
-@keyframes grow-line {
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: 100%;
-  }
 }
 </style>
