@@ -50,7 +50,8 @@ export default {
   },
   methods: {
     isActive(path) {
-      return window.location.pathname === path;
+      const route = useRoute();
+      return computed(() => route.path) === path;
     },
      scrollToTop() {
       console.log('scrolling to top');

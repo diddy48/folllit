@@ -134,8 +134,8 @@
     </v-row>
     <v-row no-gutters id="snap-3" class="section d-flex align-center snap-item">
         <v-col cols="12" class="text-center">
-            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">We can <span
-                    class="font-italic main_accent">draw</span> together
+            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1"><span class="alt_font">We can </span><span
+                    class="font-italic main_accent">draw</span><span class="alt_font"> together</span>
             </div>
         </v-col>
         <v-col cols="12" class="d-flex justify-end" style="position: absolute; bottom: 0; right: 0; padding: 20px;">
@@ -154,7 +154,8 @@
     </v-row>
     <v-row no-gutters id="snap-3" class="section d-flex align-center snap-item">
         <v-col cols="12" class="text-center">
-            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">to <i class="main_accent">design</i>
+            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1"><span class="alt_font">to</span> <i
+                    class="main_accent">design</i>
             </div>
         </v-col>
         <v-col cols="12" class="d-flex justify-end" style="position: absolute; bottom: 0; right: 0; padding: 20px;">
@@ -170,7 +171,8 @@
     </v-row>
     <v-row no-gutters id="snap-3" class="section d-flex align-center snap-item">
         <v-col cols="12" class="text-center">
-            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1">the best <i class="main_accent">ideas</i>
+            <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1"><span class="alt_font">the best</span> <i
+                        class="main_accent">ideas</i>
             </div>
         </v-col>
         <v-col cols="12" class="d-flex justify-end" style="position: absolute; bottom: 0; right: 0; padding: 20px;">

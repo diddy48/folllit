@@ -58,12 +58,12 @@ writing-mode: vertical-lr;
 transform: rotate(180deg);
 z-index: 9999;
 ">
-                
+                <a href="/archive" class="text-decoration-none link">
                     <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h3 text-center alt_font main_accent"
-                        :class="elementClass('taqquiniElement')" xyz="fade delay-2 origin-right left-4 duration-20"><a href="/archive" class="text-decoration-none link">
-                        archive</a>
+                        :class="elementClass('taqquiniElement')" xyz="fade delay-2 origin-right left-4 duration-20">
+                        archive
                     </div>
-                
+                </a>
             </v-col>
         </v-row>
     </div>
