@@ -1,9 +1,16 @@
 <script>export default {
   name: "Footer",
+  data() {
+    return {
+      showDialog: false,
+    };
+  },
   mounted() {
     this.$nextTick(() => {
       this.initializeRepetition();
     });
+
+    this.observeElement();
   },
   methods: {
     initializeRepetition() {
@@ -25,6 +32,21 @@
         el.innerHTML += html;
         counter++;
       }
+    }, observeElement() {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !this.showDialog) {
+              console.log("show dialog");
+              this.showDialog = true; // Show the dialog
+              observer.disconnect(); // Stop observing after showing the dialog
+            }
+          });
+        },
+        { threshold: 0.1 } // Adjust this to control how much of the element must be visible
+      );
+
+      observer.observe(this.$refs.showDialogElement);
     },
   },
 };
@@ -32,56 +54,65 @@
 </script>
 
 <template>
-  <div class="pa-3">
-    <div class="dotted-line my-0"></div>
-  </div>
-  <v-col class="snap-item pa-0" style="background-color: white; overflow-x: hidden;">
-    <v-row class="px-3">
-      <v-col cols="4" class="d-flex flex-column align-start justify-start">
-        <p class="text-subtitle-1 text-md-h4">Valerio Romano</p>
-        <p class="text-subtitle-1 text-md-h4 main_accent font-italic">Designer</p>
-      </v-col>
-      <v-col cols="4" class="d-flex flex-column align-center justify-start">
-        <p class="text-subtitle-1 text-md-h4">Venezia</p>
-      </v-col>
-      <v-col cols="4" class="d-flex flex-column align-end justify-start">
-        <p class="text-subtitle-1 text-md-h4">IG: FOLLLIT</p><!-- 
+  <footer ref="showDialogElement">
+    <div class="pa-3">
+      <div class="dotted-line my-0"></div>
+    </div>
+    <v-col class="snap-item pa-0" style="background-color: white; overflow-x: hidden;">
+      <v-row class="px-3">
+        <v-col cols="4" class="d-flex flex-column align-start justify-start">
+          <p class="text-subtitle-1 text-md-h4">Valerio Romano</p>
+          <p class="text-subtitle-1 text-md-h4 main_accent font-italic">Designer</p>
+        </v-col>
+        <v-col cols="4" class="d-flex flex-column align-center justify-start">
+          <p class="text-subtitle-1 text-md-h4">Venezia</p>
+        </v-col>
+        <v-col cols="4" class="d-flex flex-column align-end justify-start">
+          <p class="text-subtitle-1 text-md-h4">IG: FOLLLIT</p><!-- 
         <p class="text-subtitle-1 main_accent">✌️</p> -->
-        <a href="tel:+393338202323" class="text-subtitle-1 text-md-h4 main_accent">+39 333 8202323</a>
-      </v-col>
-    </v-row>
-    <v-spacer style="height: 5px;"></v-spacer><!-- 
+          <a href="tel:+393338202323" class="text-subtitle-1 text-md-h4 main_accent">+39 333 8202323</a>
+        </v-col>
+      </v-row>
+      <v-spacer style="height: 5px;"></v-spacer><!-- 
     <v-row no-gutters>
       <v-col cols="12" class="d-flex flex-column align-center justify-center">
         <a href="mailto:hello@folllit.it"
           class="dynamic-font main_accent text-decoration-none ma-0">hello@folllit.com</a>
       </v-col>
     </v-row> -->
-    <div class="outer">
-      <!-- This div is important! It lets us specify margin-left later on. -->
-      <!-- <v-col cols="12" class="d-flex flex-column align-center justify-center"> -->
-      <div class="loop">
-        <!-- <div class="content"> Make sure you subscribe ✦</div> -->
-        <a href="mailto:hello@folllit.it" class="dynamic-font main_accent text-decoration-none ma-0 content">❧ hello@folllit.com</a>
+      <div class="outer">
+        <!-- This div is important! It lets us specify margin-left later on. -->
+        <!-- <v-col cols="12" class="d-flex flex-column align-center justify-center"> -->
+        <div class="loop">
+          <!-- <div class="content"> Make sure you subscribe ✦</div> -->
+          <a href="mailto:hello@folllit.it" class="dynamic-font main_accent text-decoration-none ma-0 content">❧
+            hello@folllit.com</a>
+        </div>
+        <!-- </v-col> -->
       </div>
-      <!-- </v-col> -->
-    </div>
 
-    <v-row no-gutters>
-      <v-col cols="8" offset="2" class="d-flex flex-column align-center text-center justify-end">
-        <p class="text-subtitle-1 text-md-h5">Designed and developed by</p><!-- 
+      <v-row no-gutters>
+        <v-col cols="8" offset="2" class="d-flex flex-column align-center text-center justify-end">
+          <p class="text-subtitle-1 text-md-h5">Designed and developed by</p><!-- 
         <p class="text-subtitle-1 font-italic main_accent">folllit</p> -->
-        <img class="mt-1" width="70vw" src="assets/logo/orizzontale.png" />
-        <p class="text-subtitle-1 text-md-h5">&</p>
-        <p class="text-subtitle-1 text-md-h5 font-italic main_accent">Gabriele Romano</p>
-        <p class="text-subtitle-2 text-md-h5">folllit © 2024 Tutti i diritti riservati.</p>
-      </v-col>
+          <img class="mt-1" width="70vw" src="assets/logo/orizzontale.png" />
+          <p class="text-subtitle-1 text-md-h5">&</p>
+          <p class="text-subtitle-1 text-md-h5 font-italic main_accent">Gabriele Romano</p>
+          <p class="text-subtitle-2 text-md-h5">folllit © 2024 Tutti i diritti riservati.</p>
+        </v-col>
 
-      <v-col cols="4" class="d-flex flex-column align-end justify-end">
-      </v-col>
-    </v-row>
+        <v-col cols="4" class="d-flex flex-column align-end justify-end">
+        </v-col>
+      </v-row>
 
-  </v-col>
+    </v-col>
+  </footer>
+  <DialogWebsiteReady :visible="showDialog" title="Just a quick info" success="Understood"
+    @update:visible="showDialog = $event" @accept="{}">
+    <p>The complete
+      website will be ready
+      on October 2025</p>
+  </DialogWebsiteReady>
 
 </template>
 <style scoped>

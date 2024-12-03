@@ -79,7 +79,7 @@
                     </v-col> -->
                     <v-col cols="12" class="d-flex justify-end"
                         style="position: absolute; bottom: 0; right: 0; padding: 0px;">
-                        <a href="assets/file/resume.pdf"><img style="" src="assets/gif/get_in_touch.gif" class="bollino"
+                        <a href="file/resume.pdf"><img style="" src="assets/gif/get_in_touch.gif" class="bollino"
                                 target="_blank" alt="logo circle" /></a>
                     </v-col>
                 </v-row>
@@ -165,14 +165,15 @@
     </v-row>
     <v-row no-gutters id="snap-1" class="section snap-item">
         <v-col cols="12" class="text-center ">
-            <img src="~/assets/img/_W4A0594-l-immenso-acquitrino-celeste.jpg"
-                style="height: 100vh; width: 100%; object-fit: cover;" />
+            <!-- <img src="~/assets/img/_W4A0594-l-immenso-acquitrino-celeste.jpg"
+                style="height: 100vh; width: 100%; object-fit: cover;" /> -->
+            <Carousel :carousel-img="carouselImg1" />
         </v-col>
     </v-row>
     <v-row no-gutters id="snap-3" class="section d-flex align-center snap-item">
         <v-col cols="12" class="text-center">
             <div class="text-h4 text-sm-h3 text-md-h2 text-lg-h1"><span class="alt_font">the best</span> <i
-                        class="main_accent">ideas</i>
+                    class="main_accent">ideas</i>
             </div>
         </v-col>
         <v-col cols="12" class="d-flex justify-end" style="position: absolute; bottom: 0; right: 0; padding: 20px;">
@@ -181,10 +182,11 @@
         </v-col>
     </v-row>
     <v-row no-gutters id="snap-1" class="section snap-item">
-        <v-col cols="12" class="d-flex justify-center align-center">
-            <img src="~/assets/img/_W4A3479.jpg" style="height: 100vh; width: 100%; object-fit: cover;" />
+        <v-col cols="12" class="d-flex justify-center align-center"><!-- 
+            <img src="~/assets/img/_W4A3479.jpg" style="height: 100vh; width: 100%; object-fit: cover;" /> -->
+            <Carousel :carousel-img="carouselImg2" />
         </v-col>
-    </v-row>
+    </v-row><!-- 
     <v-row no-gutters id="snap-1" class="section justify-center snap-item" style="background-color: rgb(255, 91, 0);">
         <v-col cols="12" class="d-flex justify-center align-center ">
             <div class="text-h1 font-italic text-center" style="line-height: 1.2; color: white;">The complete
@@ -192,11 +194,11 @@
                 on October 2025
             </div>
         </v-col>
-    </v-row>
-
+    </v-row> -->
 </template>
 
 <script>
+import Dialog from './DialogWebsiteReady.vue';
 import WonderTaqquini from './WonderTaqquini.vue';
 
 /* import 'animate.css'; */
@@ -206,6 +208,8 @@ export default {
             isGraphicVisible: false,
             isEditorialVisible: false,
             isUpcyclingVisible: false,
+            carouselImg1: ["/img/_DSF0606.jpg", "/img/_W4A0540.jpg", "/img/_W4A1018.jpg", "/img/_W4A1226.jpg", "/img/_W4A1259.jpg", "/img/_W4A1309.jpg"],
+            carouselImg2: ['/img/_W4A0591-l-immenso-acquitrino-celeste.jpg', "/img/_W4A3428.jpg", "/img/1-01.jpg", "/img/12.jpg", "/img/Tavola_disegno_1-100.jpg"],
         };
     },
     mounted() {
@@ -220,6 +224,8 @@ export default {
         setTimeout(() => {
             this.isUpcyclingVisible = true; // Activate "upcycling" after 12 seconds
         }, 3000);
+    },
+    methods: {
     },
 };
 </script>

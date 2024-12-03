@@ -22,6 +22,7 @@
     "tslint": "^5.20.1",
     "vite-plugin-vuetify": "^2.0.4",
     "vue": "latest",
+    "vue-lazyload": "^3.0.0",
     "vue-router": "latest",
     "vuetify": "^3.7.4"
   },

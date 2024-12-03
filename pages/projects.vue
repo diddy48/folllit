@@ -1,6 +1,6 @@
 <template>
     <AppHeader />
-    Projects
+    <v-spacer style="height: 18vh;"></v-spacer>
     <AppFooter />
 </template>
 <script scoped>

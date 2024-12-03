@@ -4,26 +4,27 @@
   </div> -->
 
   <v-app>
-    <transition name="fade">
-      <div v-show="!unlocked">
-        <div class="splash">
-          <video autoplay muted playsinline class="splash_video" style="
+    <div class="splash">
+      <video autoplay muted playsinline class="splash_video" style="
   position: absolute;
   top: 0;
   left: 0;" @ended="onSplashEnded">
-            <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/mov; codecs="hvc1"'> -->
-            <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'> -->
+        <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/mov; codecs="hvc1"'> -->
+        <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'> -->
 
-            <source src="~/assets/video/load_ext_shadow.webm" type="video/webm">
-            <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'>
+        <source src="~/assets/video/load_ext_shadow.webm" type="video/webm">
+        <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'>
 
-            <!-- <source src="~/assets/video/load_ext_shadow-1.webm" type="video/webm"> 
+        <!-- <source src="~/assets/video/load_ext_shadow-1.webm" type="video/webm"> 
       <source src="~/assets/video/load_ext_shadow-1.mov" type='video/quicktime; codecs="hevc"'> -->
 
-            <!-- ffmpeg -i .\l.mov -c:v libvpx -quality good -cpu-used 0 -b:v 7000k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1500k -threads 8 -vf scale=-1:1080 -c:a libvorbis -b:a 192k -auto-alt-ref 0 -f webm l.webm -->
-            <!-- <source src="https://rotato.netlify.app/alpha-demo/movie-webm.webm" type="video/webm"> -->
-          </video>
-        </div>
+        <!-- ffmpeg -i .\l.mov -c:v libvpx -quality good -cpu-used 0 -b:v 7000k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1500k -threads 8 -vf scale=-1:1080 -c:a libvorbis -b:a 192k -auto-alt-ref 0 -f webm l.webm -->
+        <!-- <source src="https://rotato.netlify.app/alpha-demo/movie-webm.webm" type="video/webm"> -->
+      </video>
+    </div>
+    <transition name="fade">
+      <div v-show="!unlocked">
+
         <div class="unlocker">
           <div class="game-container">
             <canvas ref="canvas" @mousedown="startDrawing" @mousemove="draw" @mouseup="stopDrawing"
@@ -37,43 +38,43 @@
             <div
               :style="{ backgroundImage: `url(${randomImage})`, /* backgroundRepeat: `repeat-x` */backgroundSize: `cover` }"
               class="home_logo img-fluid" rel="preload"></div>
-            
-              <svg class="mask-container" width="10vw" height="10dvh">
-                <!-- Define SVG mask -->
-                <mask id="eye-mask">
-                  <text x="20px" y="10svh" fill="white" class="text-h3 text-md-h2 text-lg-h1">folllit</text>
-                  <text x="20px" y="95svh" fill="white" class="text-h4 text-md-h2 text-lg-h1">draw a smile to
-                    unlock</text>
 
-                  <!-- Desktop circles -->
-                  <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye"
-                    ref="mobileEyeSx" />
-                  <circle v-else-if="deviceType === 'tablet'" cx="33%" cy="42%" r="15%" fill="white" class="tablet-eye"
-                    ref="tabletEyeSx" />
-                  <circle v-else cx="35%" cy="42%" r="14%" fill="white" class="desktop-eye" ref="desktopEyeSx" />
+            <svg class="mask-container" width="10vw" height="10dvh">
+              <!-- Define SVG mask -->
+              <mask id="eye-mask">
+                <text x="20px" y="10svh" fill="white" class="text-h3 text-md-h2 text-lg-h1">folllit</text>
+                <text x="20px" y="95svh" fill="white" class="text-h4 text-md-h2 text-lg-h1">draw a smile to
+                  unlock</text>
 
-                  <circle v-if="deviceType === 'mobile'" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye"
-                    ref="mobileEyeDx" />
-                  <circle v-else-if="deviceType === 'tablet'" cx="67%" cy="42%" r="15%" fill="white" class="tablet-eye"
-                    ref="tabletEyeDx" />
-                  <circle v-else cx="65%" cy="42%" r="14%" fill="white" class="desktop-eye" ref="desktopEyeDx" />
-                  <!-- Mobile circles -->
-                </mask>
+                <!-- Desktop circles -->
+                <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye"
+                  ref="mobileEyeSx" />
+                <circle v-else-if="deviceType === 'tablet'" cx="33%" cy="42%" r="15%" fill="white" class="tablet-eye"
+                  ref="tabletEyeSx" />
+                <circle v-else cx="35%" cy="42%" r="14%" fill="white" class="desktop-eye" ref="desktopEyeSx" />
 
-                <!-- Video with the mask applied -->
+                <circle v-if="deviceType === 'mobile'" cx="70%" cy="40%" r="10%" fill="white" class="mobile-eye"
+                  ref="mobileEyeDx" />
+                <circle v-else-if="deviceType === 'tablet'" cx="67%" cy="42%" r="15%" fill="white" class="tablet-eye"
+                  ref="tabletEyeDx" />
+                <circle v-else cx="65%" cy="42%" r="14%" fill="white" class="desktop-eye" ref="desktopEyeDx" />
+                <!-- Mobile circles -->
+              </mask>
 
-                <!-- <image href="~/assets/img/prova_device.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" mask="url(#eye-mask)"/> -->
-                <foreignObject width="100%" height="100%">
-                  <div class="masked-video" xmlns="http://www.w3.org/1999/xhtml">
-                    <video playsinline autoplay muted loop style="
+              <!-- Video with the mask applied -->
+
+              <!-- <image href="~/assets/img/prova_device.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="image-rendering: crispEdges;" mask="url(#eye-mask)"/> -->
+              <foreignObject width="100%" height="100%">
+                <div class="masked-video" xmlns="http://www.w3.org/1999/xhtml">
+                  <video playsinline autoplay muted loop style="
   position: absolute;
   top: 0;
   left: 0;">
-                      <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
-                    </video>
-                  </div>
-                </foreignObject>
-              </svg>
+                    <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
+                  </video>
+                </div>
+              </foreignObject>
+            </svg>
           </div>
         </div>
       </div>
@@ -142,12 +143,17 @@ export default {
       randomImage: '',// Randomly selected image
       isCanvasReady: false,
       deviceType: 'desktop',
-      unlocked: usePersistedState('unlocked', false)//useState('unlocked', () => false)
+      unlocked: usePersistedState('unlocked', false),//useState('unlocked', () => false)
+      showDialog: false,
     };
   },
   created() {
     // Select a random image as soon as the component is created
     this.selectRandomImage();
+
+    if (this.unlocked == null) {
+      this.unlocked = false;
+    }
   },
   mounted() {
     useSeoMeta({
@@ -453,5 +459,4 @@ canvas {
 }
 
 /* end unlocker */
-
 </style>

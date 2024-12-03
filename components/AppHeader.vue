@@ -1,6 +1,6 @@
 
 <template>
-  <div class="app-header" @click="scrollToTop">
+  <nav class="app-header" @click="scrollToTop">
     <!-- <v-row no-gutters>
       <v-col cols="6" lg="9" class="text-center d-flex px-5 pt-3">
         <div class="text-h3 text-sm-h2 text-md-h1 text-lg-h1">folllit</div>
@@ -29,7 +29,7 @@
     <!-- <div class="px-5 pt-0 pb-5">
       <div class="animated-line "></div>
     </div> -->
-  </div>
+  </nav>
 
 </template>
 

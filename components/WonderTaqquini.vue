@@ -180,14 +180,14 @@ export default {
             const targetElement = this.$refs.taqquiniElement;
             const targetElementM = this.$refs.taqquiniElementM;
             if (!targetElement || !targetElementM) {
-                console.warn("Target element not found for IntersectionObserver.");
+                //console.warn("Target element not found for IntersectionObserver.");
                 return;
             }
             if (targetElement || targetElementM) {
                 const elementObserver = new IntersectionObserver((entries) => {
                     const entry = entries[0];
 
-                        console.log(entry);
+                        //console.log(entry);
                     if (entry.isIntersecting) {
                         // Element is in the viewport, apply fade-in effect
                         this.elementVisibility.taqquiniElement = true;
