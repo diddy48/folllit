@@ -26,8 +26,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/eslint",
     "@nuxt/fonts",
-    /* 
-    'nuxtjs-naive-ui', */
+    "nuxtjs-naive-ui"
     /* '@vueuse/nuxt' */
   ],
   eslint: {

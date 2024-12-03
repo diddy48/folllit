@@ -17,10 +17,10 @@
 
                     <v-col cols="11" class="d-flex justify-start align-center">
 
-                        <div class="text-h4 text-md-h3 alt_font">{{ title }}</div>
+                        <div class="text-h4 text-md-h3">{{ title }}</div>
                     </v-col>
                     <v-col cols="1" class="d-flex justify-end self-align-start">
-                        <button class="close-button" @click="closeDialog">×</button>
+                        <button class="close-button text-h5 text-md-h4" @click="closeDialog">×</button>
                     </v-col>
                 </v-row>
                 <div class="dialog-content">
@@ -30,7 +30,7 @@
 
                     <v-col cols="12" class="d-flex justify-end text-right">
 
-                        <div @click="accept" class="text-h6 text-md-h5" style="cursor: pointer;">{{ success }}</div>
+                        <div @click="accept" class="text-h6 text-md-h5 alt_font" style="cursor: pointer;">{{ success }}</div>
                     </v-col>
                 </v-row>
             </div>
