@@ -9,7 +9,16 @@ export default defineNuxtConfig({
     "@mdi/font/css/materialdesignicons.css",
   ],
   build: {
-    transpile: ["vuetify","@animxyz/core", "@animxyz/vue3", "clsx"],
+    transpile: [
+      "vuetify",
+      "@animxyz/core",
+      "@animxyz/vue3",
+      "clsx",
+      "naive-ui",
+      "vueuc",
+      "@css-render/vue3-ssr",
+      "@juggle/resize-observer",
+    ],
   },
   vite: {
     css: {
@@ -26,7 +35,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/eslint",
     "@nuxt/fonts",
-    "nuxtjs-naive-ui"
+    "nuxtjs-naive-ui",
     /* '@vueuse/nuxt' */
   ],
   eslint: {
