@@ -109,7 +109,7 @@ export default {
     },
     methods: {
         spawnImageAtPosition(x, y, num, duration) {
-            const randomImageIndex = Math.floor(Math.random() * 79) + 1;
+            const randomImageIndex = Math.floor(Math.random() * 40) + 1;
             const imagePath = `/taqquini/${randomImageIndex}.png`;
 
             const img = document.createElement('img');
