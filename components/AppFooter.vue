@@ -97,7 +97,9 @@
         <p class="text-subtitle-1 font-italic main_accent">folllit</p> -->
           <img class="mt-1" width="70vw" src="assets/logo/orizzontale.png" />
           <p class="text-subtitle-1 text-md-h5">&</p>
-          <p class="text-subtitle-1 text-md-h5 font-italic main_accent">Gabriele Romano</p>
+          <p class="text-subtitle-1 text-md-h5 font-italic main_accent"><a
+              href="https://www.linkedin.com/in/gabriele-romano-885870184/" target="_blank" class=" main_accent my_link">Gabriele
+              Romano</a></p>
           <p class="text-subtitle-2 text-md-h5">folllit © 2024 Tutti i diritti riservati.</p>
         </v-col>
 
@@ -116,6 +118,16 @@
 
 </template>
 <style scoped>
+.my_link{
+  text-decoration: none;
+  transition: 1s  ease-in-out;
+}
+.my_link:hover {
+  text-decoration: underline;
+  font-size: 1.3em;
+  transition: 1s  ease-in-out;
+}
+
 /* rolling mail */
 .content {
   padding-left: 0.25em;
