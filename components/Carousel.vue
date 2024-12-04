@@ -69,8 +69,8 @@ export default {
  -->
  <template>
     <n-carousel autoplay :show-dots="true" :draggable="true" :interval="2000" style="height: 100vh;">
-        <img v-for="(img, index) in carouselImg" :key="index" class="carousel-img" v-lazy="img" :alt="'Image ' + index" /> 
-        <!-- <img v-for="(img, index) in carouselImg" :key="index" class="carousel-img" :src="img" :alt="'Image ' + index" /> -->
+        <!-- <img v-for="(img, index) in carouselImg" :key="index" class="carousel-img" v-lazy="img" :alt="'Image ' + index" />  -->
+        <img v-for="(img, index) in carouselImg" :key="index" class="carousel-img" :src="img" :alt="'Image ' + index" />
     </n-carousel>
 
     <!-- <v-carousel height="100svh" :show-arrows="false" cycle :hide-delimiter="true" :hide-delimiter-background="true" :touch="true">
