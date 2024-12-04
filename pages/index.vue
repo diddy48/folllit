@@ -3,25 +3,25 @@
     {{ unlocked }}
   </div> -->
 
-  <v-app>
+  <v-app><!-- 
     <div class="splash">
       <video autoplay muted playsinline class="splash_video" style="
   position: absolute;
   top: 0;
   left: 0;" @ended="onSplashEnded">
+        <source src="~/assets/video/load_ext_shadow.webm" type="video/webm">
+        <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'> -->
         <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/mov; codecs="hvc1"'> -->
         <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'> -->
 
-        <source src="~/assets/video/load_ext_shadow.webm" type="video/webm">
-        <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'>
 
         <!-- <source src="~/assets/video/load_ext_shadow-1.webm" type="video/webm"> 
       <source src="~/assets/video/load_ext_shadow-1.mov" type='video/quicktime; codecs="hevc"'> -->
 
         <!-- ffmpeg -i .\l.mov -c:v libvpx -quality good -cpu-used 0 -b:v 7000k -qmin 10 -qmax 42 -maxrate 500k -bufsize 1500k -threads 8 -vf scale=-1:1080 -c:a libvorbis -b:a 192k -auto-alt-ref 0 -f webm l.webm -->
         <!-- <source src="https://rotato.netlify.app/alpha-demo/movie-webm.webm" type="video/webm"> -->
-      </video>
-    </div>
+     <!--  </video>
+    </div> -->
     <transition name="fade">
       <div v-show="!unlocked">
 

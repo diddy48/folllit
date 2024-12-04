@@ -83,11 +83,19 @@ export default {
 
 
 
-<script>
+<script setup>
 import { defineComponent } from 'vue';
 import { NCarousel } from 'naive-ui';
 
-export default defineComponent({
+// Props declaration for the carousel images
+defineProps({
+    carouselImg: {
+        type: Array,
+        required: true,
+    },
+});
+
+/* export default defineComponent({
     props: {
         carouselImg: {
             type: Array,
@@ -97,7 +105,8 @@ export default defineComponent({
     components: {
         NCarousel,
     },
-});
+}); */
+
 </script>
 
 <style scoped>
