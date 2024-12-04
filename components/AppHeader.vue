@@ -15,15 +15,17 @@
     <div class="header">
       <div class="left">
         <a href="/" class="text-h3 text-sm-h2 text-md-h1 text-lg-h1 text-decoration-none main_accent"
-          >folllit</a>
-      </div>
+          >folllit</a> 
+        </div>
       <!-- Right-aligned text -->
       <div class="right">
         <a href="/projects"
           class="text-h5 text-sm-h4 text-md-h3 text-lg-h3 alt_font text-decoration-none main_accent link"
           :class="{ active: isActive('/projects') }">projects</a>
+         
         <a href="/about" class="text-h5 text-sm-h4 text-md-h3 text-lg-h3 alt_font text-decoration-none main_accent link"
           :class="{ active: isActive('/about') }">about</a>
+          
       </div>
     </div>
     <!-- <div class="px-5 pt-0 pb-5">

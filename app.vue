@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -12,16 +11,27 @@ useHead({
   }
 })
 
-/* useSeoMeta({
-  ogImage: 'https://landing-template.nuxt.dev/social-card.png',
-  twitterImage: 'https://landing-template.nuxt.dev/social-card.png',
-  twitterCard: 'summary_large_image'
-}) */
+// Optional: Clear session storage on page refresh or first load
+if (process.client) {
+  const handlePageRefresh = () => {
+    // Uncomment if you want to reset first visit on page refresh
+    // sessionStorage.removeItem('first-visit');
+
+    // Optional: Clear unlocked state on page refresh
+    // sessionStorage.removeItem('unlocked');
+  };
+
+  window.addEventListener('load', handlePageRefresh);
+}
 </script>
 
 <template>
-  <NuxtPage />
+  <NuxtPage :transition="{
+    name: 'fade',
+    mode: 'out-in'
+  }" />
 </template>
+
 
 <style>
   html,body {/* 
@@ -147,5 +157,17 @@ useHead({
 
 .blend-text {
   mix-blend-mode: overlay;
+}
+
+/* transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.8s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
 }
 </style>

@@ -51,8 +51,7 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: "en",
-      } /* 
-      link: [{ rel: 'icon', type: 'image/png', href: 'favicon_small.png' }], */,
+      },
       link: [
         { rel: "icon", type: "image/png", href: "icon/favicon.ico" },
         {
