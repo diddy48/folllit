@@ -79,8 +79,9 @@
                     </v-col> -->
                     <v-col cols="12" class="d-flex justify-end"
                         style="position: absolute; bottom: 0; right: 0; padding: 0px;">
-                        <a href="file/resume.pdf"><img style="" src="assets/gif/get_in_touch.gif" class="bollino"
-                                target="_blank" alt="logo circle" /></a>
+                        <!--  <a href="file/resume.pdf"><img style="" src="assets/gif/get_in_touch.gif" class="bollino"alt="logo circle" /></a> -->
+                        <a href="mailto:hello@folllit.it"><img style="" src="assets/gif/get_in_touch.gif"
+                                class="bollino" alt="logo circle" /></a>
                     </v-col>
                 </v-row>
             </v-container>
