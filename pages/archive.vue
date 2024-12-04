@@ -65,7 +65,6 @@ export default {
 }
 </style>
 <template>
-<template>
         <AppHeader /><!-- 
     <v-spacer style="height: 20vh;"></v-spacer> -->
         <div class="pa-5 d-flex align-end" style="height:20vh;">
@@ -109,7 +108,6 @@ export default {
                 :photo="item.photo" />
         </v-row>
         <AppFooter />
-    </template>
 </template>
 
 <style scoped></style>

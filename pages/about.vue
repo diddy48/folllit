@@ -1,5 +1,4 @@
 <template>
-    <template>
         <AppHeader />
         <div>
             <v-row no-gutters id="snap-1" class="section ">
@@ -67,7 +66,6 @@ position: absolute; left: 0px; bottom: 20px;">Do you like Interstellar?
             </v-row>
         </div>
         <AppFooter />
-    </template>
 </template>
 
     <script setup>

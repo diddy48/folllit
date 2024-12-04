@@ -1,9 +1,7 @@
 <template>
-    <template>
         <AppHeader />
         <v-spacer style="height: 18vh;"></v-spacer>
         <AppFooter />
-    </template>
 </template>
     <script setup>
 import AppFooter from '~/components/AppFooter.vue';

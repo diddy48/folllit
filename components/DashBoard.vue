@@ -208,8 +208,8 @@ export default {
             isGraphicVisible: false,
             isEditorialVisible: false,
             isUpcyclingVisible: false,
-            carouselImg1: ["/img/car1/1_a.webp", "/img/car1/1_b.webp", "/img/car1/1_c.webp", "/img/car1/1_d.webp", "/img/car1/1_e.webp", "/img/car1/1_f.webp", "/img/car1/1_g.webp", "/img/car1/1_h.webp", "/img/car1/1_i.webp", "/img/car1/h.webp",],
-            carouselImg2: ["/img/car2/2_a.webp", "/img/car2/2_b.webp", "/img/car2/2_c.webp", "/img/car2/2_d.webp", "/img/car2/2_e.webp", "/img/car2/2_f.webp", "/img/car2/2_g.webp", "/img/car2/2_h.webp", "/img/car2/2_i.webp"],
+            carouselImg1: ["/img/car1/1_a.webp", "/img/car1/1_b.webp", "/img/car1/1_c.webp", "/img/car1/1_d.webp", "/img/car1/1_e.webp", "/img/car1/1_f.webp", "/img/car1/1_g.webp", "/img/car1/h.webp",],
+            carouselImg2: ["/img/car2/2_a.webp", "/img/car2/2_b.webp", "/img/car2/2_d.webp", "/img/car2/2_e.webp", "/img/car2/2_f.webp", "/img/car2/2_g.webp", "/img/car2/2_h.webp"],
         };
     },
     mounted() {
