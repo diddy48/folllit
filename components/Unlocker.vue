@@ -169,7 +169,10 @@ export default {
         },
         checkDrawing() {
             if (this.isSmileDetected()) {
+                setTimeout(() => {
                 this.startSVGAnimation();
+                this.clearCanvas();
+                }, 500);
 
                 // Optional: Add a slight delay before emitting unlocked event
                 setTimeout(() => {

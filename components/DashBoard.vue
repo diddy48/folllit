@@ -147,7 +147,7 @@
         <v-col cols="12" class="text-center ">
             <video playsinline autoplay muted loop style="width: 100%; height: 100vh;"><!-- 
                 <source src="~/assets/video/3_4.mov" type="video/mov" /> -->
-                <source src="~/assets/video/3_4.webm" type="video/webm" />
+                <source src="~/assets/video/3_4_b.mp4" type="video/mp4" />
             </video>
 
         </v-col>
@@ -208,8 +208,8 @@ export default {
             isGraphicVisible: false,
             isEditorialVisible: false,
             isUpcyclingVisible: false,
-            carouselImg1: ["/img/_DSF0606.jpg", "/img/_W4A0540.jpg", "/img/_W4A1018.jpg", "/img/_W4A1226.jpg", "/img/_W4A1259.jpg", "/img/_W4A1309.jpg"],
-            carouselImg2: ['/img/_W4A0591-l-immenso-acquitrino-celeste.jpg', "/img/_W4A3428.jpg", "/img/1-01.jpg", "/img/12.jpg", "/img/Tavola_disegno_1-100.jpg"],
+            carouselImg1: ["/img/car1/1_a.webp", "/img/car1/1_b.webp", "/img/car1/1_c.webp", "/img/car1/1_d.webp", "/img/car1/1_e.webp", "/img/car1/1_f.webp", "/img/car1/1_g.webp", "/img/car1/1_h.webp", "/img/car1/1_i.webp", "/img/car1/h.webp",],
+            carouselImg2: ["/img/car2/2_a.webp", "/img/car2/2_b.webp", "/img/car2/2_c.webp", "/img/car2/2_d.webp", "/img/car2/2_e.webp", "/img/car2/2_f.webp", "/img/car2/2_g.webp", "/img/car2/2_h.webp", "/img/car2/2_i.webp"],
         };
     },
     mounted() {

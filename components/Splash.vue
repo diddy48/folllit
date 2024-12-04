@@ -2,7 +2,7 @@
     <div class="splash">
         <video ref="splashVideo" autoplay muted playsinline class="splash_video" @ended="onSplashEnded">
             <source src="~/assets/video/load_ext_shadow.webm" type="video/webm">
-            <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'>
+            <!-- <source src="~/assets/video/load_ext_shadow.mov" type='video/quicktime; codecs="hevc"'> -->
         </video>
     </div>
 </template>
