@@ -20,12 +20,6 @@ export default defineNuxtConfig({
       "@juggle/resize-observer",
     ],
   },
-  cloudinary: {
-    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-    uploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET,
-    apiKey: process.env.CLOUDINARY_API_KEY,
-    analytics: true,
-  },
   vite: {
     css: {
       preprocessorOptions: {
@@ -38,19 +32,8 @@ export default defineNuxtConfig({
   //server side rendering
   ssr: true,
 
-  image: {
-   /*  cloudinary: {
-      baseURL: "https://res.cloudinary.com/dlloyc6dj/image/upload/",
-    }, */
-  },
-
-  modules: [
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "nuxtjs-naive-ui",
-    /* '@vueuse/nuxt' */ "@nuxt/image",
-    "@nuxtjs/cloudinary",
-  ],
+  modules: ["@nuxt/eslint", "@nuxt/fonts", "nuxtjs-naive-ui"
+  /* '@vueuse/nuxt' */, "@nuxt/image"],
   eslint: {
     config: {
       stylistic: {
