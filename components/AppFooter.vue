@@ -55,51 +55,8 @@
 
 <template>
   <footer ref="showDialogElement" style="background-color: rgb(255, 91, 0);" class="snap-item">
-    <!-- <div class="pa-3">
-      <div class="dotted-line my-0"></div>
-    </div>
-    <v-col class="snap-item pa-0" style="background-color: white; overflow-x: hidden;">
-      <v-row class="px-3">
-        <v-col cols="4" class="d-flex flex-column align-start justify-start">
-          <p class="text-subtitle-1 text-md-h4">Valerio Romano</p>
-          <p class="text-subtitle-1 text-md-h4 main_accent font-italic">Designer</p>
-        </v-col>
-        <v-col cols="4" class="d-flex flex-column align-center justify-start">
-          <p class="text-subtitle-1 text-md-h4">Venezia</p>
-        </v-col>
-        <v-col cols="4" class="d-flex flex-column align-end justify-start">
-          <p class="text-subtitle-1 text-md-h4">IG: FOLLLIT</p>
-          <a href="tel:+393338202323" class="text-subtitle-1 text-md-h4 main_accent">+39 333 8202323</a>
-        </v-col>
-      </v-row>
-      <v-spacer style="height: 5px;"></v-spacer>
-      <div class="outer">
-        <div class="loop">
-          <a href="mailto:hello@folllit.it" class="dynamic-font main_accent text-decoration-none ma-0 content">❧
-            hello@folllit.com</a>
-        </div>
-      </div>
-
-      <v-row no-gutters>
-        <v-col cols="8" offset="2" class="d-flex flex-column align-center text-center justify-end">
-          <p class="text-subtitle-1 text-md-h5">Designed and developed by</p>
-          <img class="mt-1" width="70vw" src="assets/logo/orizzontale.png" />
-          <p class="text-subtitle-1 text-md-h5">&</p>
-          <p class="text-subtitle-1 text-md-h5 font-italic main_accent"><a
-              href="https://www.linkedin.com/in/gabriele-romano-885870184/" target="_blank" class=" main_accent my_link">Gabriele
-              Romano</a></p>
-          <p class="text-subtitle-2 text-md-h5">folllit © 2024 Tutti i diritti riservati.</p>
-        </v-col>
-
-        <v-col cols="4" class="d-flex flex-column align-end justify-end">
-        </v-col>
-      </v-row>
-
-    </v-col> -->
+   
     <v-col cols="12" class="pa-5 justify-center text-white">
-      <!--  <div class="pa-3">
-        <div class="my-0"></div>
-      </div> -->
       <v-row>
         <v-col cols="12">
           <div class="line1 mt-5"></div>
@@ -199,16 +156,17 @@ hr {
 }
 
 .line3 {
+  
   display: block;
-    height: 2pt;
     border: 0;
-    border-top: 3pt dashed white;
+    border-top: 2pt dashed white;
+
 }
 
 .line4 {
   display: block;
   border: 0;
-  border-top: 4pt dotted white;
+  border-top: 2pt dotted white;
 }
 
 
@@ -267,7 +225,7 @@ hr {
 
 
 .dotted-line {
-  border-bottom: 2px dashed rgb(155, 151, 148);
+  border-bottom: 3px dashed rgb(155, 151, 148);
   /* Creates a dotted line */
 
   /* border-bottom: 10px dotted rebeccapurple; */

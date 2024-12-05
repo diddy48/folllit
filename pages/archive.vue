@@ -8,7 +8,7 @@ export default {
     data() {
         return {
             data: [],
-            loading: false,
+            loading: true,
             error: null,
         }
     },
@@ -65,12 +65,13 @@ export default {
 }
 </style>
 <template>
+    <div>
         <AppHeader /><!-- 
     <v-spacer style="height: 20vh;"></v-spacer> -->
-        <div class="pa-5 d-flex align-end" style="height:20vh;">
+        <div class="pa-5 d-flex align-end" style="height:20vh; transition: 1s ease-in-out;">
             <div class="animated-line "></div>
         </div>
-        <v-row no-gutters id="snap-1" class="d-flex align-end justify-center px-5">
+        <v-row no-gutters id="snap-1" class="d-flex align-end justify-center px-5" style=" transition: 1s ease-in-out;">
             <v-col cols="12" class="text-left d-flex">
                 <div class="text-h3 text-sm-h2 text-md-h1 text-lg-h1 blend-text title">
                     <span class="alt_font">Archive</span>
@@ -90,24 +91,25 @@ export default {
             </v-col>
         </v-row><!-- 
     <v-spacer style="height: 20vh;"></v-spacer> -->
-        <div class="pa-5 " style="height:20vh;">
+        <div class="pa-5 " style="height:20vh;  transition: 1s ease-in-out;">
             <div class="animated-line "></div>
         </div>
         <v-row class=" px-5" no-gutters>
-            <!-- <v-col cols="12" class="text-center">
+            <v-row v-if="loading" style="height: 60vh;">
+                <v-col cols="12" class="text-center">
+                    <p class="text-h4 text-md-h3">Just wait a second...</p>
+                </v-col>
+            </v-row>
+            <v-row v-if="error">
+                <v-col cols="12" class="text-center">
+                    <p class="text-h4 text-md-h3">Ops...An unexptected error</p>
+                </v-col>
+            </v-row>
 
-                <h1>Firestore Data</h1>
-                <ul>
-                    <li v-for="item in data" :key="item.id">{{ item }}</li>
-                </ul>
-                <p v-if="loading">Loading...</p>
-                <p v-if="error">{{ error }}</p>
-          
-            </v-col>   -->
             <TaqquinoCard v-for="item in data" :key="item.id" :name="item.name" :info="item.info" :date="item.date"
                 :photo="item.photo" />
         </v-row>
         <AppFooter />
+    </div>
 </template>
 
-<style scoped></style>

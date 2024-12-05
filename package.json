@@ -15,6 +15,7 @@
     "@animxyz/vue3": "latest",
     "@mdi/font": "^7.4.47",
     "@nuxt/fonts": "^0.10.2",
+    "@nuxt/image": "^1.8.1",
     "animate.css": "^4.1.1",
     "css-render": "^0.15.14",
     "dotenv": "^16.4.5",

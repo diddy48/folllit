@@ -1,8 +1,10 @@
 <template>
     <v-col cols="12" md="3" class="mx-1 mb-10">
 
-        <div class="taqquini-card" height="60vh">
-            <img src="/assets/taqquini/2.png" :alt="photo" class="taqquini-card__photo bg-black">
+        <div class="taqquini-card" height="60vh"><!-- 
+            <img :src="getPhoto(photo)" :alt="photo" class="taqquini-card__photo bg-black"> -->
+            <nuxt-img :src="photo ? `/taqquini/${photo}` : '/taqquini/2.webp'" :alt=" photo"
+                class="taqquini-card__photo bg-black" />
 
             <div class="text-h6 alt_font">{{ date }}</div>
             <div class="text-h4">{{ name }}</div>

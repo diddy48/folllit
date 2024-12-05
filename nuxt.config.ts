@@ -31,13 +31,12 @@ export default defineNuxtConfig({
   },
   //server side rendering
   ssr: true,
+  image: {
+    dir: 'assets'
+  },
 
-  modules: [
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "nuxtjs-naive-ui",
-    /* '@vueuse/nuxt' */
-  ],
+  modules: ["@nuxt/eslint", "@nuxt/fonts", "nuxtjs-naive-ui"
+  /* '@vueuse/nuxt' */, "@nuxt/image"],
   eslint: {
     config: {
       stylistic: {
