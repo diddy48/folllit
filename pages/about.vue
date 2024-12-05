@@ -8,7 +8,7 @@
                     <!-- <img src="assets/img/righe1.jpg" style="height: 90vh; width: 100%; object-fit: cover;" /> -->
                     <!-- <nuxt-img provider="cloudinary" src="/img/car1/1_a_xube72.webp"
                         style="height: 90vh; width: 100%; object-fit: cover;" /> -->
-                    <CldImage src="cld-sample-5" width="987" height="987" alt="My Awesome Image" />
+                    <!-- <CldImage src="cld-sample-5" width="987" height="987" alt="My Awesome Image" /> -->
 
                     <v-container class="fill-height overlay-text pa-5" fluid>
                         <v-row no-gutters class="d-flex align-center" style="height: 20vh;">
