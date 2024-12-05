@@ -22,7 +22,8 @@ export default {
             showUnlocker: false
         }
     },
-    mounted() {
+    created() {
+        // Use created for server-side operations
         definePageMeta({
             title: 'Home',
             meta: [
@@ -32,6 +33,8 @@ export default {
                 }
             ],
         });
+    },
+    mounted() {
         // Use mounted instead of created for client-side operations
         this.initializePageAccess()
     },
