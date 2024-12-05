@@ -1,19 +1,10 @@
 <script setup lang="ts">
-/* definePageMeta({
-  title: 'Home',
-  meta: [
-    {
-      name: "I am a designer with an artisanal approach, mixing editorial and upcycling.",
-      content: "Home page"
-    }
-  ],
-}); */
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico', crossorigin: 'use-credentials' }
+    { rel: 'icon', href: '/favicon.ico' }
   ],
   htmlAttrs: {
     lang: 'en'
