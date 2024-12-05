@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({
+/* definePageMeta({
   title: 'Home',
   meta: [
     {
@@ -7,7 +7,7 @@ definePageMeta({
       content: "Home page"
     }
   ],
-});
+}); */
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }

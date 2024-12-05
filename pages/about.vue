@@ -5,16 +5,12 @@
             <v-row no-gutters id="snap-1" class="section ">
                 <v-col cols="12" class="d-flex justify-center align-start" style="position: relative;">
                     <!-- Image -->
-                    <img src="assets/img/righe1.jpg" style="height: 90vh; width: 100%; object-fit: cover;" />
+                    <!-- <img src="assets/img/righe1.jpg" style="height: 90vh; width: 100%; object-fit: cover;" /> -->
+                    <!-- <nuxt-img provider="cloudinary" src="/img/car1/1_a_xube72.webp"
+                        style="height: 90vh; width: 100%; object-fit: cover;" /> -->
+                    <CldImage src="cld-sample-5" width="987" height="987" alt="My Awesome Image" />
 
-                    <!-- <v-row no-gutters class="circles-container">
-                <v-col cols="6" class="d-flex justify-center align-start">
-                    <div class="background_accent circle1 circles"></div>
-                </v-col>
-                <v-col cols="6" class="d-flex justify-center align-start">
-                    <div class="background_accent circle2 circles"></div>
-                </v-col>
-            </v-row> --><v-container class="fill-height overlay-text pa-5" fluid>
+                    <v-container class="fill-height overlay-text pa-5" fluid>
                         <v-row no-gutters class="d-flex align-center" style="height: 20vh;">
                             <v-col cols="12" class="d-flex justify-center align-center">
                                 <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-center">While waiting you can
