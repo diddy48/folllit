@@ -23,6 +23,15 @@ export default {
         }
     },
     mounted() {
+        definePageMeta({
+            title: 'Home',
+            meta: [
+                {
+                    name: "I am a designer with an artisanal approach, mixing editorial and upcycling.",
+                    content: "Home page"
+                }
+            ],
+        });
         // Use mounted instead of created for client-side operations
         this.initializePageAccess()
     },
