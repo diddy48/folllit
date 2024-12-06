@@ -3,7 +3,7 @@
 
         <div class="taqquini-card" height="60vh"><!-- 
             <img :src="getPhoto(photo)" :alt="photo" class="taqquini-card__photo bg-black"> -->
-            <nuxt-img :src="photo ? `/projects/taqquini/${photo}` : '/projects/taqquini/2.webp'" :alt=" photo"
+            <nuxt-img provider="cloudinary" :src="photo ? `${photo}` : '/assets/basic_taqquino.webp'" :alt=" photo"
                 class="taqquini-card__photo bg-black" />
 
             <div class="text-h6 alt_font">{{ date }}</div>

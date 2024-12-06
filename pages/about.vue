@@ -6,7 +6,6 @@
                 <v-col cols="12" class="d-flex justify-center align-start" style="position: relative;">
                     <!-- Image -->
                     <img src="assets/img/righe1.jpg" style="height: 90vh; width: 100%; object-fit: cover;" />
-
                     <!-- <v-row no-gutters class="circles-container">
                 <v-col cols="6" class="d-flex justify-center align-start">
                     <div class="background_accent circle1 circles"></div>

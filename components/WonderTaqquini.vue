@@ -83,7 +83,17 @@ export default {
             spawnInterval: null,
             elementVisibility: reactive({
                 taqquiniElement: false // Track visibility of the Taqquini element
-            })
+            }),
+            taqquiniImages : [
+                "10_zjggsa.webp", "11_xpg4hn.webp", "12_wyakna.webp", "13_feasj1.webp", "14_vo8kro.webp",
+                "15_xziben.webp", "16_s13dao.webp", "17_rsmtbx.webp", "18_oq3cp2.webp", "19_zbkyxa.webp",
+                "1_fz6fqm.webp", "20_o09dz8.webp", "21_rwyjvl.webp", "22_fs5va2.webp", "23_zun9wn.webp",
+                "24_zcsfwk.webp", "25_borrul.webp", "26_us2aav.webp", "27_bkgx24.webp", "28_xo89l2.webp",
+                "29_zzucky.webp", "2_jkaeeg.webp", "30_ordp9l.webp", "31_hi7ss6.webp", "32_umfern.webp",
+                "33_u0coxg.webp", "34_xtzx7u.webp", "35_wnagmp.webp", "36_gqe512.webp", "37_y6q0k7.webp",
+                "38_arxk5m.webp", "39_sroqed.webp", "3_sfjopo.webp", "40_sbt3fi.webp", "4_eqskwg.webp",
+                "5_zru242.webp", "6_nmmf7f.webp", "7_iqkxdn.webp", "8_hsz9k4.webp", "9_shr8z7.webp"
+            ]
         };
     },
     props: {

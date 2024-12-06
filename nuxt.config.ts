@@ -32,14 +32,25 @@ export default defineNuxtConfig({
   //server side rendering
   ssr: true,
 
-  modules: ["@nuxt/eslint", "@nuxt/fonts", "nuxtjs-naive-ui"
-  /* '@vueuse/nuxt' */, "@nuxt/image"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "nuxtjs-naive-ui",
+    /* '@vueuse/nuxt' */ "@nuxt/image",
+    "@nuxt/image-edge",
+  ],
   eslint: {
     config: {
       stylistic: {
         commaDangle: "never",
         braceStyle: "1tbs",
       },
+    },
+  },
+  image: {
+    cloudinary: {
+      baseURL:
+        "https://res.cloudinary.com/dlloyc6dj/image/upload/" /* v1733436902 */,
     },
   },
   app: {

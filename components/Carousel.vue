@@ -68,9 +68,11 @@ export default {
 </style>
  -->
  <template>
-    <n-carousel autoplay :show-dots="true" :draggable="false" :interval="2500" style="height: 100vh;">
+    <n-carousel :show-dots="true" :show-arrow="true" :draggable="false" :interval="2500" style="height: 100vh; width: 100vw;">
         <!-- <img v-for="(img, index) in carouselImg" :key="index" class="carousel-img" v-lazy="img" :alt="'Image ' + index" />  -->
-        <img v-for="(img, index) in carouselImg" :key="index" class="carousel-img" :src="img" :alt="'Image ' + index" />
+        <!-- <img v-for="(img, index) in carouselImg" :key="index" class="carousel-img" :src="img" :alt="'Image ' + index" /> -->
+        <nuxt-img provider="cloudinary" v-for="(img, index) in carouselImg" :key="index" :src="img"
+            :alt="'Image ' + index" class="carousel-img" />
     </n-carousel>
 
     <!-- <v-carousel height="100svh" :show-arrows="false" cycle :hide-delimiter="true" :hide-delimiter-background="true" :touch="true">

@@ -148,7 +148,8 @@
         <v-col cols="12" class="text-center ">
             <video playsinline autoplay muted loop style="width: 100%; height: 100vh;"><!-- 
                 <source src="~/assets/video/3_4.mov" type="video/mov" /> -->
-                <source src="~/assets/video/3_4_b.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dlloyc6dj/video/upload/v1733446119/3_4_b_cszwyw.mp4"
+                    type="video/mp4" />
             </video>
 
         </v-col>
@@ -209,9 +210,12 @@ export default {
             isGraphicVisible: false,
             isEditorialVisible: false,
             isUpcyclingVisible: false,
-            carouselImg1: ["/img/car1/1_a.webp", "/img/car1/1_b.webp", "/img/car1/1_c.webp", "/img/car1/1_d.webp", "/img/car1/1_e.webp", "/img/car1/1_f.webp", "/img/car1/1_g.webp", "/img/car1/h.webp",],
+            /* carouselImg1: ["/img/car1/1_a_xube72.webp", "/img/car1/1_b_m2fggu.webp", "/img/car1/1_c.webp", "/img/car1/1_d.webp", "/img/car1/1_e.webp", "/img/car1/1_f.webp", "/img/car1/1_g.webp", "/img/car1/h.webp",],
             carouselImg2: ["/img/car2/2_a.webp", "/img/car2/2_b.webp", "/img/car2/2_d.webp", "/img/car2/2_e.webp", "/img/car2/2_f.webp", "/img/car2/2_g.webp", "/img/car2/2_h.webp"],
-        };
+            */carouselImg1: ["1_a_xube72.webp", "1_b_pjei9q.webp", "1_c_mu26rp.webp", "1_d_m2fggu.webp", "1_e_uakvkl.webp", "1_f_or5j7q.webp", "1_g_ak5gtz.webp", "h_l79hwp.webp",],
+            carouselImg2: ["2_a_ufjxkz.webp", "2_b_oj9ucx.webp", "2_d_kfptwj.webp", "2_e_hfkckg.webp", "2_f_xddod6.webp", "2_g_s2tynm.webp", "2_h_akqp1v.webp"],
+        
+         };
     },
     mounted() {
         setTimeout(() => {
