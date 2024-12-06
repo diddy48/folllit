@@ -111,6 +111,8 @@ export default {
     padding: 20px;
     background-color: rgb(255, 91, 0);
 
+    border: 2pt dashed white;
+
 }
 
 
