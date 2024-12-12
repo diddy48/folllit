@@ -1,13 +1,14 @@
 <template>
     <div class="unlocker">
+            
         <div class="unlocker_content">
             <div :style="{ backgroundImage: `url(${randomImage})`, transition: `background-image 0.5s ease-in-out`, backgroundSize: `cover` }"
                 class="home_logo img-fluid" rel="preload"></div>
 
             <svg class="mask-container" width="10vw" height="10dvh">
                 <mask id="eye-mask">
-                    <text x="20px" y="10svh" fill="white" class="text-h3 text-md-h2 text-lg-h1">folllit</text>
-                    <text x="20px" y="95svh" fill="white" class="text-h4 text-md-h2 text-lg-h1">draw a smile to
+                    <text x="20px" y="10svh" fill="white" class="text-h3 text-md-h2 text-lg-h1 text-non-IOS">folllit</text>
+                    <text x="20px" y="95svh" fill="white" class="text-h4 text-md-h2 text-lg-h1 text-non-IOS">draw a smile to
                         unlock</text>
 
                     <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye"
@@ -36,6 +37,12 @@
         <div class="game-container">
             <canvas ref="canvas" @mousedown="startDrawing" @mousemove="draw" @mouseup="stopDrawing"
                 @touchstart="startDrawing" @touchmove="draw" @touchend="stopDrawing"></canvas>
+        </div>
+        <div class="text_IOS name pa-5">
+            <div class="text-h5 text-sm-h4 text-md-h1 text-center">follit</div>
+        </div>
+        <div class="text_IOS istructions pa-5">
+            <div class="text-h5 text-sm-h4 text-md-h1 text-center">draw a smile to unlock</div>
         </div>
     </div>
 </template>
@@ -72,7 +79,7 @@ export default {
                 'papers/kraft.jpg',
                 'papers/lucido_1.jpg',
                 'papers/lucido_2.jpg',
-                'papers/nero.jpg',
+                //'papers/nero.jpg',
                 'papers/partita_doppia.jpg',
                 'papers/quadretti_rosa.jpg',
                 'papers/quadretti_rosa_2.jpg',
@@ -170,8 +177,8 @@ export default {
         checkDrawing() {
             if (this.isSmileDetected()) {
                 setTimeout(() => {
-                this.startSVGAnimation();
-                this.clearCanvas();
+                    this.startSVGAnimation();
+                    this.clearCanvas();
                 }, 500);
 
                 // Optional: Add a slight delay before emitting unlocked event
@@ -237,6 +244,54 @@ export default {
 </script>
 
 <style scoped>
+@supports (-webkit-touch-callout: none) {
+
+    /* CSS specific to iOS devices */
+    .text_IOS {
+        display: block; 
+        position:absolute;
+    }
+
+    .text_IOS.name {
+        top: 0;
+        left: 0;
+    }
+
+    .text_IOS.istructions {
+        bottom: 0;
+        left: 0;
+    }
+
+    .text-non-IOS {
+        display: none;
+    }
+}
+
+@supports not (-webkit-touch-callout: none) {
+
+    /* CSS for other than iOS devices */
+    .text_IOS {
+        display: none;
+        /* display: block;
+            position: absolute; */
+            
+    }.text_IOS.name {
+        top: 0;
+        left: 0;
+    }
+    
+    .text_IOS.istructions {
+        bottom: 0;
+        left: 0;
+    }
+
+    .text-non-IOS {
+        display: block;
+    }
+
+}
+
+
 .home_logo {
     width: 100%;
     height: 100dvh;

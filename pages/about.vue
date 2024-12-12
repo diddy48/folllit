@@ -1,19 +1,15 @@
 <template>
     <div>
+        <title>folllit - about</title>
+        <meta name="description"
+            content=" I am a graphic designer with an artisanal approach, mixing editorial and upcycling." />
+
         <AppHeader />
-        <div>
+        <!-- <div>
             <v-row no-gutters id="snap-1" class="section ">
                 <v-col cols="12" class="d-flex justify-center align-start" style="position: relative;">
-                    <!-- Image -->
                     <img src="assets/img/righe1.jpg" style="height: 90vh; width: 100%; object-fit: cover;" />
-                    <!-- <v-row no-gutters class="circles-container">
-                <v-col cols="6" class="d-flex justify-center align-start">
-                    <div class="background_accent circle1 circles"></div>
-                </v-col>
-                <v-col cols="6" class="d-flex justify-center align-start">
-                    <div class="background_accent circle2 circles"></div>
-                </v-col>
-            </v-row> --><v-container class="fill-height overlay-text pa-5" fluid>
+                    <v-container class="fill-height overlay-text pa-5" fluid>
                         <v-row no-gutters class="d-flex align-center" style="height: 20vh;">
                             <v-col cols="12" class="d-flex justify-center align-center">
                                 <div class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-center">While waiting you can
@@ -33,9 +29,35 @@
                     </v-col>
                 </v-row>
             </v-row>
+        </div> -->
+        <div>
+            <v-spacer style="height: 20vh;"></v-spacer>
+            <v-row no-gutters class="align-start ">
+                <v-col cols="12" md="4" class="d-flex justify-center align-start pa-5">
+                    <nuxt-img provider="cloudinary" src="valerio_romano_folllit_ritratto_pmbdvp"
+                        alt="profile_picture_valerio_romano" style="
+    width: 100%;
+    height: 60svh;
+    object-fit: cover;" />
+
+                </v-col>
+                <v-col cols="12" md="8" class="d-flex align-start pa-5">
+                    <div class="text-h6 text-sm-h6 text-md-h5 text-lg-h3">
+                        <div class="main_accent text-h4 text-sm-h4 text-md-h3 text-lg-h2 pb-5 alt_font"> Biography</div>
+                        Born in Pordenone in 2001, he currently resides in Padua, where he works as a graphic
+                        designer and studies Communication Design at IUAV University of Venice. He has always been
+                        interested in artisanal craftsmanship and deepens his skills, knowledge, and applications in
+                        this
+                        field through his studies, leading to the creation of the "Taqquini" project. This initiative
+                        aims to
+                        explore the connection between sustainability, craftsmanship, and upcycling, particularly within
+                        the Italian context.
+                    </div>
+                </v-col>
+            </v-row>
         </div>
         <div>
-            <v-row no-gutters id="snap-1" class="sub-section justify-center">
+            <v-row no-gutters class="sub-section justify-center">
                 <v-col cols="12" class="d-flex justify-center align-end ">
                     <div class="text-h3 text-sm-h4 text-md-h2 text-lg-h1 text-center" style="
   transform: rotate(-15deg); "> <i class="main_accent">Follow</i> and
@@ -69,7 +91,7 @@ position: absolute; left: 0px; bottom: 20px;">Do you like Interstellar?
     </div>
 </template>
 
-    <script setup>
+<script setup>
 import AppHeader from "@/components/AppHeader.vue";
 import AppFooter from "@/components/AppFooter.vue";
 

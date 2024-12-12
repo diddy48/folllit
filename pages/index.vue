@@ -1,5 +1,18 @@
 <template>
     <v-app>
+        <title>folllit</title>
+        <meta name="description"
+            content=" I am a graphic designer with an artisanal approach, mixing editorial and upcycling." />
+
+        <!-- <div>
+            Show Splash: {{ showSplash }}
+        </div>
+        <div>
+            Unlocked: {{ unlocked }}
+        </div>
+        <div>
+            ShowUnlocker: {{ showUnlocker }}
+        </div> -->
         <Splash v-if="showSplash" @splash-ended="onSplashEnded" />
         <Unlocker v-if="showUnlocker" @unlocked="onUnlocked" />
 
@@ -11,9 +24,11 @@
             </div>
         </transition>
     </v-app>
-</template>
 
+</template>
 <script>
+import { tr } from 'vuetify/locale';
+
 export default {
     data() {
         return {
@@ -53,6 +68,11 @@ export default {
             } else {
                 // Subsequent visits: check for previous unlock status
                 this.unlocked = sessionStorage.getItem('site-unlocked') === 'true'
+                //console.log('Unlocked:', this.unlocked)
+            }
+            if(visitCount > 0 && !this.unlocked) {
+                this.showUnlocker = true
+                this.showSplash = true
             }
         },
         onSplashEnded() {
@@ -71,13 +91,4 @@ export default {
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-    /* transition: opacity 0.8s ease-in-out; */
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    /* opacity: 0; */
-}
 </style>

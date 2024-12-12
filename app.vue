@@ -50,6 +50,7 @@ if (process.client) {
 
   .alt_font{
     font-family: 'Inter', sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;/* fix for Chrome */
     font-size: 0.75em;
   }
 
