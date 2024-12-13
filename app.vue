@@ -37,18 +37,19 @@ export default {
       showUnlocker: false
     }
   },
-  mounted() {
-    useHead({
+  created() {
+    // Use created for server-side operations
+    definePageMeta({
+      title: 'Home',
       meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+        {
+          name: "I am a designer with an artisanal approach, mixing editorial and upcycling.",
+          content: "Home page"
+        }
       ],
-      link: [
-        { rel: 'icon', href: '/icon/favicon.ico' }
-      ],
-      htmlAttrs: {
-        lang: 'en'
-      }
-    })
+    });
+  },
+  mounted() {
     // Use mounted instead of created for client-side operations
     this.initializePageAccess()
   },
@@ -89,9 +90,10 @@ export default {
 }
 </script>
 <template>
-  <Splash v-if="showSplash" @splash-ended="onSplashEnded" />
-  <Unlocker v-if="showUnlocker" @unlocked="onUnlocked" />
-  <NuxtPage  v-if="unlocked"  :transition="{
+  <title>folllit</title>
+  <meta name="description"
+    content=" I am a graphic designer with an artisanal approach, mixing editorial and upcycling." />
+  <NuxtPage :transition="{
     name: 'fade',
     mode: 'out-in'
   }" />
