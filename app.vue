@@ -15,14 +15,15 @@ useHead({
 if (process.client) {
   const handlePageRefresh = () => {
     // Uncomment if you want to reset first visit on page refresh
-    // sessionStorage.removeItem('first-visit');
+     sessionStorage.removeItem('first-visit');
 
     // Optional: Clear unlocked state on page refresh
-    // sessionStorage.removeItem('unlocked');
+     sessionStorage.removeItem('unlocked');
   };
 
   window.addEventListener('load', handlePageRefresh);
 }
+
 </script>
 
 <template>
