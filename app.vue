@@ -160,6 +160,19 @@ if (process.client) {
   mix-blend-mode: overlay;
 }
 
+.animate-blend-text{
+  /* mix-blend-mode: overlay; */
+  opacity: 0.5;
+  transition: 2s ease-in-out;
+
+}
+
+.animate-blend-text:hover{
+  opacity: 1;
+  /* mix-blend-mode: normal; */
+  transition: 2s ease-in-out;
+}
+
 /* transitions */
 .page-enter-active,
 .page-leave-active {
