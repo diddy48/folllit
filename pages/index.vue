@@ -13,7 +13,7 @@
         <div>
             ShowUnlocker: {{ showUnlocker }}
         </div> -->
-        <!-- <Splash v-if="showSplash" @splash-ended="onSplashEnded" /> -->
+        <Splash v-if="showSplash" @splash-ended="onSplashEnded" />
         <Unlocker v-if="showUnlocker" @unlocked="onUnlocked" />
 
         <transition name="fade">
