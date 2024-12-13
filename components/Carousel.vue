@@ -67,6 +67,7 @@ function scrollRight() {
     white-space: nowrap;
     scroll-behavior: auto;
     -ms-overflow-style: none;
+    background-color: rgb(41, 41, 41);
     /* Internet Explorer 10+ */
     scrollbar-width: none;
     /* Firefox */
@@ -79,10 +80,15 @@ function scrollRight() {
 }
 
 .carousel-img {
-    width: 100vw;
+    /* width: 100vw;
     height: 100svh;
     object-fit: cover;
-    flex-shrink: 0;
+    flex-shrink: 0; */
+    width: 100vw;
+    /* Make the image fill the width of the container */
+    height: 100svh;
+    /* This creates a square aspect ratio */
+    object-fit: scale-down;
 }
 
 .scroll-arrow {
@@ -97,12 +103,14 @@ function scrollRight() {
     opacity: 0.3;
     transition: opacity 0.3s ease-in-out;
 }
+
 @media only screen and (max-width: 767px) {
     .scroll-arrow {
         font-size: 4rem;
     }
-    
+
 }
+
 .scroll-arrow:hover {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
