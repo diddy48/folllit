@@ -6,7 +6,7 @@
 
         <AppHeader />
         <TitleComponent title="Projects">
-            <span class="alt_font">All </span><i class="main_accent">projects.</i>
+            <span class="alt_font">All </span><i class="main_accent">projects</i>
         </TitleComponent>
         <v-spacer style="height: 18vh;"></v-spacer>
         <AppFooter />

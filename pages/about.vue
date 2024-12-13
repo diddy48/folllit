@@ -31,7 +31,10 @@
             </v-row>
         </div> -->
         <div>
-            <v-spacer style="height: 20vh;"></v-spacer>
+            <!-- <v-spacer style="height: 20vh;"></v-spacer> -->
+            <TitleComponent title="About">
+                <span class="alt_font">Valerio Romano / </span><i class="main_accent">folllit</i>
+            </TitleComponent>
             <v-row no-gutters class="align-start ">
                 <v-col cols="12" md="4" class="d-flex justify-center align-start pa-5">
                     <nuxt-img provider="cloudinary" src="valerio_romano_folllit_ritratto_pmbdvp"
@@ -43,14 +46,17 @@
                 </v-col>
                 <v-col cols="12" md="8" class="d-flex align-start pa-5">
                     <div class="text-h6 text-sm-h6 text-md-h5 text-lg-h3">
-                        <div class="main_accent text-h4 text-sm-h4 text-md-h3 text-lg-h2 pb-5 alt_font"> Biography</div>
+                        <div class="main_accent text-h4 text-sm-h4 text-md-h3 text-lg-h2 pb-5 alt_font"> Biography
+                        </div>
                         Born in Pordenone in 2001, he currently resides in Padua, where he works as a graphic
                         designer and studies Communication Design at IUAV University of Venice. He has always been
                         interested in artisanal craftsmanship and deepens his skills, knowledge, and applications in
                         this
-                        field through his studies, leading to the creation of the "Taqquini" project. This initiative
+                        field through his studies, leading to the creation of the "Taqquini" project. This
+                        initiative
                         aims to
-                        explore the connection between sustainability, craftsmanship, and upcycling, particularly within
+                        explore the connection between sustainability, craftsmanship, and upcycling, particularly
+                        within
                         the Italian context.
                     </div>
                 </v-col>
@@ -94,6 +100,7 @@ position: absolute; left: 0px; bottom: 20px;">Do you like Interstellar?
 <script setup>
 import AppHeader from "@/components/AppHeader.vue";
 import AppFooter from "@/components/AppFooter.vue";
+import TitleComponent from "~/components/TitleComponent.vue";
 
 definePageMeta(
     {
