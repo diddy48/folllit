@@ -1,14 +1,16 @@
 <template>
     <div class="unlocker">
-            
+
         <div class="unlocker_content">
             <div :style="{ backgroundImage: `url(${randomImage})`, transition: `background-image 0.5s ease-in-out`, backgroundSize: `cover` }"
                 class="home_logo img-fluid" rel="preload"></div>
 
             <svg class="mask-container" width="10vw" height="10dvh">
                 <mask id="eye-mask">
-                    <text x="20px" y="10svh" fill="white" class="text-h3 text-md-h2 text-lg-h1 text-non-IOS">folllit</text>
-                    <text x="20px" y="95svh" fill="white" class="text-h4 text-md-h2 text-lg-h1 text-non-IOS">draw a smile to
+                    <text x="20px" y="10svh" fill="white"
+                        class="text-h3 text-md-h2 text-lg-h1 text-non-IOS">folllit</text>
+                    <text x="20px" y="95svh" fill="white" class="text-h4 text-md-h2 text-lg-h1 text-non-IOS">draw a
+                        smile to
                         unlock</text>
 
                     <circle v-if="deviceType === 'mobile'" cx="30%" cy="40%" r="10%" fill="white" class="mobile-eye"
@@ -39,10 +41,10 @@
                 @touchstart="startDrawing" @touchmove="draw" @touchend="stopDrawing"></canvas>
         </div>
         <div class="text_IOS name pa-5">
-            <div class="text-h5 text-sm-h4 text-md-h1 text-center">follit</div>
+            <div class="text-h3 text-sm-h2 text-md-h1 text-center">follit</div>
         </div>
         <div class="text_IOS istructions pa-5">
-            <div class="text-h5 text-sm-h4 text-md-h1 text-center">draw a smile to unlock</div>
+            <div class="text-h4 text-sm-h3 text-md-h1 text-center">draw a smile to unlock</div>
         </div>
     </div>
 </template>
@@ -272,8 +274,8 @@ export default {
     /* CSS for other than iOS devices */
     .text_IOS {
         display: none;
-        /* display: block;
-            position: absolute; */
+        /*  display: block;
+            position: absolute;  */
             
     }.text_IOS.name {
         top: 0;
