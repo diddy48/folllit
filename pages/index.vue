@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <div>
         <title>folllit</title>
         <meta name="description"
             content=" I am a graphic designer with an artisanal approach, mixing editorial and upcycling." />
@@ -23,7 +23,7 @@
                 <AppFooter />
             </div>
         </transition>
-    </v-app>
+    </div>
 
 </template>
 <script>

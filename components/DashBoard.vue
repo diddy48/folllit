@@ -184,7 +184,7 @@
         </v-col>
     </v-row>
     <v-row no-gutters id="snap-1" class="section snap-item">
-        <v-col cols="12" class="d-flex justify-center align-center"><!-- 
+        <v-col cols="12" class="text-center "><!-- 
             <img src="~/assets/img/_W4A3479.jpg" style="height: 100vh; width: 100%; object-fit: cover;" /> -->
             <Carousel :carousel-img="carouselImg2" />
         </v-col>

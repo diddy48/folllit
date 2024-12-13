@@ -1,24 +1,16 @@
- <template>
-    <n-carousel :show-dots="true" :show-arrow="true" :draggable="false" :interval="2500" style="height: 100vh; width: 100vw;">
-        <!-- <img v-for="(img, index) in carouselImg" :key="index" class="carousel-img" v-lazy="img" :alt="'Image ' + index" />  -->
-        <!-- <img v-for="(img, index) in carouselImg" :key="index" class="carousel-img" :src="img" :alt="'Image ' + index" /> -->
-        <nuxt-img provider="cloudinary" v-for="(img, index) in carouselImg" :key="index" :src="img"
-            :alt="'Image ' + index" class="carousel-img" />
-    </n-carousel>
-
-    <!-- <v-carousel height="100svh" :show-arrows="false" cycle :hide-delimiter="true" :hide-delimiter-background="true" :touch="true">
-        <v-carousel-item v-for="(img, index ) in carouselImg" :key="index" :src="img" width="100vw">
-            <img :key="index" class="carousel-img" v-lazy="img"
-                :alt="'Image ' + index" />
-        </v-carousel-item>
-    </v-carousel> -->
+<template>
+    <div class="scroll-wrapper">
+        <button class="scroll-arrow left alt_font main_accent" @click="scrollLeft">&lt;</button>
+        <div class="scroll-container" :ref="el => scrollContainer = el">
+            <nuxt-img provider="cloudinary" v-for="(img, index) in carouselImg.concat(carouselImg)" :key="index"
+                :src="img" :alt="'Image ' + index" class="carousel-img" />
+        </div>
+        <button class="scroll-arrow right alt_font main_accent" @click="scrollRight">&gt;</button>
+    </div>
 </template>
 
-
-
 <script setup>
-import { defineComponent } from 'vue';
-import { NCarousel } from 'naive-ui';
+import { ref, onMounted } from 'vue';
 
 // Props declaration for the carousel images
 defineProps({
@@ -28,27 +20,99 @@ defineProps({
     },
 });
 
-/* export default defineComponent({
-    props: {
-        carouselImg: {
-            type: Array,
-            required: true,
-        },
-    },
-    components: {
-        NCarousel,
-    },
-}); */
+// Local ref for the scroll container
+let scrollContainer = null;
 
+onMounted(() => {
+    console.log(scrollContainer);
+    if (scrollContainer) {
+        // Position the first image halfway visible
+        scrollContainer.scrollLeft = scrollContainer.clientWidth / 2;
+    }
+});
+
+function scrollLeft() {
+    if (scrollContainer) {
+        const container = scrollContainer;
+        const imageWidth = container.clientWidth;
+        const currentScroll = container.scrollLeft;
+        const newScroll = Math.round(currentScroll / imageWidth - 1) * imageWidth;
+        container.scrollTo({ left: newScroll, behavior: 'smooth' });
+    }
+}
+
+function scrollRight() {
+    if (scrollContainer) {
+        const container = scrollContainer;
+        const imageWidth = container.clientWidth;
+        const currentScroll = container.scrollLeft;
+        const newScroll = Math.round(currentScroll / imageWidth + 1) * imageWidth;
+        container.scrollTo({ left: newScroll, behavior: 'smooth' });
+    }
+}
 </script>
 
+
 <style scoped>
+.scroll-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: auto;
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+    flex: 1;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
 .carousel-img {
     width: 100vw;
     height: 100svh;
     object-fit: cover;
-    /* Smooth animation using GPU acceleration */
-    /* transform: translateZ(0);
-    will-change: transform, opacity; */
+    flex-shrink: 0;
+}
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 7rem;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.3;
+    transition: opacity 0.3s ease-in-out;
+}
+@media only screen and (max-width: 767px) {
+    .scroll-arrow {
+        font-size: 4rem;
+    }
+    
+}
+.scroll-arrow:hover {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.scroll-arrow.left {
+    left: 1rem;
+}
+
+.scroll-arrow.right {
+    right: 1rem;
 }
 </style>
