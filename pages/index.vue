@@ -13,11 +13,12 @@
         <div>
             ShowUnlocker: {{ showUnlocker }}
         </div> -->
+        <!-- 
         <Splash v-if="showSplash" @splash-ended="onSplashEnded" />
-        <Unlocker v-if="showUnlocker" @unlocked="onUnlocked" />
+        <Unlocker v-if="showUnlocker" @unlocked="onUnlocked" /> -->
 
         <transition name="fade">
-            <div v-if="unlocked" class="background_accent scroll-container">
+            <div  class="background_accent scroll-container">
                 <AppHeader :blended="false" />
                 <DashBoard />
                 <AppFooter />
