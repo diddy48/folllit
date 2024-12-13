@@ -1,11 +1,11 @@
 <template>
-    <div class="scroll-wrapper">
-        <button class="scroll-arrow left alt_font main_accent" @click="scrollLeft">&lt;</button>
+    <div class="scroll-wrapper"><!-- 
+        <button class="scroll-arrow left alt_font main_accent" @click="scrollLeft">&lt;</button> -->
         <div class="scroll-container" :ref="el => scrollContainer = el">
             <nuxt-img provider="cloudinary" v-for="(img, index) in carouselImg.concat(carouselImg)" :key="index"
                 :src="img" :alt="'Image ' + index" class="carousel-img" />
-        </div>
-        <button class="scroll-arrow right alt_font main_accent" @click="scrollRight">&gt;</button>
+        </div><!-- 
+        <button class="scroll-arrow right alt_font main_accent" @click="scrollRight"></button> -->
     </div>
 </template>
 
@@ -30,7 +30,7 @@ onMounted(() => {
         scrollContainer.scrollLeft = scrollContainer.clientWidth / 2;
     }
 });
-
+/* 
 function scrollLeft() {
     if (scrollContainer) {
         const container = scrollContainer;
@@ -49,7 +49,7 @@ function scrollRight() {
         const newScroll = Math.round(currentScroll / imageWidth + 1) * imageWidth;
         container.scrollTo({ left: newScroll, behavior: 'smooth' });
     }
-}
+} */
 </script>
 
 
@@ -84,11 +84,9 @@ function scrollRight() {
     height: 100svh;
     object-fit: cover;
     flex-shrink: 0; */
-    width: 100vw;
     /* Make the image fill the width of the container */
     height: 100svh;
     /* This creates a square aspect ratio */
-    object-fit: scale-down;
 }
 
 .scroll-arrow {
