@@ -41,7 +41,7 @@
                 @touchstart="startDrawing" @touchmove="draw" @touchend="stopDrawing"></canvas>
         </div>
         <div class="text_IOS name pa-5">
-            <div class="text-h3 text-sm-h2 text-md-h1 text-center">follit</div>
+            <div class="text-h3 text-sm-h2 text-md-h1 text-center">folllit</div>
         </div>
         <div class="text_IOS istructions pa-5">
             <div class="text-h4 text-sm-h3 text-md-h1 text-center">draw a smile to unlock</div>
