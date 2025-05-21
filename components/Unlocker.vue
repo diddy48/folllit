@@ -186,7 +186,7 @@ export default {
                 // Optional: Add a slight delay before emitting unlocked event
                 setTimeout(() => {
                     this.$emit('unlocked');
-                }, 1200);
+                }, 1500);
             }
         },
         isSmileDetected() {

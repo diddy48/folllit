@@ -13,14 +13,15 @@
         <div>
             ShowUnlocker: {{ showUnlocker }}
         </div> -->
-        <Splash v-if="showSplash" @splash-ended="onSplashEnded" />
+        <!-- 
+        <Splash v-if="showSplash" @splash-ended="onSplashEnded" /> -->
         <Unlocker v-if="showUnlocker" @unlocked="onUnlocked" />
 
         <transition name="fade">
             <div v-if="unlocked" class="background_accent scroll-container">
                 <AppHeader :blended="false" />
                 <DashBoard />
-                <AppFooter />
+                <!-- <AppFooter /> -->
             </div>
         </transition>
     </div>
@@ -51,9 +52,15 @@ export default {
     },
     mounted() {
         // Use mounted instead of created for client-side operations
-        this.initializePageAccess()
+        //this.initializePageAccess()
+        this.initializeAlwaysShowSplash()
     },
     methods: {
+        initializeAlwaysShowSplash() {
+            // Check if the splash should always be shown
+                this.showSplash = true
+                this.showUnlocker = true
+        },
         initializePageAccess() {
             // Use a more robust check for first-time visit
             const visitCount = parseInt(sessionStorage.getItem('visit-count') || '0')
