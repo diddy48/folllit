@@ -39,7 +39,7 @@ export default {
   },
   created() {
     // Use created for server-side operations
-    definePageMeta({
+   /*  definePageMeta({
       title: 'Home',
       meta: [
         {
@@ -47,7 +47,7 @@ export default {
           content: "Home page"
         }
       ],
-    });
+    }); */
   },
   mounted() {
     // Use mounted instead of created for client-side operations
@@ -252,3 +252,6 @@ export default {
   filter: blur(1rem);
 }
 </style>
+<!-- 
+  npm run dev -- --host
+-->
