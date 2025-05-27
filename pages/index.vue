@@ -21,6 +21,7 @@
             <div v-if="unlocked" class="background_accent scroll-container">
                 <AppHeader :blended="false" />
                 <DashBoard />
+                <SmallFooter />
                 <!-- <AppFooter /> -->
             </div>
         </transition>
@@ -29,6 +30,7 @@
 </template>
 <script>
 import { tr } from 'vuetify/locale';
+import SmallFooter from '~/components/SmallFooter.vue';
 
 export default {
     data() {

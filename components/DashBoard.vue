@@ -19,7 +19,7 @@
 }
 </style>
 <template>
-    <v-row no-gutters id="snap-1" class="section-first snap-item">
+    <v-row no-gutters class="section-first">
         <v-col cols="12" class="text-center ">
             <video playsinline autoplay muted loop style="width: 100%; height: 100svh;">
                 <source src="~/assets/video/Sequenza_02.webm" type="video/webm" />
@@ -53,18 +53,16 @@
                         </div>
 
                     </v-col>
-                    <!--<v-col cols="12" class="d-flex justify-end"
+                    <!-- <v-col cols="12" class="d-flex justify-end"
                         style="position: absolute; bottom: 0; right: 0; padding: 0px;">
                          <a href="file/resume.pdf"><img style="" src="assets/gif/get_in_touch.gif" class="bollino"alt="logo circle" /></a>
                     <a href="mailto:hello@folllit.it"><img style="" src="assets/gif/get_in_touch.gif" class="bollino"
                             alt="logo circle" /></a>
-                    </!--v-col>-->
+                    </v-col> -->
                 </v-row>
             </v-container>
-
         </v-col>
     </v-row>
-    
     <!-- <v-row no-gutters id="snap-2" class="section d-flex align-center snap-item" style="background-color: black;">
 
         <WonderTaqquini :mobile="false" class="d-none d-md-flex" />

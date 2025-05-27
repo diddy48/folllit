@@ -36,14 +36,13 @@
             </template>
 
             <template v-slot:default="{ isActive }">
-              <v-card>
+              <v-card style="border-radius: 0;">
                 <v-card-title class="text-h5 text-sm-h5 text-md-h4 text-lg-h3"><span class=" alt_font">Valerio Romano /
                   </span><i class="main_accent">folllit</i></v-card-title>
                 <v-spacer></v-spacer>
                 <v-row no-gutters class="align-start ">
                   <v-col cols="12" md="4" class="d-flex justify-center align-start pa-5">
-                    <nuxt-img provider="cloudinary" src="valerio_romano_folllit_ritratto_pmbdvp"
-                      alt="profile_picture_valerio_romano" style="
+                    <nuxt-img provider="cloudinary" src="ritratto_kvtfvw" alt="profile_picture_valerio_romano" style="
     width: 100%;
     height: 60svh;
     object-fit: cover;" />
@@ -53,21 +52,18 @@
                     <div class="text-h6 text-sm-h6 text-md-h6 text-lg-h4">
                       <div class="main_accent text-h5 text-sm-h5 text-md-h4 text-lg-h3 pb-5 alt_font"> Biography
                       </div>
-                      Born in Pordenone in 2001, he currently resides in Padua, where he works as a graphic
-                      designer and studies Communication Design at IUAV University of Venice. He has always been
-                      interested in artisanal craftsmanship and deepens his skills, knowledge, and applications in
-                      this
-                      field through his studies, leading to the creation of the "Taqquini" project. This
-                      initiative
-                      aims to
-                      explore the connection between sustainability, craftsmanship, and upcycling, particularly
-                      within
-                      the Italian context.
+                      Born in Pordenone in 2001, he currently lives in Padua, working as a freelance graphic designer.
+                      His path has taken him through several cities, including Brussels, Turin, Rome, and Milan, which
+                      have all contributed to his personal and professional growth. He studied at Iuav University of
+                      Venice, focusing on design and visual communication. He has a long-standing interest in artisanal
+                      craftsmanship, which he explored further during his studies. This led to the development of
+                      Taqquini, a project focused on the relationship between sustainability, craftsmanship, and
+                      upcycling, with particular attention to the Italian context.
                     </div>
                   </v-col>
                 </v-row>
                 <v-spacer></v-spacer>
-                <v-card-actions>
+                <v-card-actions class="my-5">
                   <v-btn @click="isActive.value = false"><span
                       class=" alt_font text-h6 text-sm-h5 text-md-h4 text-lg-h4">Close </span></v-btn>
                 </v-card-actions>

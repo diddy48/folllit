@@ -37,7 +37,7 @@
             </TitleComponent>
             <v-row no-gutters class="align-start ">
                 <v-col cols="12" md="4" class="d-flex justify-center align-start pa-5">
-                    <nuxt-img provider="cloudinary" src="valerio_romano_folllit_ritratto_pmbdvp"
+                    <nuxt-img provider="cloudinary" src="valerio_romano_folllit_ritratto_kvtfvw"
                         alt="profile_picture_valerio_romano" style="
     width: 100%;
     height: 60svh;
